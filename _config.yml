@@ -1,16 +1,16 @@
-title:            Site Title
-description:      Describe your website here.
+title:            Lingfeng's Blog
+description:      First test.
 logo:             site-logo.png
 disqus_shortname: 
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+url:              http://coldwind.me
 
 # Owner/author information
 owner:
-  name:           Your Name
+  name:           feng
   avatar:         bio-photo.jpg
-  email:          you@email.com
+  email:          hanxiaomax@qq.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
