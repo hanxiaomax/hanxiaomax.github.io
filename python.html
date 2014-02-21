@@ -4,17 +4,17 @@ permalink: /Python/
 title: Python
 description: "Python Learning"
 image:
-  feature: so-simple-sample-image-2.jpg
+  feature: so-simple-sample-image-1.jpg
 ---
 
 <ul class="post-list">
 {% for post in site.python %} 
   <li>
   	<article>
-  		<a href="{{ site.url }}{{ python.url }}">
-  			{{ python.title }} 
+  		<a href="{{ site.url }}{{ post.url }}">
+  			{{ post.title }} 
   			<span class="entry-date">
-  				<time datetime="{{ python.date | date_to_xmlschema }}">
+  				<time datetime="{{ post.date | date_to_xmlschema }}">
   					{{ python.date | date: "%B %d, %Y" }}
   				</time>
   			</span>
