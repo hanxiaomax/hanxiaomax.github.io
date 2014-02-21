@@ -34,6 +34,8 @@ bing_verify:
 links:
   - title: About
     url: /about/
+  - title: homepage
+    url: /homepage/  
   - title: Python
     url: /Python/
   - title: C/C++
