@@ -3,7 +3,7 @@ layout: page
 permalink: /about/
 title: About this blog
 image:
-  feature: so-simple-sample-image-4.jpg
+  feature: about.jpg
   credit: Michael Rose
   creditlink: http://mademistakes.com
 ---
@@ -11,6 +11,7 @@ image:
 
 This blog is powered by Jekyll using the So Simple Theme.
 
+如果大家喜欢这个主题，可以点击下面的链接，学习如何安装
 <a markdown="0" href="{{ site.url }}/theme-setup" class="btn">
     Install Minimal Mistakes Theme
 </a>
