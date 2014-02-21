@@ -8,7 +8,7 @@ image:
 ---
 
 <ul class="post-list"> <!--<ul>无序列表,并调用一个post-list的css样式。-->
-{% for post in site.python %} 
+{% for post in site._python %} 
   <li>
   	<article>
   		<a href="{{ site.url }}{{ post.url }}">
