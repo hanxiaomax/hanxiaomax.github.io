@@ -1,0 +1,23 @@
+---
+layout: page
+permalink: /Python/
+title: Python
+description: "Python Learning"
+---
+
+<ul class="python-list">
+{% for post in site.posts %} 
+  <li>
+  	<article>
+  		<a href="{{ site.url }}{{ python.url }}">
+  			{{ python.title }} 
+  			<span class="entry-date">
+  				<time datetime="{{ python.date | date_to_xmlschema }}">
+  					{{ python.date | date: "%B %d, %Y" }}
+  				</time>
+  			</span>
+  		</a>
+  	</article>
+  </li>
+{% endfor %}
+</ul>
