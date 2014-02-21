@@ -33,7 +33,9 @@ bing_verify:
 # For external links add external: true
 links:
   - title: About
-    url: /about/  
+    url: /about/
+  - title: homepage
+    url: http://hanxiaomax.github.io
   - title: Python
     url: /Python/
   - title: C/C++
