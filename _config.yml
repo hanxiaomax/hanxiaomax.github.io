@@ -4,7 +4,7 @@ logo:             site-logo.png
 disqus_shortname: 
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://hanxiaomax.github.io
+url:              http://coldwind.me
 
 # Owner/author information
 owner:
