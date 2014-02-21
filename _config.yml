@@ -32,10 +32,10 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: Python
-    url: /about/
   - title: C/C++
-    url: /articles/
+    url: /about/
+  - title: Python
+    url: /Python/
   - title: Theme Setup
     url: /theme-setup/
   - title: 新浪微博
