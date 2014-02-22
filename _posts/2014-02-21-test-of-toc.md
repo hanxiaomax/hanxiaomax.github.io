@@ -38,10 +38,10 @@ tags: [markdown, 目录生成]
 
 不考虑链接美观的情况下，最简单的方法是使用html标签锚定一个位置，从而进行跳转。
 
-{% highligh html %}
+{% highlight html %}
 [文本内容](#jump)
 
 
 <span id="jump">
 </span>
-{% endhighligh %}
+{% endhighlight %}
