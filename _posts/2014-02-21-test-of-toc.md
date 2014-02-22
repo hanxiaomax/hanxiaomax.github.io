@@ -1,23 +1,33 @@
 ---
 layout: post
-permalink: /1/
-title:	test
-description: "Instructions on how to install and customize the Jekyll theme So Simple."
-modified: 2013-09-11
-tags: [Jekyll, theme, install, setup]
+title:	使用{:toc}自动生成
+category: other
+tags: [markdown, 目录生成]
 ---
-* Table of Contents
-{:toc}
+
+应用如下代码
+
+	* Table of Contents
+	{:toc}
+
+	##H1  
+
+	###h1  
+
+	####hh1
+
+	##H2  
+
+	###h2  
+
+	####hh2
 
 
-##H1  
+将得到如下图所示的目录
+<figure>
+    <a href="/images/toc-1.jpg"> <!--herf是超链接-->
+        <img src="/images/toc-1.jpg"><!--img标签必须有src属性=“图片位置”-->
+    </a>
+</figure>
 
-###h1  
 
-####hh1
-
-##H2  
-
-###h2  
-
-####hh2
