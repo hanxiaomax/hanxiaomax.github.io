@@ -4,6 +4,7 @@ title: Latest Posts
 image:
   feature: about.jpg
 ---
+<a name="top" id="top"></a>
 
 <ul class="post-list"> <!--<ul>无序列表,并调用一个post-list的css样式。-->
 {% for post in site.posts limit:10 %} 
@@ -21,3 +22,5 @@ image:
   </li>
 {% endfor %}
 </ul>
+
+<a href="#top" target="_self" class="btn">选择专栏</a>
