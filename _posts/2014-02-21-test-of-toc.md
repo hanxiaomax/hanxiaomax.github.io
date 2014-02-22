@@ -6,13 +6,14 @@ tags: [markdown, 目录生成]
 ---
 * Table of Contents
 	{:toc}
+
 ##1.自动生成目录
 
 应用如下代码
 
 	* Table of Contents
-	{:toc}
-
+	{:toc} 
+	这里需要一个空行
 	##H1  
 
 	###h1  
