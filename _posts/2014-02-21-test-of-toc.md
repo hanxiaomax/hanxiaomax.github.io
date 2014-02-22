@@ -1,9 +1,12 @@
 ---
 layout: post
-title:	使用{:toc}自动生成
+title:	使用{:toc}自动生成目录或建立文内跳转
 category: other
 tags: [markdown, 目录生成]
 ---
+* Table of Contents
+	{:toc}
+##1.自动生成目录
 
 应用如下代码
 
@@ -31,3 +34,14 @@ tags: [markdown, 目录生成]
 </figure>
 
 
+##2.建立文内跳转
+
+不考虑链接美观的情况下，最简单的方法是使用html标签锚定一个位置，从而进行跳转。
+
+{% highligh html %}
+[文本内容](#jump)
+
+
+<span id="jump">
+</span>
+{% endhighligh %}
