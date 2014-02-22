@@ -4,6 +4,7 @@ title:	使用{:toc}自动生成目录或建立文内跳转
 category: other
 tags: [markdown, 目录生成]
 ---
+
 * Table of Contents
 	{:toc}
 
