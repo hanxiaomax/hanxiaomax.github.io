@@ -6,7 +6,7 @@ tags: [markdown, 目录生成]
 ---
 
 * Table of Contents
-	{:toc}
+{:toc}
 
 ##1.自动生成目录
 
