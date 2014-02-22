@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 permalink: /1/
 title:	test
 description: "Instructions on how to install and customize the Jekyll theme So Simple."
