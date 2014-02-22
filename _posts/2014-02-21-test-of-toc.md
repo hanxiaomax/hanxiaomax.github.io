@@ -5,7 +5,8 @@ category: other
 tags: [markdown, 目录生成]
 ---
 
-* Table of Contents
+Table of Contents
+
 {:toc}
 
 ##1.自动生成目录
