@@ -2,7 +2,7 @@
 layout: post
 title:	 How to talk about various practitioners 词源及衍生词汇(2)
 category: etymology
-tags: [markdown, 目录生成]
+tags: [etymology, 词源，词根]
 image:
   feature: article.jpg
 comments: true
@@ -93,7 +93,6 @@ chiromancy:手相术
 
 1.Norman Lewis.(1991-2-15).*Word Power Made Easy*. Pocket Books  
 2.etymology dictionary    
-
 ****************************************
 
 
