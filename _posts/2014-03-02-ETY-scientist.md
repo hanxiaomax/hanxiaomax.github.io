@@ -73,6 +73,7 @@ This linguistic scientist explored the subtle,intangible,elusive relationship be
 这类语言学家，探索的是语言和思维，意义和词汇之间精妙的，难以理解的，难以捉摸的关系，他们对确定人类的所说所写的心理性成因和心理对说话，写作的影响。
 
 **10 sociologist       社会学家**  
+
 > who are your friends and neighbors?
 This scientist is a student of the ways in which people live together,their family and community structures and customs,their housing,their social relationships,their forms of government,and their layers of caste and class.
 
