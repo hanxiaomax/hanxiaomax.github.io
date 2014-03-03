@@ -38,7 +38,7 @@ share: true
 
 
 
-```c
+~~~~~~~~
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 typedef GdkSegment GdkRegionBox;
@@ -100,7 +100,7 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
   }
   gdk_window_add_filter (window, event_filter, context);
 }
-```
+~~~~~~~~~~~~
 
 ##Step3：安装C/C++的编译环境和gtk libgtk2.0-dev
 
