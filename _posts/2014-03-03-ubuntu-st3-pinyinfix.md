@@ -106,13 +106,14 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 
 直接使用如下命令：
 
-  sudo apt-get install build-essential  
-  sudo apt-get install libgtk2.0-dev
+`sudo apt-get install build-essential`
+`sudo apt-get install libgtk2.0-dev`
 
 ##Step4：编译成共享库
 
-  gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
-
+~~~
+gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
+~~~
 
 **在这一步的时候，如果遇到问题，比如说出现未定义的变量，文件名，结构体等等问题，请检查之前的c代码，有时候在复制过程中会出现乱码。请重新复制或者对照修改。**
 
