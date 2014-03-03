@@ -171,6 +171,13 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 
 至此就完成了所有的操作，注销系统再进入，就可以使用了。
 
+<figure>
+    <a href="/images/ST3.jpg"> <!--herf是超链接-->
+        <img src="/images/ST3.jpg"><!--img标签必须有src属性=“图片位置”-->
+    </a>
+</figure>
+
+
 <span id="jump">
 参考链接：
 </span>
