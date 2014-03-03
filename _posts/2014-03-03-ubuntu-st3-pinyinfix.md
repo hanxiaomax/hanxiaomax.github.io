@@ -1,6 +1,6 @@
 ---
 layout: post
-title:	解决ubuntu上sublime text 3不能输入汉字的问题
+title:  解决ubuntu上sublime text 3不能输入汉字的问题
 category: other
 tags: [ubuntu, sublime text，输入法，中文]
 image:
@@ -24,9 +24,9 @@ share: true
 
 首先我们安装输入法，**依次**使用如下三个命令即可：
 
-	sudo add-apt-repository ppa:fcitx-team/nightly
-	sudo apt-get update
-	sudo apt-get install fcitx fcitx-googlepinyin
+`sudo add-apt-repository ppa:fcitx-team/nightly`  
+`sudo apt-get update`  
+`sudo apt-get install fcitx fcitx-googlepinyin`
 
 关于开机自动启动的问题，并不影响最终结果，如果需要请看[参考链接](#1)
 
@@ -39,21 +39,9 @@ share: true
 
 
 ```c
-
-/*
-sublime-imfix.c
-Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.
-By Cjacker Huang <jianzhong.huang at i-soft.com.cn>
-
-
-gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
-LD_PRELOAD=./libsublime-imfix.so sublime_text
-*/
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 typedef GdkSegment GdkRegionBox;
-
-
 struct _GdkRegion
 {
   long size;
@@ -61,19 +49,13 @@ struct _GdkRegion
   GdkRegionBox *rects;
   GdkRegionBox extents;
 };
-
-
 GtkIMContext *local_context;
-
-
 void
 gdk_region_get_clipbox (const GdkRegion *region,
             GdkRectangle    *rectangle)
 {
   g_return_if_fail (region != NULL);
   g_return_if_fail (rectangle != NULL);
-
-
   rectangle->x = region->extents.x1;
   rectangle->y = region->extents.y1;
   rectangle->width = region->extents.x2 - region->extents.x1;
@@ -89,12 +71,6 @@ gdk_region_get_clipbox (const GdkRegion *region,
         gtk_im_context_set_cursor_location(local_context, rectangle);
   }
 }
-
-
-//this is needed, for example, if you input something in file dialog and return back the edit area
-//context will lost, so here we set it again.
-
-
 static GdkFilterReturn event_filter (GdkXEvent *xevent, GdkEvent *event, gpointer im_context)
 {
     XEvent *xev = (XEvent *)xevent;
@@ -105,8 +81,6 @@ static GdkFilterReturn event_filter (GdkXEvent *xevent, GdkEvent *event, gpointe
     }
     return GDK_FILTER_CONTINUE;
 }
-
-
 void gtk_im_context_set_client_window (GtkIMContext *context,
           GdkWindow    *window)
 {
@@ -115,8 +89,6 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
   klass = GTK_IM_CONTEXT_GET_CLASS (context);
   if (klass->set_client_window)
     klass->set_client_window (context, window);
-
-
   if(!GDK_IS_WINDOW (window))
     return;
   g_object_set_data(G_OBJECT(context),"window",window);
@@ -134,12 +106,12 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 
 直接使用如下命令：
 
-	sudo apt-get install build-essential  
-	sudo apt-get install libgtk2.0-dev
+  sudo apt-get install build-essential  
+  sudo apt-get install libgtk2.0-dev
 
 ##Step4：编译成共享库
 
-	gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
+  gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
 
 
 **在这一步的时候，如果遇到问题，比如说出现未定义的变量，文件名，结构体等等问题，请检查之前的c代码，有时候在复制过程中会出现乱码。请重新复制或者对照修改。**
@@ -153,8 +125,8 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 
 然后使用如下命令  
 
-	cd /usr/share/applications
-	sudo vi sublime_text.desktop
+  cd /usr/share/applications
+  sudo vi sublime_text.desktop
 进入applications修改sublime-text-2.desktop
 
 原文作者在这里使用了vi作为文本编辑器，大家也可以用gedit作为编辑器：
