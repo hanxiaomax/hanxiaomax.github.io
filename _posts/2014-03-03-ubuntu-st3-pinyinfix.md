@@ -39,6 +39,7 @@ share: true
 
 
 ```c
+
 /*
 sublime-imfix.c
 Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.
@@ -147,7 +148,7 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 ##Step5：修改启动图标
 首先，cd到sublime的根目录，找到`libsublime-imfix.so`，使用命令
 
-	mv libsublime-imfix.so /usr/lib
+`mv libsublime-imfix.so /usr/lib`
 把`libsublime-imfix.so`移动到/usr/lib
 
 然后使用如下命令  
@@ -157,7 +158,7 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 进入applications修改sublime-text-2.desktop
 
 原文作者在这里使用了vi作为文本编辑器，大家也可以用gedit作为编辑器：
-	sudo gedit sublime_text.desktop
+`sudo gedit sublime_text.desktop`
 
 运行命令后会打开文件sublime_text.desktop，修改    
 `Exec=/opt/sublime_text/sublime_text %F`  
@@ -181,4 +182,5 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 <span id="jump">
 参考链接：
 </span>
+
 [http://bbs.chinahtml.com/t319624/](http://bbs.chinahtml.com/t319624/)
