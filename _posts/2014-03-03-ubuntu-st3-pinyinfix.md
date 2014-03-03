@@ -151,7 +151,7 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 </figure>
 
 
-<span id="jump">
+<span id="1">
 参考链接：
 </span>
 
