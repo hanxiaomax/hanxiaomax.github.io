@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "Linux phrasebook learning note"
-category:other
+title: Linux phrasebook learning note
+category: other
 tags: [linux,shell]
+modified: 2014-03-04
 image:
   feature: article.jpg
 comments: true
 share: true
 ---
+
 
 
 目录
