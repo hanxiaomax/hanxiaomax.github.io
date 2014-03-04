@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux phrasebook learning note
+title: "Linux phrasebook learning note"
 category:other
 tags: [linux,shell]
 image:
@@ -8,6 +8,7 @@ image:
 comments: true
 share: true
 ---
+
 
 目录
 
