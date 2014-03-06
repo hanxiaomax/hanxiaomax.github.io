@@ -124,7 +124,7 @@ plt.show()
 ********************************
 
 ###3.多图叠加
-3.[lines bars and markers example code: fill demo features.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo_features.html#lines-bars-and-markers-example-code-fill-demo-features-py)
+[lines bars and markers example code: fill demo features.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo_features.html#lines-bars-and-markers-example-code-fill-demo-features-py)
 
 
 <figure>
@@ -156,8 +156,46 @@ plt.fill(x, y1, 'b', x, y2, 'r', alpha=0.3)#把两个曲线画在一张图上
 plt.show()
 {% endhighlight %}
 
+**************************
+
+###4.虚线和自定义虚线
+[lines bars and markers example code: line demo dash control.py](http://matplotlib.org/examples/lines_bars_and_markers/line_demo_dash_control.html#lines-bars-and-markers-example-code-line-demo-dash-control-py)
+
+<figure>
+    <a href="/images/1-figure-4.png"> <!--herf是超链接-->
+        <img src="/images/1-figure-4.png"><!--img标签必须有src属性=“图片位置”-->
+    </a>
+</figure>
+
+{% highlight python linenos %}
+#coding:utf-8
+"""
+Demo of a simple plot with a custom dashed line.
+
+A Line object's ``set_dashes`` method allows you to specify dashes with
+a series of on/off lengths (in points).
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10)#0-10等步长
+line, = plt.plot(x, np.sin(x), '--', linewidth=2)
+
+dashes = [10, 5, 100, 5] # 10 points on, 5 off, 100 on, 5 off 设置长横和短横
+line.set_dashes(dashes)#按照dashes自定义虚线
+
+plt.show()
+{% endhighlight %}
 
 *************************************
+1.`line.set_dashes(dashes)`
+
+
+2.`plt.plot(x, np.sin(x), '--', linewidth=2)`  
+[info:.plot](http://matplotlib.org/1.3.1/api/pyplot_api.html#matplotlib.pyplot.plot)
+
+*************************
+
 **本文采用中国大陆版CC协议发布**
  
 作者保留以下权利：  
