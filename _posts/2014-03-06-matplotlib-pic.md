@@ -71,6 +71,47 @@ Restore the default rc params. These are not the params loaded by the rc file, b
 
 
 ********************************************
+1.`np.arange()`
+
+To create sequences of numbers, NumPy provides a function analogous to range that returns arrays instead of lists
+
+2.`np.random.rand()`
+
+
+********************************************
+
+
+[lines_bars_and_markers example code: fill_demo.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo.html)
+
+<figure>
+    <a href="/images/1-figure-2.png"> <!--herf是超链接-->
+        <img src="/images/1-figure-2.png"><!--img标签必须有src属性=“图片位置”-->
+    </a>
+</figure>
+
+{% highlight python linenos %}
+#coding:utf-8
+"""
+Simple demo of the fill function.
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 1)#0-1等步长
+y = np.sin(4 * np.pi * x) * np.exp(-5 * x)#sin(4*pi*x)*x^-5
+
+plt.fill(x, y, 'r') #使用红色填充填充
+plt.grid(True) #打开网格
+plt.show()
+{% endhighlight %}
+
+***************************************
+1.`matplotlib.pyplot.fill(*args, **kwargs)`
+
+[info:fill](http://matplotlib.org/1.3.1/api/pyplot_api.html#matplotlib.pyplot.fill)
+
+2.`plt.grid(True)`
+**********************************
 
 **本文采用中国大陆版CC协议发布**
  
