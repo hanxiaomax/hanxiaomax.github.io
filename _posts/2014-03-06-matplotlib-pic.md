@@ -10,6 +10,9 @@ comments: true
 share: true
 ---
 
+[lines_bars_and_markers example code: barh_demo.py](http://matplotlib.org/examples/lines_bars_and_markers/barh_demo.html)
+
+
 <figure>
     <a href="/images/barh_demo.png"> <!--herf是超链接-->
         <img src="/images/barh_demo.png"><!--img标签必须有src属性=“图片位置”-->
