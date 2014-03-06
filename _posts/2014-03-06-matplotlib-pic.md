@@ -9,7 +9,13 @@ comments: true
 share: true
 ---
 
-[lines_bars_and_markers example code: barh_demo.py](http://matplotlib.org/examples/lines_bars_and_markers/barh_demo.html)
+目录
+
+* Table of Contents
+{:toc}
+
+
+###1.[lines bars and markers example code: barh demo.py](http://matplotlib.org/examples/lines_bars_and_markers/barh_demo.html)
 
 
 <figure>
@@ -81,7 +87,7 @@ To create sequences of numbers, NumPy provides a function analogous to range tha
 ********************************************
 
 
-[lines_bars_and_markers example code: fill_demo.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo.html)
+###2.[lines bars and markers example code: fill demo.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo.html)
 
 <figure>
     <a href="/images/1-figure-2.png"> <!--herf是超链接-->
@@ -106,13 +112,49 @@ plt.show()
 {% endhighlight %}
 
 ***************************************
+
 1.`matplotlib.pyplot.fill(*args, **kwargs)`
 
 [info:fill](http://matplotlib.org/1.3.1/api/pyplot_api.html#matplotlib.pyplot.fill)
 
 2.`plt.grid(True)`
-**********************************
 
+********************************
+
+###3.[lines bars and markers example code: fill demo features.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo_features.html#lines-bars-and-markers-example-code-fill-demo-features-py)
+
+
+<figure>
+    <a href="/images/1-figure-3.png"> <!--herf是超链接-->
+        <img src="/images/1-figure-3.png"><!--img标签必须有src属性=“图片位置”-->
+    </a>
+</figure>
+
+
+{% highlight python linenos %}
+#coding:utf-8
+"""
+Demo of the fill function with a few features.
+
+In addition to the basic fill plot, this demo shows a few optional features:
+
+    * Multiple curves with a single command.
+    * Setting the fill color.
+    * Setting the opacity (alpha value).
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2 * np.pi, 100)#(0,2*pi),100等分
+y1 = np.sin(x)
+y2 = np.sin(3 * x)
+plt.fill(x, y1, 'b', x, y2, 'r', alpha=0.3)#把两个曲线画在一张图上
+#plt.grid(True)
+plt.show()
+{% endhighlight %}
+
+
+*************************************
 **本文采用中国大陆版CC协议发布**
  
 作者保留以下权利：  
