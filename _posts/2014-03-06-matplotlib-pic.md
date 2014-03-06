@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Makefile 101 for dummies just like me"
-category: cpp
+title: "Matplotlib learning note:Lines, bars, and markers"
+category: python
 tags: [python,matplotlib]
-modified: 2014-02-21
 image:
   feature: 2000px-Matplotlib_logo.svg.png
 comments: true
