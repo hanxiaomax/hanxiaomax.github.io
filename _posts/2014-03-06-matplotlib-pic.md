@@ -15,7 +15,8 @@ share: true
 {:toc}
 
 
-###1.[lines bars and markers example code: barh demo.py](http://matplotlib.org/examples/lines_bars_and_markers/barh_demo.html)
+###1.水平柱状图
+[lines bars and markers example code: barh demo.py](http://matplotlib.org/examples/lines_bars_and_markers/barh_demo.html)
 
 
 <figure>
@@ -87,7 +88,8 @@ To create sequences of numbers, NumPy provides a function analogous to range tha
 ********************************************
 
 
-###2.[lines bars and markers example code: fill demo.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo.html)
+###2.填充曲线
+[lines bars and markers example code: fill demo.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo.html)
 
 <figure>
     <a href="/images/1-figure-2.png"> <!--herf是超链接-->
@@ -121,7 +123,8 @@ plt.show()
 
 ********************************
 
-###3.[lines bars and markers example code: fill demo features.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo_features.html#lines-bars-and-markers-example-code-fill-demo-features-py)
+###多图叠加
+3.[lines bars and markers example code: fill demo features.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo_features.html#lines-bars-and-markers-example-code-fill-demo-features-py)
 
 
 <figure>
