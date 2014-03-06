@@ -123,7 +123,7 @@ plt.show()
 
 ********************************
 
-###多图叠加
+###3.多图叠加
 3.[lines bars and markers example code: fill demo features.py](http://matplotlib.org/examples/lines_bars_and_markers/fill_demo_features.html#lines-bars-and-markers-example-code-fill-demo-features-py)
 
 
