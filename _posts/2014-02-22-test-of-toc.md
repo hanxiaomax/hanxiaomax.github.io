@@ -55,3 +55,12 @@ share: true
 <span id="jump">
 </span>
 {% endhighlight %}
+
+****************
+
+**本文采用中国大陆版CC协议发布**  
+作者保留以下权利：  
+1. 署名（Attribution）：必须提到原作者。  
+2. 非商业用途（Noncommercial）：不得用于盈利性目的。  
+3. 禁止演绎（No Derivative Works）：不得修改原作品, 不得再创作。   
+新浪微博 [@XX含笑饮砒霜XX](http://weibo.com/smilingly1989)
