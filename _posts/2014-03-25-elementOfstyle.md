@@ -10,6 +10,7 @@ share: true
 ---
 
 #ELEMENTARY RULES OF USAGE
+
 ##1.From the possessive singular of nouns by adding's.  
 
 - 直接加`'s`构造所有格，也不用管最后的辅音
@@ -20,6 +21,7 @@ share: true
 > Moses'Laws---->the laws of Moses
 - 不定代词(indefinite pronouns)同样加`'s`构造
 - 不要混淆`its`和`it's`
+
 ##2.In a series of three or more terms with a single conjunction,use a comma after each term except the last.
 
 - 连续的几个词，除了最后一个词，前面的都要加`,`
@@ -30,6 +32,7 @@ share: true
 - 作为公司名，倒数第二个单词后面的`,`也要省略
 >Little,Brown and Company  
  Donaldson,Lufkin & Jenrette
+ 
 ##3.Enclose parenthetic expressions between commas.
 - 在两个`,`之间放置插入语
 - 如果插入语不怎么影响句子流，则两个`,`可以省略，**但是**绝对不要省略一个，而留下另一个
