@@ -35,7 +35,7 @@ bing_verify:
 # For external links add external: true
 links:
   - title: 首页
-    url: /index/
+    url: /about/
   - title: About
     url: /about/
   - title: Python
