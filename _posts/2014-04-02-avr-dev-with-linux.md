@@ -26,6 +26,7 @@ share: true
 3.推荐的源  
 
 **网易的源**  
+
 ~~~~~~~~~~~~~~
 deb http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse  
 deb-src http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse  
@@ -40,6 +41,7 @@ deb-src http://mirrors.163.com/ubuntu/ raring-updates universe main multiverse r
 ~~~~~~~~~~~~~~~~~~~~
 
 **上海交通大学（教育网速度极快)**  
+
 ~~~~~~~~~~~~~~~
 deb http://ftp.sjtu.edu.cn/ubuntu/ raring main multiverse restricted universe  
 deb http://ftp.sjtu.edu.cn/ubuntu/ raring-backports main multiverse restricted universe  
