@@ -27,32 +27,32 @@ share: true
 
 **网易的源**  
 ```
-deb http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse
-deb-src http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse
-deb http://mirrors.163.com/ubuntu/ raring-security universe main multiverse restricted
-deb-src http://mirrors.163.com/ubuntu/ raring-security universe main multiverse restricted
-deb http://mirrors.163.com/ubuntu/ raring-updates universe main multiverse restricted
-deb http://mirrors.163.com/ubuntu/ raring-proposed universe main multiverse restricted
-deb-src http://mirrors.163.com/ubuntu/ raring-proposed universe main multiverse restricted
-deb http://mirrors.163.com/ubuntu/ raring-backports universe main multiverse restricted
-deb-src http://mirrors.163.com/ubuntu/ raring-backports universe main multiverse restricted
-deb-src http://mirrors.163.com/ubuntu/ raring-updates universe main multiverse restricted
+deb http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse  
+deb-src http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse  
+deb http://mirrors.163.com/ubuntu/ raring-security universe main multiverse restricted  
+deb-src http://mirrors.163.com/ubuntu/ raring-security universe main multiverse restricted  
+deb http://mirrors.163.com/ubuntu/ raring-updates universe main multiverse restricted  
+deb http://mirrors.163.com/ubuntu/ raring-proposed universe main multiverse restricted  
+deb-src http://mirrors.163.com/ubuntu/ raring-proposed universe main multiverse restricted  
+deb http://mirrors.163.com/ubuntu/ raring-backports universe main multiverse restricted  
+deb-src http://mirrors.163.com/ubuntu/ raring-backports universe main multiverse restricted  
+deb-src http://mirrors.163.com/ubuntu/ raring-updates universe main multiverse restricted  
 ```
 
 
 **上海交通大学（教育网速度极快)***
 ```
-deb http://ftp.sjtu.edu.cn/ubuntu/ raring main multiverse restricted universe
-deb http://ftp.sjtu.edu.cn/ubuntu/ raring-backports main multiverse restricted universe
-deb http://ftp.sjtu.edu.cn/ubuntu/ raring-proposed main multiverse restricted universe
-deb http://ftp.sjtu.edu.cn/ubuntu/ raring-security main multiverse restricted universe
-deb http://ftp.sjtu.edu.cn/ubuntu/ raring-updates main multiverse restricted universe
-deb http://ftp.sjtu.edu.cn/ubuntu-cn/ raring main multiverse restricted universe
-deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring main multiverse restricted universe
-deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-backports main multiverse restricted universe
-deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-proposed main multiverse restricted universe
-deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-security main multiverse restricted universe
-deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-updates main multiverse restricted universe
+deb http://ftp.sjtu.edu.cn/ubuntu/ raring main multiverse restricted universe  
+deb http://ftp.sjtu.edu.cn/ubuntu/ raring-backports main multiverse restricted universe  
+deb http://ftp.sjtu.edu.cn/ubuntu/ raring-proposed main multiverse restricted universe  
+deb http://ftp.sjtu.edu.cn/ubuntu/ raring-security main multiverse restricted universe  
+deb http://ftp.sjtu.edu.cn/ubuntu/ raring-updates main multiverse restricted universe  
+deb http://ftp.sjtu.edu.cn/ubuntu-cn/ raring main multiverse restricted universe  
+deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring main multiverse restricted universe  
+deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-backports main multiverse restricted universe  
+deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-proposed main multiverse restricted universe  
+deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-security main multiverse restricted universe  
+deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-updates main multiverse restricted universe  
 ```
 
 回到[开始]重新下载安装，系统会删除avr-libc，所以你需要再安装一下，其他的不需要重新安装。  
