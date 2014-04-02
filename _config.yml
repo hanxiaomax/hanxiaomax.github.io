@@ -34,8 +34,6 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: 首页
-    url: /about/
   - title: About
     url: /about/
   - title: Python

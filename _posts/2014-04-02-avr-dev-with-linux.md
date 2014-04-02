@@ -65,5 +65,11 @@ deb-src http://ftp.sjtu.edu.cn/ubuntu/ raring-updates main multiverse restricted
 `http://gmplib.org/`，`http://www.mpfr.org/`，`http://www.multiprecision.org/`
 
 3.另外还需要安装M4文件以防止安装GMP出错    
-`http://ftp.gnu.org/gnu/m4/`下载并安装    
-` tar zxvf m4-x.x.x.tar.gz` x为对应版本号  
+`http://ftp.gnu.org/gnu/m4/`下载并安装     
+`tar zxvf m4-x.x.x.tar.gz` x为对应版本号  
+
+
+~~~~
+import os
+import math
+~~~~~~~~
