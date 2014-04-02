@@ -35,7 +35,7 @@ bing_verify:
 # For external links add external: true
 links:
   - title: 首页
-    url: hanxiaomax.github.io
+    url: /index/
   - title: About
     url: /about/
   - title: Python
@@ -68,7 +68,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  use_coderay: true
 
   coderay:
     coderay_line_numbers: 
