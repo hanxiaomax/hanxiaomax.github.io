@@ -103,13 +103,13 @@ void array_init(TYPE (&parm)[N])
 对非类型形参，如果求值结果相同，则被认为是等价的
 
 
-```
+{% highlight c linenos %}
 int x[42];
 const int sz=40;
 int y[sz+2];
 array_init(x);//array_init<int,42>
 array_init(y);//array_init<int,42>
-```
+{% endhighlight %}
 
 ###注意
 1. 虽然模板对一切类型有效，但是实例化后的结果可能是非法的，所以在编写前总是会假定可能使用的类型。
