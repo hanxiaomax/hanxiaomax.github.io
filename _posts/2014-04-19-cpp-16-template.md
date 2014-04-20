@@ -21,14 +21,14 @@ share: true
 
 ###函数模板
 
-1. **定义**一个函数模板  
-~~~~
+1. **定义**一个函数模板    
+```
 template<typename TYPE>//typename也可以用class代替，typename是较新的标准
 int compare(const TYPE &v1,const TYPE &v2)
 {
         return v1<v2? -1:1;
 }
-~~~~
+```
 
 2. **使用**一个**函数模板**  
 `compare(1,2)；//编译器会自动实例化compare`
@@ -42,7 +42,7 @@ int compare(const TYPE &v1,const TYPE &v2)
 ###类模板
 
 1. **定义**一个**类模板**  
-~~~~~~~~~~
+```
 template<typename TYPE> 
 class QUEUE
 {
@@ -55,7 +55,7 @@ class QUEUE
         bool empty() const;
     private:
 };
-~~~~~~~~~~  
+```
 2. **使用**一个**类模板**      
 
 需要注意的是，使用类模板需要显式的指定实参
@@ -69,13 +69,13 @@ class QUEUE
 
 除了定义`数据成员`和`函数成员`以外，类还可以定义`类型成员`，如果我们要在`函数模板`内部使用这样的类型，必须告诉编译器我们正在使用的名字指的是一个类型。
 
-~~~
+```
 template<class Parm,class U>
 Parm fcn(Parm * array,U value)
 {
     typename Parm::size_type *p //告诉编译器将成员当做类型
 }
-~~~
+```
 
 ###非类型模板形参
 
@@ -83,9 +83,8 @@ Parm fcn(Parm * array,U value)
 
 ####函数模板
 
-~~~
-//初始化一个数组为全0
 
+```//初始化一个数组为全0
 template<class TYPE ,size_t N>
 void array_init(TYPE (&parm)[N])
 {
@@ -94,22 +93,21 @@ void array_init(TYPE (&parm)[N])
         parm[i]=0;
     }
 }
-~~~
-
+```
 *编译器将根据数组的具体情况，计算N的值并实例化不同版本的函数*
-
 
 ####类型等价性
 
 对非类型形参，如果求值结果相同，则被认为是等价的
 
-~~~~
+
+```
 int x[42];
 const int sz=40;
 int y[sz+2];
 array_init(x);//array_init<int,42>
 array_init(y);//array_init<int,42>
-~~~~
+```
 
 ###注意
 1. 虽然模板对一切类型有效，但是实例化后的结果可能是非法的，所以在编写前总是会假定可能使用的类型。
