@@ -18,10 +18,10 @@ share: true
 {:toc}
 
 ## 模板定义
+
 ###函数模板
 
 1. **定义**一个**函数模板**
-
 ~~~~~~
 template<typename TYPE>//typename也可以用class代替，typename是较新的标准
 int compare(const TYPE &v1,const TYPE &v2)
@@ -31,16 +31,14 @@ int compare(const TYPE &v1,const TYPE &v2)
 ~~~~
 
 2. **使用**一个**函数模板**
-~~~
-compare(1,2)；//编译器会自动实例化compare
-~~~~~
+
+`compare(1,2)；//编译器会自动实例化compare`
+
 
 3. `inline`函数模板
 要注意的是`inline`关键词在模板参数列表之后
+`template<typename TYPE> inline TYPE fun(const TYPE v1,const TYPE v1);`
 
-~~~
-template<typename TYPE> inline TYPE fun(const TYPE v1,const TYPE v1);
-~~~~~~
 
 
 ###类模板
@@ -66,10 +64,10 @@ class QUEUE
 
 需要注意的是，使用类模板需要显式的指定实参
 
-~~~~~~
-QUEUE<int> queue_int //实例化一个QUEUE<int>类型的实例queue_int
-QUEUE<vector<double>> queue_vector_double
-~~~~~
+
+    QUEUE<int> queue_int //实例化一个QUEUE<int>类型的实例queue_int
+    QUEUE<vector<double>> queue_vector_double
+
 
 ###在模板定义内部指定类型
 
