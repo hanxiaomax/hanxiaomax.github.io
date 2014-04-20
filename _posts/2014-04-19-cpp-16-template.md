@@ -21,7 +21,7 @@ share: true
 
 ###函数模板
 
-1. **定义**一个函数模板
+1. **定义**一个函数模板  
 ~~~~
 template<typename TYPE>//typename也可以用class代替，typename是较新的标准
 int compare(const TYPE &v1,const TYPE &v2)
@@ -30,19 +30,18 @@ int compare(const TYPE &v1,const TYPE &v2)
 }
 ~~~~
 
-2. **使用**一个**函数模板**
+2. **使用**一个**函数模板**  
 `compare(1,2)；//编译器会自动实例化compare`
 
-3. `inline`函数模板
-要注意的是`inline`关键词在模板参数列表之后
+3. `inline`函数模板  
+要注意的是`inline`关键词在模板参数列表之后  
 `template<typename TYPE> inline TYPE fun(const TYPE v1,const TYPE v1);`
 
 
 
 ###类模板
 
-1. **定义**一个**类模板**
-
+1. **定义**一个**类模板**  
 ~~~~~~~~~~
 template<typename TYPE> 
 class QUEUE
@@ -56,9 +55,8 @@ class QUEUE
         bool empty() const;
     private:
 };
-~~~~~~~~~~
-
-2. **使用**一个**类模板**
+~~~~~~~~~~  
+2. **使用**一个**类模板**      
 
 需要注意的是，使用类模板需要显式的指定实参
 
@@ -81,7 +79,7 @@ Parm fcn(Parm * array,U value)
 
 ###非类型模板形参
 
-**模板的形参不必都是类型！**
+*模板的形参不必都是类型！*
 
 ####函数模板
 
@@ -98,7 +96,7 @@ void array_init(TYPE (&parm)[N])
 }
 ~~~
 
-**编译器将根据数组的具体情况，计算N的值并实例化不同版本的函数**
+*编译器将根据数组的具体情况，计算N的值并实例化不同版本的函数*
 
 
 ####类型等价性
