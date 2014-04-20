@@ -21,16 +21,16 @@ share: true
 
 ###函数模板
 
-1. **定义**一个**函数模板**
-```
+1. **定义**一个函数模板
+~~~~
 template<typename TYPE>//typename也可以用class代替，typename是较新的标准
 int compare(const TYPE &v1,const TYPE &v2)
 {
         return v1<v2? -1:1;
 }
-```
-2. **使用**一个**函数模板**
+~~~~
 
+2. **使用**一个**函数模板**
 `compare(1,2)；//编译器会自动实例化compare`
 
 3. `inline`函数模板
