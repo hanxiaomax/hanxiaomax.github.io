@@ -127,8 +127,9 @@ gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags 
 
 然后使用如下命令  
 
-  cd /usr/share/applications
-  sudo vi sublime_text.desktop
+`cd /usr/share/applications`
+
+`sudo vi sublime_text.desktop`  
 进入applications修改sublime-text-2.desktop
 
 原文作者在这里使用了vi作为文本编辑器，大家也可以用gedit作为编辑器：
