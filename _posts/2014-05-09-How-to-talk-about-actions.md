@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How To Talk About Actions"
+title: "How To Talk About Actions---disparage"
 category: etymology
 tags: [etymology, 词源，词根]
 image:
