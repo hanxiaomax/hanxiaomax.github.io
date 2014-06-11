@@ -10,6 +10,7 @@ share: true
 ---
 
 **2.playing it safe**
+
 >Willing to look at some more history of the late 1940s?
 Of course,Dewey did campaign,in his own way,for the presidency.As the Republican aspirant,he had to take a stand on the controversial Taft-Hartley Act.
 
