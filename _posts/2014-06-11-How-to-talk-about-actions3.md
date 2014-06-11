@@ -21,4 +21,34 @@ share: true
 
 >How do such things affect you?          
 
+这些东西是如何影响你的呢？
+
 > They titillate you.
+
+它们**挑逗**你。
+
+PS:上面的翻译大家参考一下，有一些句子实在是拿不准，我在向高人请教，得到更好的翻译后我会修改的，大家有什么意见也请提出来。
+
+**************************************
+
+**titillate   vt. 使觉得痒；使高兴 vi. 感到兴奋；被激发**
+
+>1. touch (a body part) lightly so as to excite the surface nerves and cause uneasiness, laughter, or spasmodic movements
+>2. excite pleasurably or erotically
+
+这个单词吧，其实就是挑逗，撩骚的意思，有很浓的性意味，这点我们从它的英文释义中就可以看出来，作者文中用的太过文艺了，哈哈哈。
+
+titillate来自拉丁语*titillare*，表示"to tickle"，使人发痒。有着实际的意义或是象征性的意义，也就是说，可以描述咯吱人这个动作或是使人发笑，兴奋的这种象征意味。
+
+当你去titillate别人的时候，通常会温柔的触摸某个地方，带来生理上的愉悦感。当然，你也可以通过魅力，才华，智慧，诺言等来影响别人思维，幻想，从而产生精神上的愉悦感。
+
+
+引用部分均来自：Word power made easy 一书和在线词源字典。
+
+
+**本文采用中国大陆版CC协议发布**  
+作者保留以下权利：  
+1. 署名（Attribution）：必须提到原作者。  
+2. 非商业用途（Noncommercial）：不得用于盈利性目的。  
+3. 禁止演绎（No Derivative Works）：不得修改原作品, 不得再创作。   
+新浪微博 [@XX含笑饮砒霜XX](http://weibo.com/smilingly1989)
