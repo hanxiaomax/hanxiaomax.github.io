@@ -34,7 +34,7 @@ share: true
 </figure>
 <figure>
     <a href="/images/POST-30OS-1-2.jpg"> <!--herf是超链接-->
-        <img src="/images/POST-30OS-1-3.jpg2"><!--img标签必须有src属性=“图片位置”-->
+        <img src="/images/POST-30OS-1-2.jpg"><!--img标签必须有src属性=“图片位置”-->
     </a>
 </figure>
 
@@ -48,7 +48,7 @@ share: true
 </figure>
 <figure>
     <a href="/images/POST-30OS-1-4.jpg"> <!--herf是超链接-->
-        <img src="/images/POST-30OS-1-4.jpg2"><!--img标签必须有src属性=“图片位置”-->
+        <img src="/images/POST-30OS-1-4.jpg"><!--img标签必须有src属性=“图片位置”-->
     </a>
 </figure>
 
