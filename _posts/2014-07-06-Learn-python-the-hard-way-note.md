@@ -14,16 +14,24 @@ share: true
 * Table of Contents
 {:toc}
 
-###LEARN PYTHON THE HARD WAY
+##LEARN PYTHON THE HARD WAY 自学笔记
+
 ####1.开发环境搭建
+
 ####2.第一个程序
+
 ####3.注释
+
 ####4.算数
+
 ####5.变量和变量名
+
 ####6.更多变量和打印
+
 ####7.字符串和文本
 
 **%r和%s的区别**
+
 ~~~~
 x="There are %d type of people." % 10 
 binary="binary"
