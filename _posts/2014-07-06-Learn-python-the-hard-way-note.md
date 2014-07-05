@@ -765,6 +765,7 @@ bulls_on_parade.sing_me_a_song()
 ####41.面向对象
 
 **一些名词**  
+
 - **class :**  Tell Python to make a new kind of thing.  
 - **object :** Two meanings: the most basic kind of thing, and any instance of some thing.  
 - **instance :** What you get when you tell Python to create a class.  
