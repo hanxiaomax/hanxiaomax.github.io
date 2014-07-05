@@ -9,6 +9,8 @@ comments: true
 share: true
 ---
 
+[例程代码和部分答案@Github](https://github.com/hanxiaomax/LPTHW_code_examples)
+
 目录
 
 * Table of Contents
@@ -16,19 +18,19 @@ share: true
 
 ##LEARN PYTHON THE HARD WAY 自学笔记
 
-####1.开发环境搭建
+###1.开发环境搭建
 
-####2.第一个程序
+###2.第一个程序
 
-####3.注释
+###3.注释
 
-####4.算数
+###4.算数
 
-####5.变量和变量名
+###5.变量和变量名
 
-####6.更多变量和打印
+###6.更多变量和打印
 
-####7.字符串和文本
+###7.字符串和文本
 
 **%r和%s的区别**
 
@@ -61,7 +63,7 @@ e="a string with a right side."
 print w + e #字符串合并
 ~~~~
 
-####8.打印，打印
+###8.打印，打印
 
 **占位符使用和中文输出**
 
@@ -83,7 +85,7 @@ print "%s" %"哦"#仍然有乱码，但是已经是中文了
 print u"你好世界" #可以正常输出中文
 ~~~
 
-####9.打印，打印，再打印
+###9.打印，打印，再打印
 
 **多行文本打印**
 
@@ -121,9 +123,9 @@ Even 4 lines if we want, or 5, or 6.
 print "\n123\n123\n123"
 ~~~
 
-####10.转义符 
+###10.转义符 
 
-####11.输入
+###11.输入
 
 **会自动转换的input()和更加安全的raw_input()**
 
@@ -142,7 +144,7 @@ abc
 
 ~~~
 
-####12.提醒用户输入
+###12.提醒用户输入
 
 **查看函数手册**
 
@@ -151,7 +153,7 @@ python -m pydoc raw_input
 ~~~
 
 
-####13.参数，参数解包，变量
+###13.参数，参数解包，变量
 
 **命令行参数**
 
@@ -175,7 +177,7 @@ $ python 13.py a b c
 1.注意这里一共是4个命令行参数
 2.命令行参数是作为str类型进入的，可以强制转换
 
-####14.模拟一个命令行程序
+###14.模拟一个命令行程序
 
 ~~~
 from sys import argv
@@ -193,7 +195,7 @@ Alright, so you said %r about liking me.
 """ % (likes)
 ~~~
 
-####15.读取文件
+###15.读取文件
 
 `.read()`
 
@@ -206,7 +208,7 @@ print txt.read()
 txt.close()
 ~~~
 
-####16.读写文件
+###16.读写文件
 
 **close** -- Closes the file. Like File->Save.. in your editor.  
 **read** -- Reads the contents of the file. You can assign the result to a variable.  
@@ -238,7 +240,7 @@ print "And finally, we close it."
 target.close()
 ~~~
 
-####17.更多有关文件的内容
+###17.更多有关文件的内容
 **结合os模块操作函数**
 
 文件与目录处理：[File and Directory Access](https://docs.python.org/2/library/filesys.html)
@@ -276,7 +278,7 @@ print os.path.getctime('C:\Users\\asus\Desktop\python\\1.txt')
 print time.ctime(os.path.getctime('C:\Users\\asus\Desktop\python\\1.txt'))
 ~~~
 
-####18.命名，变量，函数
+###18.命名，变量，函数
 **任意个数的函数参数**
 
 >What does the * in *args do?
@@ -315,7 +317,7 @@ print_none()
 
 ####19.函数和变量
 
-####20.函数和文件
+###20.函数和文件
 [文件对象](https://docs.python.org/2/library/stdtypes.html#file-objects)
 
 ~~~
@@ -361,7 +363,7 @@ for current_line in current_file:
     line_num+=1
 ~~~
 
-####21.函数返回值
+###21.函数返回值
 
 ~~~
 def secret_formula(started):
@@ -372,9 +374,9 @@ def secret_formula(started):
 """注意多返回值"""
 ~~~
 
-####22.复习
+###22.复习
 
-####23.读代码
+###23.读代码
 
 - github.com
 - launchpad.net
@@ -382,14 +384,14 @@ def secret_formula(started):
 - sourceforge.net
 - freecode.com
 
-####24.更多练习
+###24.更多练习
 
 - 转义符
 - 多行文字打印
 - print
 - 函数
 
-####25.更多更多的练习
+###25.更多更多的练习
 
 **很容易的创建模块和调用**
 
@@ -461,17 +463,17 @@ print "All<>good<>things<>come<>to<>those<>who<>wait.".split(' ')
 print '1<>2<>3'.split('<>')
 ~~~
 
-####26.测试
+###26.测试
 
-####27.逻辑运算
+###27.逻辑运算
 
-####28.布尔操作符
+###28.布尔操作符
 
-####29.如果
+###29.如果
 
 **if语句**
 
-####30.如果，或者
+###30.如果，或者
 
 ~~~
 if cars > people:
@@ -482,9 +484,9 @@ else:
     print "We can't decide."
 ~~~
 
-####31.做决定
+###31.做决定
 
-####32.循环和列表
+###32.循环和列表
 
 ~~~
 the_count = [1, 2, 3, 4, 5]
@@ -512,11 +514,11 @@ for i in mylist,the_count:
 
 That's a list in a list like this: [[1,2,3],[4,5,6]]
 
-####33.while循环
+###33.while循环
 
-####34.获取列表元素
+###34.获取列表元素
 
-####35.分支和函数
+###35.分支和函数
 
 **1. exit(0)**
 
@@ -529,7 +531,7 @@ if "c" in string:
     print string
 ~~~
 
-####36.设计和debug
+###36.设计和debug
 
 **Rules For If-Statements**
 
@@ -552,7 +554,7 @@ while仅仅用于无限循环
 2. The best way to debug a program is to use print to print out the values of variables at points in the program to see where they go wrong.
 3. Make sure parts of your programs work as you work on them. Do not write massive files of code before you try to run them. Code a little, run a little, fix a little.
 
-####37.符号复习
+###37.符号复习
 
 
 **Keywords**
@@ -642,7 +644,7 @@ while仅仅用于无限循环
 5. Any while-loops that might not end.
 6. Finally, any parts of code that you can't understand for whatever reason.
 
-####38.操作列表
+###38.操作列表
 
 ~~~
 """
@@ -686,7 +688,7 @@ dist=src[:]
 - If you need to access the contents randomly by a number.
 - If you need to go through the contents linearly (first to last).
 
-####39.字典，可爱的字典
+###39.字典，可爱的字典
 
 - 获取字典值
  
@@ -724,7 +726,7 @@ print "The city for the state 'TX' is: %s" % city
 
 **没完成**
 
-####40.模组，类和对象
+###40.模组，类和对象
 
 1.模块就像字典
 2.类就像模块
@@ -762,7 +764,7 @@ bulls_on_parade.sing_me_a_song()
 ~~~
 
 
-####41.面向对象
+###41.面向对象
 
 **一些名词**  
 
@@ -777,9 +779,9 @@ bulls_on_parade.sing_me_a_song()
 - **is-a :** A phrase to say that something inherits from another, as in a "salmon" is-a "fish."  
 - **has-a :** A phrase to say that something is composed of other things or has a trait, as in "a salmon has-a mouth."  
 
-####42.对象和类
+###42.对象和类
 
-####43.基本面向对象分析与设计思想
+###43.基本面向对象分析与设计思想
 
 - **Write or draw about the problem.**
 - **Extract key concepts from #1 and research them.**
@@ -787,9 +789,9 @@ bulls_on_parade.sing_me_a_song()
 - **Code the classes and a test to run them.**
 - **Repeat and refine.**.
 
-####44.继承和聚合
+###44.继承和聚合
 
-#####继承
+####继承
 
 **1.成员函数继承**
 
@@ -853,7 +855,7 @@ class Child(Parent):
         super(Child, self).__init__()
 ~~~
 
-#####聚合
+####聚合
 
 ~~~
 class Other(object):
@@ -881,7 +883,7 @@ son.override()
 son.altered()
 ~~~
 
-#####何时使用聚合，何时使用继承
+####何时使用聚合，何时使用继承
 >You don't want to have duplicated code all over your software, since that's not clean and efficient
 
 - Inheritance solves this problem by creating a mechanism for you to have implied features in base classes.
@@ -889,9 +891,9 @@ son.altered()
 - Composition solves this by giving you modules and the ability to simply call functions in other classes.
 
 
-####45.编写一个游戏
+###45.编写一个游戏
 
-####46.项目框架
+###46.项目框架
 
 **1.安装python包**
 
@@ -928,7 +930,7 @@ __init__.py   lexicon_test.py   parser_test.py
 __init__.pyc  lexicon_test.pyc  parser_test.pyc  
 
 
-####47.自动化测试
+###47.自动化测试
 
 **测试指导**
 
@@ -956,7 +958,7 @@ def test_directions():
                           ('direction', 'east')])
 ~~~
 
-####48.高级用户输入
+###48.高级用户输入
 
 **1. 分割句子**
 
@@ -1033,7 +1035,7 @@ Import errors are caused by usually four things.
 3. You are importing the wrong module because you spelled it wrong. 
 4. Your PYTHONPATH isn't set to . so you can't load modules from your current directory.
 
-####49.造句
+###49.造句
 
 **查表和配对**
 
