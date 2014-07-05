@@ -196,6 +196,7 @@ Alright, so you said %r about liking me.
 ####15.读取文件
 
 `.read()`
+
 ~~~
 from sys import argv
 script, filename = argv
@@ -207,11 +208,11 @@ txt.close()
 
 ####16.读写文件
 
-**close** -- Closes the file. Like File->Save.. in your editor.
-**read** -- Reads the contents of the file. You can assign the result to a variable.
-**readline** -- Reads just one line of a text file.
-**truncate** -- Empties the file. Watch out if you care about the file.
-**write(stuff)** -- Writes stuff to the file.
+**close** -- Closes the file. Like File->Save.. in your editor.  
+**read** -- Reads the contents of the file. You can assign the result to a variable.  
+**readline** -- Reads just one line of a text file.  
+**truncate** -- Empties the file. Watch out if you care about the file.  
+**write(stuff)** -- Writes stuff to the file.  
 
 ~~~
 from sys import argv
@@ -393,6 +394,7 @@ def secret_formula(started):
 **很容易的创建模块和调用**
 
 ex25.py
+
 ~~~
 def break_words(stuff):
     """This function will break up words for us."""
@@ -432,6 +434,7 @@ def print_first_and_last_sorted(sentence):
 ~~~
 
 25-1.py
+
 ~~~
 #coding: utf-8
 import ex25 #不能是25.py
@@ -504,7 +507,8 @@ for i in mylist,the_count:
     print i
 ~~~
 
-**How do you make a 2-dimensional (2D) list?**
+**How do you make a 2-dimensional (2D) list?**  
+
 That's a list in a list like this: [[1,2,3],[4,5,6]]
 
 ####33.while循环
@@ -514,7 +518,9 @@ That's a list in a list like this: [[1,2,3],[4,5,6]]
 ####35.分支和函数
 
 **1. exit(0)**
+
 `from sys import exit`
+
 **2. in关键字**
 
 ~~~
@@ -533,19 +539,20 @@ if "c" in string:
 5. Your boolean tests should be simple. If they are complex, move their calculations to variables earlier in your function and use a good name for the variable.
  
 **Rules For Loops**
+
 1. Use a while-loop only to loop forever, and that means probably never. This only applies to Python; other languages are different.
 while仅仅用于无限循环
 2. Use a for-loop for all other kinds of looping, especially if there is a fixed or limited number of things to loop over.
 其他情况用for
 
 **Tips For Debugging**
+
 1. Do not use a "debugger." A debugger is like doing a full-body scan on a sick person. You do not get any specific useful information, and you find a whole lot of information that doesn't help and is just confusing.
 2. The best way to debug a program is to use print to print out the values of variables at points in the program to see where they go wrong.
 3. Make sure parts of your programs work as you work on them. Do not write massive files of code before you try to run them. Code a little, run a little, fix a little.
 
 ####37.符号复习
 
-[Exercise 37](http://learnpythonthehardway.org/book/ex37.html)
 
 **Keywords**
 
@@ -595,6 +602,7 @@ while仅仅用于无限循环
 
 
 **String Formats**
+
 - %d
 - %i
 - %o
@@ -680,14 +688,17 @@ dist=src[:]
 ####39.字典，可爱的字典
 
 - 获取字典值
+ 
 ~~~
 stuff['city'] = "San Francisco"
 ~~~
 - 添加字典元素
+ 
 ~~~
 cities['NY'] = 'New York'
 ~~~
 - 删除字典元素
+
 ~~~
 del stuff['city']
 ~~~
@@ -752,17 +763,17 @@ bulls_on_parade.sing_me_a_song()
 
 ####41.面向对象
 
-**一些名词**
-- **class :**  Tell Python to make a new kind of thing.
-- **object :** Two meanings: the most basic kind of thing, and any instance of some thing.
-- **instance :** What you get when you tell Python to create a class.
-- **def :** How you define a function inside a class.
-- **self :** Inside the functions in a class, self is a variable for the instance/object being accessed.
-- **inheritance :** The concept that one class can inherit traits from another class, much like you and your parents.
-- **composition :** The concept that a class can be composed of other classes as parts, much like how a car has wheels.
-- **attribute :** A property classes have that are from composition and are usually variables.
-- **is-a :** A phrase to say that something inherits from another, as in a "salmon" is-a "fish."
-- **has-a :** A phrase to say that something is composed of other things or has a trait, as in "a salmon has-a mouth."
+**一些名词**  
+- **class :**  Tell Python to make a new kind of thing.  
+- **object :** Two meanings: the most basic kind of thing, and any instance of some thing.  
+- **instance :** What you get when you tell Python to create a class.  
+- **def :** How you define a function inside a class.  
+- **self :** Inside the functions in a class, self is a variable for the instance/object being accessed.  
+- **inheritance :** The concept that one class can inherit traits from another class, much like you and your parents.  
+- **composition :** The concept that a class can be composed of other classes as parts, much like how a car has wheels.  
+- **attribute :** A property classes have that are from composition and are usually variables.  
+- **is-a :** A phrase to say that something inherits from another, as in a "salmon" is-a "fish."  
+- **has-a :** A phrase to say that something is composed of other things or has a trait, as in "a salmon has-a mouth."  
 
 ####42.对象和类
 
@@ -779,7 +790,9 @@ bulls_on_parade.sing_me_a_song()
 #####继承
 
 **1.成员函数继承**
+
 *you define a function in the parent, but not in the child.*
+
 ~~~~
 class Parent(object):
     def implicit(self):
@@ -793,6 +806,7 @@ son.implicit()#子类同样可以使用implicit方法
 ~~~~
 
 **2.成员函数重载**
+
 ~~~
 class Parent(object):
     def override(self):
@@ -808,6 +822,7 @@ son.override()
 ~~~
 
 **3.事先/事后改变重载**
+
 ~~~
 class Parent(object):
     def altered(self):
@@ -828,6 +843,7 @@ son.altered()
 **5.在`__init__`中使用`super()`**
 
 这是最常见的用法
+
 ~~~
 class Child(Parent):
     def __init__(self, stuff):
@@ -876,6 +892,7 @@ son.altered()
 ####46.项目框架
 
 **1.安装python包**
+
 >I am warning you; this will be frustrating. In the business we call this "yak shaving." Yak shaving is any activity that is mind numblingly, irritatingly boring and tedious that you have to do before you can do something else that's more fun. You want to create cool Python projects, but you can't do that until you set up a skeleton directory, but you can't set up a skeleton directory until you install some packages, but you can't install packages until you install package installers, and you can't install package installers until you figure out how your system installs software in general, and so on.
 
 **2.建立框架**
@@ -897,6 +914,18 @@ son.altered()
 4. Finally, remove all the *.pyc files to make sure you're clean.
 
 
+>$ ls -R
+.:
+bin  docs  ex48  setup.py  tests
+./bin:
+./docs:
+./ex48:
+__init__.py  __init__.pyc  lexicon.py  lexicon.pyc  parser.py  parser.pyc
+./tests:
+__init__.py   lexicon_test.py   parser_test.py
+__init__.pyc  lexicon_test.pyc  parser_test.pyc
+
+
 ####47.自动化测试
 
 **测试指导**
@@ -911,7 +940,10 @@ son.altered()
 
 ~~~
 
-"""这是lexicon_test.py中的一个函数，nose会依次调用，每个函数负责一个测试，但是一个测试可以包含不同的项目"""
+"""
+这是lexicon_test.py中的一个函数，nose会依次调用，
+每个函数负责一个测试，但是一个测试可以包含不同的项目
+"""
 def test_directions():
     assert_equal(lexicon.scan("north"), [('direction', 'north')])
     #项目1：assert_equal(para1,para2)
@@ -933,6 +965,7 @@ words = stuff.split()
 ~~~
 
 **2.元组**
+
 - 类似于一个你不能修改的列表
 - 元组由不同的元素组成，每个元素可以存储不同类型的数据，例如，字符串、数字和元组
 - 元组通常代表一行数据，而元组中的元素则代表不同的数据项 
@@ -988,10 +1021,11 @@ def scan(user_sentence):
     return sentence
 ~~~
 
-**4.如果保证自己写的模组能够正确导入**
+**4.如果保证自己写的模组能够正确导入**  
 **Why do I keep getting ImportErrors?**
 
 Import errors are caused by usually four things.
+
 1. You didn't make a __init__.py in a directory that has modules in it.
 2. you are in the wrong directory. 
 3. You are importing the wrong module because you spelled it wrong. 
@@ -1000,6 +1034,7 @@ Import errors are caused by usually four things.
 ####49.造句
 
 **查表和配对**
+
 1. A way to loop through the list of tuples. That's easy.
 2. A way to "match" different types of tuples that we expect in our Subject Verb Object setup.
 3. A way to "peek" at a potential tuple so we can make some decisions.
