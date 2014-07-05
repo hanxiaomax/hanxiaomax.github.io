@@ -452,6 +452,7 @@ print words
 ~~~
 
 分割字符串
+
 ~~~
 print "All good things come to those who wait.".split(' ')
 print "All,good,things,come,to,those,who,wait.".split(',')
@@ -914,16 +915,16 @@ son.altered()
 4. Finally, remove all the *.pyc files to make sure you're clean.
 
 
->$ ls -R
-.:
-bin  docs  ex48  setup.py  tests
-./bin:
-./docs:
-./ex48:
-__init__.py  __init__.pyc  lexicon.py  lexicon.pyc  parser.py  parser.pyc
-./tests:
-__init__.py   lexicon_test.py   parser_test.py
-__init__.pyc  lexicon_test.pyc  parser_test.pyc
+>$ ls -R  
+.:  
+bin  docs  ex48  setup.py  tests  
+./bin:  
+./docs:  
+./ex48:  
+__init__.py  __init__.pyc  lexicon.py  lexicon.pyc  parser.py  parser.pyc  
+./tests:  
+__init__.py   lexicon_test.py   parser_test.py  
+__init__.pyc  lexicon_test.pyc  parser_test.pyc  
 
 
 ####47.自动化测试
