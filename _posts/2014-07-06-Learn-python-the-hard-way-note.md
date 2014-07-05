@@ -38,8 +38,9 @@ binary="binary"
 do_not="don't"
 y="Those who know %s and those who %s." %(binary,do_not)
 
-#字符串赋值时既可以使用占位符，并且可以引用变量
+**字符串赋值时既可以使用占位符，并且可以引用变量**
 
+~~~
 print x
 print y
 
@@ -59,8 +60,11 @@ e="a string with a right side."
 
 print w + e #字符串合并
 ~~~~
+
 ####8.打印，打印
+
 **占位符使用和中文输出**
+
 ~~~
 formatter = "%r %r %r %r"
 
@@ -78,8 +82,11 @@ print "%r" %"哦"#如果用%r会打印'\xe5\x93\xa6\xef\xbc\x9
 print "%s" %"哦"#仍然有乱码，但是已经是中文了
 print u"你好世界" #可以正常输出中文
 ~~~
+
 ####9.打印，打印，再打印
+
 **多行文本打印**
+
 ~~~
 # Here's some new strange stuff, remember type it exactly.
 
