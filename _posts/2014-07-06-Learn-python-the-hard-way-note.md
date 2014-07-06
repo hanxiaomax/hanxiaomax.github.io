@@ -944,6 +944,19 @@ __init__.pyc  lexicon_test.pyc  parser_test.pyc
 
 ~~~
 
+~~~
+class ParserError(Exception):
+    pass
+    
+def parse_verb(word_list):
+    skip(word_list, 'stop')
+
+    if peek(word_list) == 'verb':
+        return match(word_list, 'verb')
+    else:
+        raise ParserError("Expected a verb next.")
+~~~
+
 """
 这是lexicon_test.py中的一个函数，nose会依次调用，
 每个函数负责一个测试，但是一个测试可以包含不同的项目
@@ -1053,5 +1066,24 @@ When we're all done, we should have a Sentence object to work with in our game.
 
 
 **使用`class`来创建一个异常并且`raise`**
+
+~~~
+class ParserError(Exception):
+    pass
+    
+def parse_verb(word_list):
+    skip(word_list, 'stop')
+
+    if peek(word_list) == 'verb':
+        return match(word_list, 'verb')
+    else:
+        raise ParserError("Expected a verb next.")
+~~~
+
+**使用`assert_raises`来测试一个异常**
+~~~
+assert_raises(exception, callable, parameters)
+#使用callable调用parameters，必须引发exception才能通过测
+~~~
 
 
