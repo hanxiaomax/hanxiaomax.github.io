@@ -39,11 +39,9 @@ x="There are %d type of people." % 10
 binary="binary"
 do_not="don't"
 y="Those who know %s and those who %s." %(binary,do_not)
-{% endhighlight %}
+
 
 **字符串赋值时既可以使用占位符，并且可以引用变量**
-
-~~~
 print x
 print y
 
@@ -62,13 +60,13 @@ w="This is the left side of..."
 e="a string with a right side."
 
 print w + e #字符串合并
-~~~~
+{% endhighlight %}~
 
 ###8.打印，打印
 
 **占位符使用和中文输出**
 
-~~~
+{% highlight python %}
 formatter = "%r %r %r %r"
 
 print formatter % (1, 2, 3, 4)
@@ -84,13 +82,13 @@ print formatter % (
 print "%r" %"哦"#如果用%r会打印'\xe5\x93\xa6\xef\xbc\x9
 print "%s" %"哦"#仍然有乱码，但是已经是中文了
 print u"你好世界" #可以正常输出中文
-~~~
+{% endhighlight %}
 
 ###9.打印，打印，再打印
 
 **多行文本打印**
 
-~~~
+{% highlight python %}
 # Here's some new strange stuff, remember type it exactly.
 
 months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
@@ -103,18 +101,18 @@ With the three double-quotes.
 We'll be able to type as much as we like.
 Even 4 lines if we want, or 5, or 6.
 """
-~~~
+{% endhighlight %}
 
 **两种使用变量的打印方式**
 
-~~~
+{% highlight python %}
 print "Here are the months: ", months
 print "Here are the days:%r"% (months)
-~~~
+{% endhighlight %}
 
 **两种多行打印方式**
 
-~~~
+{% highlight python %}
 print """
 There's something going on here.
 With the three double-quotes.
@@ -122,7 +120,7 @@ We'll be able to type as much as we like.
 Even 4 lines if we want, or 5, or 6.
 """
 print "\n123\n123\n123"
-~~~
+{% endhighlight %}
 
 ###10.转义符 
 
@@ -133,7 +131,7 @@ print "\n123\n123\n123"
 raw_input()
 输入默认是字符串，如果需要int需要强制转换
 
-~~~
+{% highlight python %}
 print type(raw_input())#返回str
 
 print type(input())
@@ -143,15 +141,15 @@ abc
 是会出现错误的，应该是"abc"，需要让用户小心输入
 """
 
-~~~
+{% endhighlight %}
 
 ###12.提醒用户输入
 
 **查看函数手册**
 
-~~~
+{% highlight python %}
 python -m pydoc raw_input
-~~~
+{% endhighlight %}
 
 
 ###13.参数，参数解包，变量
@@ -160,7 +158,7 @@ python -m pydoc raw_input
 
 [命令行参数介绍](http://learnpythonthehardway.org/book/appendixa.html)
 
-~~~
+{% highlight python %}
 """
 unpack:
 Take whatever is in argv, unpack it, and assign it to all of these variables on the left in order
@@ -172,7 +170,7 @@ print "The script is called:", script
 print "Your first variable is:", first
 print "Your second variable is:", second
 print "Your third variable is:", third
-~~~
+{% endhighlight %}
 
 $ python 13.py a b c
 1.注意这里一共是4个命令行参数
@@ -180,7 +178,7 @@ $ python 13.py a b c
 
 ###14.模拟一个命令行程序
 
-~~~
+{% highlight python %}
 from sys import argv
 
 script, user_name = argv
@@ -194,20 +192,20 @@ likes = raw_input(prompt)
 print """
 Alright, so you said %r about liking me.
 """ % (likes)
-~~~
+{% endhighlight %}
 
 ###15.读取文件
 
 `.read()`
 
-~~~
+{% highlight python %}
 from sys import argv
 script, filename = argv
 txt = open(filename)
 print "Here's your file %r:" % filename
 print txt.read()
 txt.close()
-~~~
+{% endhighlight %}
 
 ###16.读写文件
 
@@ -217,7 +215,7 @@ txt.close()
 **truncate** -- Empties the file. Watch out if you care about the file.  
 **write(stuff)** -- Writes stuff to the file.  
 
-~~~
+{% highlight python %}
 from sys import argv
 script, filename = argv
 print "We're going to erase %r." % filename
@@ -239,7 +237,7 @@ target.write("\n")
 
 print "And finally, we close it."
 target.close()
-~~~
+{% endhighlight %}
 
 ###17.更多有关文件的内容
 **结合os模块操作函数**
@@ -248,7 +246,7 @@ target.close()
 
 操作系统模块：[Module os](https://docs.python.org/2/library/os.html#module-os)
 
-~~~
+{% highlight python %}
 from sys import argv
 from os.path import exists
 
@@ -267,17 +265,17 @@ out_file.write(indata)
 
 out_file.close()
 in_file.close()
-~~~
+{% endhighlight %}
 
 
 **os.path和time.ctime**
 
-~~~
+{% highlight python %}
 #返回值是炒年糕1970年1月1日算起的
 print os.path.getctime('C:\Users\\asus\Desktop\python\\1.txt')
 #转换为可理解形式
 print time.ctime(os.path.getctime('C:\Users\\asus\Desktop\python\\1.txt'))
-~~~
+{% endhighlight %}
 
 ###18.命名，变量，函数
 **任意个数的函数参数**
@@ -285,13 +283,13 @@ print time.ctime(os.path.getctime('C:\Users\\asus\Desktop\python\\1.txt'))
 >What does the * in *args do?
 That tells Python to take all the arguments to the function and then put them in args as a list. It's like argv that you've been using, but for functions. It's not normally used too often unless specifically needed.
 
-~~~
+{% highlight python %}
 def print_two(*args):
     arg1, arg2 = args 
     print "arg1: %r, arg2: %r" % (arg1, arg2)
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight python %}
 # this one is like your scripts with argv
 def print_two(*args):
     arg1, arg2 = args
@@ -314,14 +312,14 @@ print_two("Zed","Shaw")
 print_two_again("Zed","Shaw")
 print_one("First!")
 print_none()
-~~~
+{% endhighlight %}
 
 ####19.函数和变量
 
 ###20.函数和文件
 [文件对象](https://docs.python.org/2/library/stdtypes.html#file-objects)
 
-~~~
+{% highlight python %}
 #coding: utf-8
 from sys import argv
 
@@ -362,18 +360,18 @@ line_num=1
 for current_line in current_file:
     print line_num , current_line
     line_num+=1
-~~~
+{% endhighlight %}
 
 ###21.函数返回值
 
-~~~
+{% highlight python %}
 def secret_formula(started):
     jelly_beans = started * 500
     jars = jelly_beans / 1000
     crates = jars / 100
     return jelly_beans, jars, crates
 """注意多返回值"""
-~~~
+{% endhighlight %}
 
 ###22.复习
 
@@ -398,7 +396,7 @@ def secret_formula(started):
 
 ex25.py
 
-~~~
+{% highlight python %}
 def break_words(stuff):
     """This function will break up words for us."""
     words = stuff.split(' ')
@@ -434,11 +432,11 @@ def print_first_and_last_sorted(sentence):
     words = sort_sentence(sentence)
     print_first_word(words)
     print_last_word(words)
-~~~
+{% endhighlight %}
 
 25-1.py
 
-~~~
+{% highlight python %}
 #coding: utf-8
 import ex25 #不能是25.py
 sentence = "All good things come to those who wait."
@@ -452,17 +450,17 @@ print ex25.print_first_word(words)
 print ex25.print_last_word(words)
 
 print words
-~~~
+{% endhighlight %}
 
 分割字符串
 
-~~~
+{% highlight python %}
 print "All good things come to those who wait.".split(' ')
 print "All,good,things,come,to,those,who,wait.".split(',')
 print "All<>good<>things<>come<>to<>those<>who<>wait.".split('<>')
 print "All<>good<>things<>come<>to<>those<>who<>wait.".split(' ')
 print '1<>2<>3'.split('<>')
-~~~
+{% endhighlight %}
 
 ###26.测试
 
@@ -476,20 +474,20 @@ print '1<>2<>3'.split('<>')
 
 ###30.如果，或者
 
-~~~
+{% highlight python %}
 if cars > people:
     print "We should take the cars."
 elif cars < people:
     print "We should not take the cars."
 else:
     print "We can't decide."
-~~~
+{% endhighlight %}
 
 ###31.做决定
 
 ###32.循环和列表
 
-~~~
+{% highlight python %}
 the_count = [1, 2, 3, 4, 5]
 for number in the_count:
     print "This is count %d" % number
@@ -500,16 +498,16 @@ for i in range(0, 6):
     print "Adding %d to the list." % i
     #列表方法：追加
     elements.append(i)
-~~~
+{% endhighlight %}
 
 
 **同时遍历多个列表**
 
-~~~
+{% highlight python %}
 #同时遍历多个列表
 for i in mylist,the_count:
     print i
-~~~
+{% endhighlight %}
 
 **How do you make a 2-dimensional (2D) list?**  
 
@@ -527,10 +525,10 @@ That's a list in a list like this: [[1,2,3],[4,5,6]]
 
 **2. in关键字**
 
-~~~
+{% highlight python %}
 if "c" in string:
     print string
-~~~
+{% endhighlight %}
 
 ###36.设计和debug
 
@@ -647,7 +645,7 @@ while仅仅用于无限循环
 
 ###38.操作列表
 
-~~~
+{% highlight python %}
 """
 .join()
 .append()
@@ -675,13 +673,13 @@ print stuff[-1] # whoa! fancy
 print stuff.pop()
 print ' '.join(stuff) # what? cool!
 print '#'.join(stuff[3:5]) # super stellar!
-~~~
+{% endhighlight %}
 
 **复制列表**
 
-~~~
+{% highlight python %}
 dist=src[:]
-~~~
+{% endhighlight %}
 
 **When To Use Lists**
 
@@ -693,23 +691,23 @@ dist=src[:]
 
 - 获取字典值
  
-~~~
+{% highlight python %}
 stuff['city'] = "San Francisco"
-~~~
+{% endhighlight %}
 - 添加字典元素
  
-~~~
+{% highlight python %}
 cities['NY'] = 'New York'
-~~~
+{% endhighlight %}
 - 删除字典元素
 
-~~~
+{% highlight python %}
 del stuff['city']
-~~~
+{% endhighlight %}
 
 - **两种获取可能不存在元素的方法**  
 
-~~~
+{% highlight python %}
 # safely get a abbreviation by state that might not be there
 state = states.get('Texas')
 
@@ -719,7 +717,7 @@ if not state:
 # get a city with a default value
 city = cities.get('TX', 'Does Not Exist')
 print "The city for the state 'TX' is: %s" % city
-~~~
+{% endhighlight %}
 
 
 - **Making Your Own Dictionary Module**
@@ -733,17 +731,17 @@ print "The city for the state 'TX' is: %s" % city
 2.类就像模块
 3.对象就像迷你import
 
-~~~
+{% highlight python %}
 class MyStuff(object):
     def __init__(self):#类似构造函数
         self.tangerine = "And now a thousand years between"
     def apple(self):
         print "I AM CLASSY APPLES!"
-~~~
+{% endhighlight %}
 
 **一个简单的类**
 
-~~~
+{% highlight python %}
 class Song(object):
 
     def __init__(self, lyrics):
@@ -762,7 +760,7 @@ bulls_on_parade = Song(["They rally around the family",
 
 happy_bday.sing_me_a_song()
 bulls_on_parade.sing_me_a_song()
-~~~
+{% endhighlight %}
 
 
 ###41.面向对象
@@ -798,7 +796,7 @@ bulls_on_parade.sing_me_a_song()
 
 *you define a function in the parent, but not in the child.*
 
-~~~~
+{% highlight python %}~
 class Parent(object):
     def implicit(self):
         print "PARENT implicit()"
@@ -808,11 +806,11 @@ dad = Parent()
 son = Child()
 dad.implicit()
 son.implicit()#子类同样可以使用implicit方法
-~~~~
+{% endhighlight %}~
 
 **2.成员函数重载**
 
-~~~
+{% highlight python %}
 class Parent(object):
     def override(self):
         print "PARENT override()"
@@ -824,11 +822,11 @@ dad = Parent()
 son = Child()
 dad.override()
 son.override()
-~~~
+{% endhighlight %}
 
 **3.事先/事后改变重载**
 
-~~~
+{% highlight python %}
 class Parent(object):
     def altered(self):
         print "PARENT altered()"
@@ -841,7 +839,7 @@ dad = Parent()
 son = Child()
 dad.altered()
 son.altered()
-~~~
+{% endhighlight %}
 
 **4.`super()`的意义**
 
@@ -849,16 +847,16 @@ son.altered()
 
 这是最常见的用法
 
-~~~
+{% highlight python %}
 class Child(Parent):
     def __init__(self, stuff):
         self.stuff = stuff
         super(Child, self).__init__()
-~~~
+{% endhighlight %}
 
 ####聚合
 
-~~~
+{% highlight python %}
 class Other(object):
     def override(self):
         print "OTHER override()"
@@ -882,7 +880,7 @@ son = Child()
 son.implicit()
 son.override()
 son.altered()
-~~~
+{% endhighlight %}
 
 ####何时使用聚合，何时使用继承
 >You don't want to have duplicated code all over your software, since that's not clean and efficient
@@ -943,9 +941,9 @@ __init__.pyc  lexicon_test.pyc  parser_test.pyc
 
 **自动化测试前要检查一下，是已经给定输入(正常情况)，还是需要用户输入，一般需要注释掉原来的输入语句，或者可以这样说，自动化测试一般只测试类或者函数这些封装后的代码。**
 
-~~~
+{% highlight python %}
 
-~~~
+{% endhighlight %}
 class ParserError(Exception):
     pass
     
@@ -956,7 +954,7 @@ def parse_verb(word_list):
         return match(word_list, 'verb')
     else:
         raise ParserError("Expected a verb next.")
-~~~
+{% highlight python %}
 
 """
 这是lexicon_test.py中的一个函数，nose会依次调用，
@@ -970,17 +968,17 @@ def test_directions():
     assert_equal(result, [('direction', 'north'),
                           ('direction', 'south'),
                           ('direction', 'east')])
-~~~
+{% endhighlight %}
 
 ###48.高级用户输入
 
 **1. 分割句子**
 
-~~~
+{% highlight python %}
 stuff = raw_input('> ')
 words = stuff.split()
 #split()可以带参数，不带参数默认是以任意空白符分割
-~~~
+{% endhighlight %}
 
 **2.元组**
 
@@ -990,30 +988,30 @@ words = stuff.split()
 - 创建元组，不定长，但一旦创建后则不能修改长度
 - 元组是由`，`创建的，只是放在`()`里面而已，如果只有一个元素，逗号也不能省
 
-~~~
+{% highlight python %}
 first_word = ('direction', 'north')
 second_word = ('verb', 'go')
 sentence = [first_word, second_word]
-~~~
+{% endhighlight %}
 
 **3.异常**
 
 **`Except` 和 `raise`**
 An exception is an error that you get from some function you may have run. 
 
-~~~
+{% highlight python %}
 def convert_number(s):
     try:
         return int(s)
     except ValueError:
         return None
-~~~
+{% endhighlight %}
 
 **try-except和if-else的选择**
 
 `if-else`是用一个返回值进行判断，`try-except`则是根据异常来进行判断
 
-~~~
+{% highlight python %}
 def scan(user_sentence):
     sentence=[]
     user_words=user_sentence.split()
@@ -1037,7 +1035,7 @@ def scan(user_sentence):
                 sentence.append(('error',word))
         #else :
     return sentence
-~~~
+{% endhighlight %}
 
 **4.如果保证自己写的模组能够正确导入**  
 **Why do I keep getting ImportErrors?**
@@ -1068,7 +1066,7 @@ When we're all done, we should have a Sentence object to work with in our game.
 
 **使用`class`来创建一个异常并且`raise`**
 
-~~~
+{% highlight python %}
 class ParserError(Exception):
     pass
     
@@ -1079,12 +1077,12 @@ def parse_verb(word_list):
         return match(word_list, 'verb')
     else:
         raise ParserError("Expected a verb next.")
-~~~
+{% endhighlight %}
 
 **使用`assert_raises`来测试一个异常**
-~~~
+{% highlight python %}
 assert_raises(exception, callable, parameters)
 #使用callable调用parameters，必须引发exception才能通过测
-~~~
+{% endhighlight %}
 
 
