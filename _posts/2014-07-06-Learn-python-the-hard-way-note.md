@@ -39,7 +39,8 @@ x="There are %d type of people." % 10
 binary="binary"
 do_not="don't"
 y="Those who know %s and those who %s." %(binary,do_not)
-{% end highlight %}
+{% endhighlight %}
+
 **字符串赋值时既可以使用占位符，并且可以引用变量**
 
 ~~~
