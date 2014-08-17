@@ -44,14 +44,7 @@
       </footer>
       
     </div><!-- /.entry-wrapper -->
-    <div class="entry-content">
-        {{ content }}
-        {% if page.comments %}
-        <div id="disqus_thread"></div>
-        {% include comments.html %}
-        <!-- /#disqus_thread -->
-        {% endif %}
-    </div><!-- /.entry-content -->
+    
     <nav class="pagination" role="navigation">
       {% if page.previous %}
         <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
@@ -62,7 +55,14 @@
     </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
-
+<div class="entry-content">
+        {{ content }}
+        {% if page.comments %}
+        <div id="disqus_thread"></div>
+        {% include comments.html %}
+        <!-- /#disqus_thread -->
+        {% endif %}
+    </div><!-- /.entry-content -->
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
