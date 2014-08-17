@@ -57,7 +57,9 @@
     </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
-
+{% if page.comments %}
+  {% include comments.html %}
+{% endif %}
 <div class="footer-wrapper">
   <footer role="contentinfo">
     {% include footer.html %}

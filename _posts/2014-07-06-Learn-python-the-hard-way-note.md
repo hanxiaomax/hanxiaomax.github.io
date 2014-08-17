@@ -5,7 +5,7 @@ category: python
 tags: [python, 笔记]
 image:
   feature: article.jpg
-comments: true
+comments: False
 share: true
 ---
 
