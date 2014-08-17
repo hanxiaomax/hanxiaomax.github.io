@@ -42,14 +42,7 @@
       
             <!-- /.social-share -->{% endif %}
       </footer>
-      <div class="entry-content">
-        {{ content }}
-        {% if page.comments %}
-        <div id="disqus_thread"></div>
-        {% include comments.html %}
-        <!-- /#disqus_thread -->
-        {% endif %}
-      </div><!-- /.entry-content -->
+     
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       {% if page.previous %}
@@ -59,14 +52,18 @@
         <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
       {% endif %}
     </nav><!-- /.pagination -->
+    
   </article>
 </div><!-- /#main -->
 
-<div id="disqus_thread">
-{% if page.comments %}
-  {% include comments.html %}
-{% endif %}
-</div>
+ <div class="entry-content">
+        {{ content }}
+        {% if page.comments %}
+        <div id="disqus_thread"></div>
+        {% include comments.html %}
+        <!-- /#disqus_thread -->
+        {% endif %}
+      </div><!-- /.entry-content -->
 <div class="footer-wrapper">
   <footer role="contentinfo">
     {% include footer.html %}
