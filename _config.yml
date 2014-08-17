@@ -40,9 +40,7 @@ links:
   - title: About
     url: /about/
   - title: Python
-    url: /Python/
-  - title: MALTAB
-    url: /MATLAB/  
+    url: /Python/  
   - title: Etymology
     url: /etymology/
   - title: C/C++
