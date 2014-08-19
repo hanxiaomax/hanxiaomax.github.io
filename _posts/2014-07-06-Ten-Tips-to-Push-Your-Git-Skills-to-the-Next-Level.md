@@ -16,12 +16,12 @@ share: true
 
 如果你在命令行中使用Git命令，每次手动输入命令是一件非常烦人的。为了解决这个问题，你可以很方便的开启自动补全功能。
 在Unix系统下，运行以下指令来获取脚本：
-{% highlight python%}
+{% highlight bash%}
 cd ~
 curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 {% endhighlight %}
 然后，在您的`~/.bash_profile`文件中添加以下代码：
-{% highlight python%}
+{% highlight bash%}
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
@@ -32,7 +32,7 @@ fi
 你是否对出现在你Git仓库中的已编译文件（比如.pyc）感到厌烦？
 亦或是你已经对把它们加入Git中这件事感到忍无可忍了？
 眼下就有一个可以让Git忽略特定文件或是目录的方法。只需要简单的创建一个`.gitignore`文件，然后列出你不想让Git跟踪的文件和目录即可。你可以使用感叹号(!)来指出例外的情况。
-{% highlight python%}
+{% highlight bash%}
 *.pyc
 *.exe
 my_db_config/
@@ -66,7 +66,7 @@ my_db_config/
 ##6.暂存一个文件的部分改动
 通常来讲，创建一个基于特性的提交是一个良好的做法，就是说，每次提交都必须代表一个新特性的产生或者是一个bug的修复。考虑一下，如果你修复了两个bug，或是添加了多个新特性但是却没有提交这些变化会怎样呢？在这种情况下，你可以把这些变化放在一次提交中。但是还有一个更好的方法：把文件分别暂存(Stage)然后分别提交。
 比如说，你对一个文件进行了多次修改并且想把他们分别提交。这种情况下，你可以在添加命令(add)中加上`-p`选项
-{% highlight python%}
+{% highlight bash%}
 git add -p [file_name]
 {% endhighlight %}
 让我们演示一下。我在`file_name`文件中添加了3行文字，而且我只想提交第一行和第三行。我们先看一下`git diff`显示的结果。然后，我们看一下，在添加命令(add)中加上`-p`选项后会发生什么。
@@ -81,12 +81,12 @@ git add -p [file_name]
 
 ##7.合并多次提交
 当你提交你的代码进行审核并创建一个pull request时(在开源项目中常常发生这样的情况)，你经常会在代码被采纳前，要求修改一些代码。你进行了一些修改，而在下一次审核中，又会被要求进行另外的修改。你不知道还有多少次修改等着你，在你知道以前，你进行了多次额外的提交。理想的状态是，你可以使用`rebase`命令，把他们都合并成一次提交。
-{% highlight python%}
+{% highlight bash%}
 git rebase -i HEAD~[number_of_commits]
 
 {% endhighlight %}
 如果你希望合并最后两次提交，您需要以下命令
-{% highlight python%}
+{% highlight bash%}
 git rebase -i HEAD~2
 {% endhighlight %}
 使用该命令，你会进入一个交互式的界面，显示了最后两次提交，并且询问你要压缩哪些。理想状态是你`pick`最近的一次提交并把它和之前的提交`squash`。
@@ -94,19 +94,19 @@ git rebase -i HEAD~2
 
 ##8.保存尚未提交的改动
 比方说你正在解决一个bug或是添加某个新功能，这时你突然被要求展示你的工作。你当前的工作还没有完成到进行提交的地步，而且你在这个阶段也没办法展示你的工作（如果不回退所有变化的话）。在这种情况下，`git stash`可以拯救你。stash命令本质上是保存了你全部的改动以供将来使用。保存你的改动，你只需要运行如下命令：
-{% highlight python%}
+{% highlight bash%}
 git stash
 {% endhighlight %}
 查看暂存列表，你可以运行如下命令：
-{% highlight python%}
+{% highlight bash%}
 git stash list
 {% endhighlight %}
 如果你不想保存了或是想要恢复这些改动，你使用如下命令：
-{% highlight python%}
+{% highlight bash%}
 git stash apply
 {% endhighlight %}
 在最后一张截图中，你可以看到，每一次保存都有一个标示符，一个独一无二的数字（尽管我们此处只有一次保存），万一你只想使用某些保存，你需要在`apply`命令后指明标示符。
-{% highlight python%}
+{% highlight bash%}
 git stash apply stash@{2}
 {% endhighlight %}
 
@@ -114,7 +114,7 @@ git stash apply stash@{2}
 尽管`reflog`是一种查看丢失提交的方法，但是它在大型仓库中行不通。这时就该`fsck`
 (file system check)出场了。
 
-{% highlight python%}
+{% highlight bash%}
 git fsck --lost-found
 {% endhighlight %}
 这里你可以看到丢失的提交，你可以使用`git show [commit_hash]`来查看这些提交所包含的改动或者是使用`git merge [commit_hash]`来恢复它。
@@ -135,3 +135,4 @@ git fsck --lost-found
 说着说着我们就来到了所有技巧的末尾，我认为这些技巧会让你的Git水平更上一层楼。
 Git是最棒的，只要你能想得到，它就能做得到。
 因此，要经常挑战自己的Git水平。最后，你很有可能会学到新的东西。
+
