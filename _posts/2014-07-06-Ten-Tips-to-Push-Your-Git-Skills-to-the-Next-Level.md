@@ -14,7 +14,7 @@ share: true
 
 **未经许可，禁止转载！**
 
-
+-----------------------------
 
 最近，我们发表了一些关于[Git基础知识](http://www.sitepoint.com/git-for-beginners/)和[在团队中使用Git](http://www.sitepoint.com/getting-started-git-team-environment/)的教程。我们之前讨论的那些命令，已经足够让帮助一个开发者在Git世界里生存了。本篇文章，我们将尝试探索如何更有效的安排您的时间以及如何充分使用Git提供的各种功能。
 
