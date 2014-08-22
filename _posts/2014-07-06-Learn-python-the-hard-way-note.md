@@ -4,7 +4,7 @@ title: "Learn Python The Hard Way 学习笔记"
 category: python
 tags: [python, 笔记]
 image:
-  feature: article.jpg
+  feature: pythonbanner.png
 comments: True
 share: true
 ---
