@@ -15,3 +15,5 @@ This blog is powered by Jekyll using the So Simple Theme.
 <a markdown="0" href="{{ site.url }}/theme-setup" class="btn">
     Install Minimal Mistakes Theme
 </a>
+
+本博客所有octocat均来自[octodex](https://octodex.github.com/)
