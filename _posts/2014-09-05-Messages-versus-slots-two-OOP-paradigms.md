@@ -1,13 +1,17 @@
 ---
 layout: post
-title: "How To Talk About Actions---titillate"
-category: trans
-tags: [etymology, 词源，词根]
+title: "消息VS槽---两种面向对象范式"
+category:trans
+tags: [技术翻译,面向对象范式,消息,槽]
 image:
   feature: article.jpg
-comments: true
+comments: True
 share: true
 ---
+
+
+
+
 ###消息VS槽---两种面向对象范式
 本文翻译自[Messages versus slots - two OOP paradigms](http://live.julik.nl/2012/08/messages-versus-slots) 
 译者[Lingfeng Ai](http:\\hanxiaomax.github.com) 
