@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How To Talk About Actions---titillate"
-category: etymology
+category: trans
 tags: [etymology, 词源，词根]
 image:
   feature: article.jpg
