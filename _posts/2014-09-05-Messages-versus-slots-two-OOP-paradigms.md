@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "消息VS槽---两种面向对象范式"
-category:trans
+category: trans
 tags: [技术翻译,面向对象范式,消息,槽]
 image:
   feature: article.jpg
