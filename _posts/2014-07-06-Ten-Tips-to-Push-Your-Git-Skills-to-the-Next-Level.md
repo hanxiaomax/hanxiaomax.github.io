@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "让你Git水平更上一层楼的10个小贴士"
-category:translate
+category:trans
 tags: [git,技术翻译]
 image:
   feature: article.jpg
