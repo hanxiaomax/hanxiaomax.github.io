@@ -41,6 +41,8 @@ links:
     url: /about/
   - title: tags
     url: /tags/
+  - title: Articles
+    url: /articles/
   - title: Python
     url: /Python/  
   - title: Etymology
