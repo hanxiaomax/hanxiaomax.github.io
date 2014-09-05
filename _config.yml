@@ -39,6 +39,8 @@ bing_verify:
 links:
   - title: About
     url: /about/
+  - title: tags
+    url: /tags/
   - title: Python
     url: /Python/  
   - title: Etymology
