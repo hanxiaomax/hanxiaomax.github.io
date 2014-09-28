@@ -10,6 +10,7 @@ share: true
 ---
 
 *本文翻译自[Quora问答：What are some features of the C programming language that are not well-known?](http://www.quora.com/What-are-some-features-of-the-C-programming-language-that-are-not-well-known)*
+
 *首发于[伯乐在线](http://blog.jobbole.com/77321/)*
 
 **未经许可，禁止转载！**
@@ -18,7 +19,7 @@ share: true
 
 *译注:请在linux系统下测试本文中出现的代码*
 
-###[Andrew Weimholt](http://www.quora.com/Andrew-Weimholt):
+###[Andrew Weimholt](http://www.quora.com/Andrew-Weimholt)的回答:
 
 `switch`语句中的`case` 关键词可以放在`if-else`或者是循环当中
 {% highlight c%}
@@ -45,7 +46,7 @@ switch (a)
     case 4:
 {% endhighlight %}
 
-###[Brian Bi](http://www.quora.com/Brian-Bi)
+###[Brian Bi](http://www.quora.com/Brian-Bi)的回答:
 
 ####1. 声明紧随用途之后
 
@@ -141,7 +142,7 @@ void f(int a[const]) {
 好吧，记住`fgetc` 实际上并不会返回 `char` 。它会返回`int`。显然这是因为`fgetc` 必须返回返回一个与其他`char` 都不同的值，也就是`EOF`,表示到达文件末尾。基于相同的原因，`fgetwc` 并不返回`wchar_t`。它会返回一个类型，叫做`wint_t` 可以表示所有无效`wchar_t` 类型，包括`WEOF`，来表示到达文件末尾。
 
 
-###[Michal Forišek](http://www.quora.com/Michal-Fori%C5%A1ek)
+###[Michal Forišek](http://www.quora.com/Michal-Fori%C5%A1ek)的回答:
 
 下面这段C程序可以准确的打印2的747次方而不产生误差。这是为什么呢？
 
@@ -183,14 +184,16 @@ int main() {
 
 输出结果：
 
-`14304567688284661153278974752312031583901259203711201647725006924333106634519194823303091330277684776547167093155518867557708479462413116497799842448027156309852771422896137582164841870381535840058702788340257784498862132559872`
+{% highlight c%}
+14304567688284661153278974752312031583901259203711201647725006924333106634519194823303091330277684776547167093155518867557708479462413116497799842448027156309852771422896137582164841870381535840058702788340257784498862132559872
+{% endhighlight %}
 
 结果仍然是一个很大的数且位数也正确，但是这一次却不够精确。这里会产生一个相对误差，因为3^474不能以双精度浮点数准确的表示。准确的数应该是这样的14304567688284660**3471**...
 
 *译注：在linux系统上是可以的，在windows 64位上后面会有很多0*
 
 
-###[Utkal Sinha](http://www.quora.com/Utkal-Sinha)
+###[Utkal Sinha](http://www.quora.com/Utkal-Sinha)的回答：
 
 我发现一些C语言特性或者是小技巧，我觉得只有很少的人知道。
 
@@ -317,7 +320,7 @@ void main()
 
 这完全没有问题。只要`#include` 包含完整可解析的C表达式，预处理器并不在意它放在什么位置。
 
-###[Vipul Mehta](http://www.quora.com/Vipul-Mehta-1)
+###[Vipul Mehta](http://www.quora.com/Vipul-Mehta-1)的回答：
 
 ####1. `printf` 格式限定符中指定（POSIX扩展语法）
 
@@ -347,7 +350,7 @@ switch(c) {
 *译注：虽然编译没有error但是却不能执行*
 
 
-###[Karan Bansal](http://www.quora.com/Karan-Bansal-3)
+###[Karan Bansal](http://www.quora.com/Karan-Bansal-3)的回答：
 
 ####**`scanf()`的力量**
 
@@ -378,7 +381,7 @@ scanf("%*s %s", last);
 
 顺便提一句，你应该非常小心的使用`scanf` 因为它可能会是你的输入缓冲溢出！通常你应该使用`fgets` 和`sscanf` 而不是仅仅使用`scanf`,使用`fgets` 来读取一行，然后用`sscanf` 来解析这一行，就像上面演示的一样。
 
-###[Afif Ahmed](http://www.quora.com/Afif-Ahmed)
+###[Afif Ahmed](http://www.quora.com/Afif-Ahmed)的回答：
 
 `~-n` 等于`n-1`
 `-~n` 等于`n+1`
