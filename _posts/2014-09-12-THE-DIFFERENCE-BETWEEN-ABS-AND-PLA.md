@@ -9,7 +9,7 @@ comments: True
 share: true
 ---
 
-*本文翻译自[http://www.protoparadigm.com/blog/2013/01/the-difference-between-abs-and-pla-for-3d-printing/](http://www.protoparadigm.com/blog/2013/01/the-difference-between-abs-and-pla-for-3d-printing/)*
+*本文翻译自[THE DIFFERENCE BETWEEN ABS AND PLA FOR 3D PRINTING](http://www.protoparadigm.com/blog/2013/01/the-difference-between-abs-and-pla-for-3d-printing/)*
 
 
 **仅作交流和分享之用，未经许可，禁止转载！**
