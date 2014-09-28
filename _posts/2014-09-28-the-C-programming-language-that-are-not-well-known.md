@@ -2,7 +2,7 @@
 layout: post
 title: "C语言有哪些鲜为人知的特性？"
 category: trans
-tags: [git,技术翻译]
+tags: [c,技术翻译]
 image:
   feature: article.jpg
 comments: True
@@ -15,7 +15,8 @@ share: true
 
 **未经许可，禁止转载！**
 
-##C语言有哪些鲜为人知的特性？
+
+------------------------------------------------
 
 *译注:请在linux系统下测试本文中出现的代码*
 
