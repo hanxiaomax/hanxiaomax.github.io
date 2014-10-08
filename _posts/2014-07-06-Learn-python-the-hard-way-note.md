@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Learn Python The Hard Way 学习笔记"
-category: python
-tags: [python, 笔记]
+title: "LEARN PYTHON THE HARD WAY 自学笔记"
+category: trans
+tags: [Python]
 image:
-  feature: pythonbanner.png
+  feature: article.jpg
 comments: True
 share: true
 ---
@@ -35,7 +35,7 @@ share: true
 **%r和%s的区别**
 
 {% highlight python %}
-x="There are %d type of people." % 10 
+x="There are %d type of people." % 10
 binary="binary"
 do_not="don't"
 y="Those who know %s and those who %s." %(binary,do_not)
@@ -122,7 +122,7 @@ Even 4 lines if we want, or 5, or 6.
 print "\n123\n123\n123"
 {% endhighlight %}
 
-###10.转义符 
+###10.转义符
 
 ###11.输入
 
@@ -209,11 +209,11 @@ txt.close()
 
 ###16.读写文件
 
-**close** -- Closes the file. Like File->Save.. in your editor.  
-**read** -- Reads the contents of the file. You can assign the result to a variable.  
-**readline** -- Reads just one line of a text file.  
-**truncate** -- Empties the file. Watch out if you care about the file.  
-**write(stuff)** -- Writes stuff to the file.  
+**close** -- Closes the file. Like File->Save.. in your editor.
+**read** -- Reads the contents of the file. You can assign the result to a variable.
+**readline** -- Reads just one line of a text file.
+**truncate** -- Empties the file. Watch out if you care about the file.
+**write(stuff)** -- Writes stuff to the file.
 
 {% highlight python %}
 from sys import argv
@@ -285,7 +285,7 @@ That tells Python to take all the arguments to the function and then put them in
 
 {% highlight python %}
 def print_two(*args):
-    arg1, arg2 = args 
+    arg1, arg2 = args
     print "arg1: %r, arg2: %r" % (arg1, arg2)
 {% endhighlight %}
 
@@ -509,7 +509,7 @@ for i in mylist,the_count:
     print i
 {% endhighlight %}
 
-**How do you make a 2-dimensional (2D) list?**  
+**How do you make a 2-dimensional (2D) list?**
 
 That's a list in a list like this: [[1,2,3],[4,5,6]]
 
@@ -539,7 +539,7 @@ if "c" in string:
 3. Never nest if-statements more than two deep and always try to do them one deep. This means if you put an if in an if then you should be looking to move that second if into another function.
 4. Treat if-statements like paragraphs, where each if elif else grouping is like a set of sentences. Put blank lines before and after.
 5. Your boolean tests should be simple. If they are complex, move their calculations to variables earlier in your function and use a good name for the variable.
- 
+
 **Rules For Loops**
 
 1. Use a while-loop only to loop forever, and that means probably never. This only applies to Python; other languages are different.
@@ -592,7 +592,7 @@ while仅仅用于无限循环
 |lambda|lambda表达式|
 |try|**封闭一段可能发生异常的代码**|
 
-**Data Types** ：有二十几种 
+**Data Types** ：有二十几种
 
 - True
 - False
@@ -626,7 +626,7 @@ while仅仅用于无限循环
 
 - `**` ：**乘方**
 - `{ }`
-- `@` 
+- `@`
 - `,`
 - `:`
 - `.`
@@ -690,12 +690,12 @@ dist=src[:]
 ###39.字典，可爱的字典
 
 - 获取字典值
- 
+
 {% highlight python %}
 stuff['city'] = "San Francisco"
 {% endhighlight %}
 - 添加字典元素
- 
+
 {% highlight python %}
 cities['NY'] = 'New York'
 {% endhighlight %}
@@ -705,7 +705,7 @@ cities['NY'] = 'New York'
 del stuff['city']
 {% endhighlight %}
 
-- **两种获取可能不存在元素的方法**  
+- **两种获取可能不存在元素的方法**
 
 {% highlight python %}
 # safely get a abbreviation by state that might not be there
@@ -765,18 +765,18 @@ bulls_on_parade.sing_me_a_song()
 
 ###41.面向对象
 
-**一些名词**  
+**一些名词**
 
-- **class :**  Tell Python to make a new kind of thing.  
-- **object :** Two meanings: the most basic kind of thing, and any instance of some thing.  
-- **instance :** What you get when you tell Python to create a class.  
-- **def :** How you define a function inside a class.  
-- **self :** Inside the functions in a class, self is a variable for the instance/object being accessed.  
-- **inheritance :** The concept that one class can inherit traits from another class, much like you and your parents.  
-- **composition :** The concept that a class can be composed of other classes as parts, much like how a car has wheels.  
-- **attribute :** A property classes have that are from composition and are usually variables.  
-- **is-a :** A phrase to say that something inherits from another, as in a "salmon" is-a "fish."  
-- **has-a :** A phrase to say that something is composed of other things or has a trait, as in "a salmon has-a mouth."  
+- **class :**  Tell Python to make a new kind of thing.
+- **object :** Two meanings: the most basic kind of thing, and any instance of some thing.
+- **instance :** What you get when you tell Python to create a class.
+- **def :** How you define a function inside a class.
+- **self :** Inside the functions in a class, self is a variable for the instance/object being accessed.
+- **inheritance :** The concept that one class can inherit traits from another class, much like you and your parents.
+- **composition :** The concept that a class can be composed of other classes as parts, much like how a car has wheels.
+- **attribute :** A property classes have that are from composition and are usually variables.
+- **is-a :** A phrase to say that something inherits from another, as in a "salmon" is-a "fish."
+- **has-a :** A phrase to say that something is composed of other things or has a trait, as in "a salmon has-a mouth."
 
 ###42.对象和类
 
@@ -917,16 +917,16 @@ son.altered()
 4. Finally, remove all the *.pyc files to make sure you're clean.
 
 
->$ ls -R  
-.:  
-bin  docs  ex48  setup.py  tests  
-./bin:  
-./docs:  
-./ex48:  
-__init__.py  __init__.pyc  lexicon.py  lexicon.pyc  parser.py  parser.pyc  
-./tests:  
-__init__.py   lexicon_test.py   parser_test.py  
-__init__.pyc  lexicon_test.pyc  parser_test.pyc  
+>$ ls -R
+.:
+bin  docs  ex48  setup.py  tests
+./bin:
+./docs:
+./ex48:
+__init__.py  __init__.pyc  lexicon.py  lexicon.pyc  parser.py  parser.pyc
+./tests:
+__init__.py   lexicon_test.py   parser_test.py
+__init__.pyc  lexicon_test.pyc  parser_test.pyc
 
 
 ###47.自动化测试
@@ -946,7 +946,7 @@ __init__.pyc  lexicon_test.pyc  parser_test.pyc
 {% endhighlight %}
 class ParserError(Exception):
     pass
-    
+
 def parse_verb(word_list):
     skip(word_list, 'stop')
 
@@ -984,7 +984,7 @@ words = stuff.split()
 
 - 类似于一个你不能修改的列表
 - 元组由不同的元素组成，每个元素可以存储不同类型的数据，例如，字符串、数字和元组
-- 元组通常代表一行数据，而元组中的元素则代表不同的数据项 
+- 元组通常代表一行数据，而元组中的元素则代表不同的数据项
 - 创建元组，不定长，但一旦创建后则不能修改长度
 - 元组是由`，`创建的，只是放在`()`里面而已，如果只有一个元素，逗号也不能省
 
@@ -997,7 +997,7 @@ sentence = [first_word, second_word]
 **3.异常**
 
 **`Except` 和 `raise`**
-An exception is an error that you get from some function you may have run. 
+An exception is an error that you get from some function you may have run.
 
 {% highlight python %}
 def convert_number(s):
@@ -1037,14 +1037,14 @@ def scan(user_sentence):
     return sentence
 {% endhighlight %}
 
-**4.如果保证自己写的模组能够正确导入**  
+**4.如果保证自己写的模组能够正确导入**
 **Why do I keep getting ImportErrors?**
 
 Import errors are caused by usually four things.
 
 1. You didn't make a __init__.py in a directory that has modules in it.
-2. you are in the wrong directory. 
-3. You are importing the wrong module because you spelled it wrong. 
+2. you are in the wrong directory.
+3. You are importing the wrong module because you spelled it wrong.
 4. Your PYTHONPATH isn't set to . so you can't load modules from your current directory.
 
 ###49.造句
@@ -1069,7 +1069,7 @@ When we're all done, we should have a Sentence object to work with in our game.
 {% highlight python %}
 class ParserError(Exception):
     pass
-    
+
 def parse_verb(word_list):
     skip(word_list, 'stop')
 

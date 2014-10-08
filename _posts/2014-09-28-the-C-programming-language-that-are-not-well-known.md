@@ -10,7 +10,6 @@ share: true
 ---
 
 *本文翻译自[Quora问答：What are some features of the C programming language that are not well-known?](http://www.quora.com/What-are-some-features-of-the-C-programming-language-that-are-not-well-known)*
-
 *首发于[伯乐在线](http://blog.jobbole.com/77321/)*
 
 **未经许可，禁止转载！**
@@ -88,7 +87,7 @@ int a[5] = {0, 2, 0, 0, 5};
 int f(const int* restrict x, int* y) {
     (*y)++;
     int z = *x;
-    (*y)--;
+    (*y)--;[^1]
     return z;
 }
 {% endhighlight %}
@@ -389,3 +388,5 @@ scanf("%*s %s", last);
 
 原因：
 当我们写`-n`时，实际上是以补码形式储存，所以`-n` 可以写成`~n + 1`，吧整个式子放在上面表达式的前面你就能明白原因了。
+
+ [^1]: 
