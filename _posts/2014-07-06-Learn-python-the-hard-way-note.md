@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "LEARN PYTHON THE HARD WAY 自学笔记"
-category: trans
-tags: [Python]
+category: python
+tags: [python]
 image:
-  feature: article.jpg
-comments: True
+  feature: 2000px-Matplotlib_logo.svg.png
+comments: true
 share: true
+
 ---
+
+
 
 [例程代码和部分答案@Github](https://github.com/hanxiaomax/LPTHW_code_examples)
 
