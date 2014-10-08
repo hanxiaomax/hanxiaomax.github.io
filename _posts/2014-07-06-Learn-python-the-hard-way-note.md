@@ -4,7 +4,7 @@ title: "LEARN PYTHON THE HARD WAY 自学笔记"
 category: python
 tags: [python]
 image:
-  feature: 2000px-Matplotlib_logo.svg.png
+  feature: article.jpeg
 comments: true
 share: true
 
