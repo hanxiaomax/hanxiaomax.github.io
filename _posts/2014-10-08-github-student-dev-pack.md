@@ -10,6 +10,16 @@ share: true
 
 ---
 
+
+*本文翻译自[GitHub Education Student Developer Pack](https://education.github.com/pack)*
+*首发于[伯乐在线](http://blog.jobbole.com/77992/)*
+
+**未经许可，禁止转载！**
+
+
+------------------------------------------------
+
+
 ##学生开发者工具包
 
 ####最好的开发工具，免费提供给学生
