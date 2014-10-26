@@ -12,6 +12,8 @@ share: true
 *本文翻译自[Quora热门问答](http://www.quora.com/Why-are-so-many-people-content-with-just-earning-a-salary-and-working-9-6-their-entire-adult-life/answer/Jennifer-Dowdy-1)*
 *首发于[伯乐在线](http://blog.jobbole.com/77804/)*
 
+
+**by Lingfeng Ai**
 **未经许可，禁止转载！**
 
 --------------------------------------------
