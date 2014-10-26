@@ -23,7 +23,7 @@ share: true
 By Blake Callens, @blakecallens
 
 
-Blake Callens是PencilBlue公司的联合创始人及CEO,也是 Raleigh创业加速实验室的联合传世人。是ExitEvent的中坚力量。
+Blake Callens是PencilBlue公司的联合创始人及CEO,也是 Raleigh创业加速实验室的联合创始人。是ExitEvent的中坚力量。
 
 每一个软件工程师都经历过这样的面试，在面试中，他们迫使自己表现的更像是一个字典而不是人类。普遍存在的误解是，为了能够开发软件，程序员必须知道职位要求所列出的每种语言的每一个细节。过去，程序员需要从手册上获取这些知识，这种面试是那个时代遗留下来的产物了。
 
