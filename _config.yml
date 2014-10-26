@@ -1,7 +1,7 @@
 title:            Lingfeng's Blog
 description:      101s and notes for dummies just like me.
 #logo:             site-logo.jpg
-disqus_shortname: 
+disqus_shortname:
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
 url:              http://hanxiaomax.github.io
@@ -12,27 +12,27 @@ owner:
   avatar:         bio-photo.jpg
   email:          hanxiaomax@qq.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
+  twitter:
+  facebook:
   github:         hanxiaomax
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
+  google_plus:
 #
 comments:
   provider: custom
 
 # Analytics and webmaster tools stuff goes here
 analytics :
-  provider : google 
-  google : 
+  provider : google
+  google :
       tracking_id : 'UA-48815860-1'
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -44,7 +44,7 @@ links:
   - title: Articles
     url: /articles/
   - title: Python
-    url: /Python/  
+    url: /Python/
   - title: Etymology
     url: /etymology/
   - title: C/C++
@@ -55,6 +55,8 @@ links:
     url: /other/
   - title: 新浪微博
     url: http://weibo.com/smilingly1989
+  - title: test
+    url: /1/
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -74,7 +76,7 @@ kramdown:
   use_coderay: true
 
   coderay:
-    coderay_line_numbers: 
+    coderay_line_numbers:
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
     coderay_bold_every: 10
