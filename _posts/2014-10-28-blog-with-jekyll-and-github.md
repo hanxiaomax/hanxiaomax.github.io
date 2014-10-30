@@ -34,7 +34,7 @@ share: true
     PS:初始化的方式并不唯一，你可以像建立其他一般仓库一样建立你的blog仓库，只是它的名字比较讲究而已。
 
 ###2.安装Jeklly来处理Pages
-其实一个最快的方案是不应该包含这一部分的，是否安装Jeklly其实并不影响你的blog，比如你可以直接clone一个开源的Jeklly的blog，所以你可以跳过这个步骤，直接进行到第3步，但是在本机安装Jeklly是GitHub Pages鼓励的行为，你可以在本地调试你的网页，然后再推送，比较方便debug，也能有效减少推送次数。
+其实一个最快的方案是不应该包含这一部分的，是否安装Jeklly其实并不影响你的blog，比如你可以直接clone一个开源的Jeklly的blog,但是在本机安装Jeklly是GitHub Pages鼓励的行为，你可以在本地调试你的网页，然后再推送，比较方便debug，也能有效减少推送次数。
 
 
 参考链接：
@@ -48,7 +48,11 @@ share: true
 
 1. 安装Ruby
     - 下载[rubyinstaller](http://rubyinstaller.org/)并运行，安装结束后，在命令行工具中输入`ruby --version` 查看版本号，如果无法查看则可能需要重启或是手动添加bin目录到环境变量。
+
+    ![Alt text](/images/jekyll/install-ruby-ready.png)
     - 下载[Ruby DevKit DevKit-mingw64](http://rubyinstaller.org/downloads/)有64位或32位可以选择，下载完成后打开，会询问解压位置（假定：C:\RubyDevKit），解压。解压后用`cd C:\RubyDevKit`定位到该目录下，然后运行`ruby dk.rb init`,初始化成功后会在目录下看到一个新文件`config.yml`，打开之后，添加本机ruby的安装路径，如图，然后运行`ruby dk.rb install` 即可完成。
+    ![Alt text](/images/jekyll/install-rubykit-addpath.png)
+
 2. 安装bundler
 `gem install bundler`
 3.  安装Jekyll
@@ -64,6 +68,7 @@ share: true
 
 4. 运行Jekyll
 `bundle exec jekyll serve`
+![Alt text](/images/jekyll/install-runjekyll.png)
 然后在浏览器访问：http://localhost:4000 即可查看本地仓库所构建的blog
 
 至此我们就配置好了Jekyll，我们可以进行一次commit来保存进度。不过，先不要着急，我们来看一下现在生成了哪些文件。
