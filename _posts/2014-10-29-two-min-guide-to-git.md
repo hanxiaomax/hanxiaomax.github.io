@@ -26,56 +26,84 @@ share: true
 
 如果你还没有安装git的话，请查看 Getting Started page上的安装指南。
 第一次使用git，我们假定你正在一个文件夹内工作，该文件夹是你项目的主文件夹。你需要做的第一件事情是：
+
 `git init`
+
 初始化文件夹供git使用。
 
 
 ####告诉git你要处理的文件
 现在你需要告诉git，需要考虑哪些文件。如果你有N个文件，你可以使用
-`git add <file1>  <file2> … <fileN>` 来添加他们。或是你想要把目录下的文件全部添加，你可以使用
+`git add <file1>  <file2> … <fileN>`
+
+来添加他们。或是你想要把目录下的文件全部添加，你可以使用
+
 `git add .`(句号是命令的一部分，表示当前目录。)
 
 ####提交改动
 下一步，我们需要提交改动。任何时候，你想要提交一个文件或多个文件的改动，运行
+
 `git commit <file1> <file2> … <fileN> -m “This is your commit message"`
+
 或者，提交全部有改动的文件：
+
 `git commit -a -m “This is your commit message for all changed files"`
+
 确保你的提交信息能够包含足够的描述信息，让你可以搞清楚你想要回退到哪个版本。
 
 ####查看历史
 现在你需要一个查看旧版本的方法。为了查看提交信息和该次提交的hash值（代表版本的一串数字）可以使用如下命令，使其以每行一个版本的方式输出
+
 `git log --pretty=oneline`
+
 它的输出看起来是下面这样的，每次提交的hash值和它的提交信息一起显示
-```
+
+{% highlight bash%}
 dbe28a0a1eba45d823d309cc3659069fc16297e3 4th version I wanted to commit
   13bbf385e6d1f94c7f11a4cdfa2a7688dfdd84f8 3rd
   a1696f671fb90dc8ea34645a6f851d0ab0152fc2 2nd version
   179e59467039c7a7b81f676297415c8e018542a0 first version
-  ```
+{% endhighlight %}
+
 注意，你同样可以使用
-`git log` 来输出一个更冗长的信息，每个版本信息占用多行，而且你可以使用
-`git log --pretty=oneline -- <filename>` 来查看某个具体文件的改动。（注意第二个--后面的空格！）
+
+`git log`
+来输出一个更冗长的信息，每个版本信息占用多行，而且你可以使用
+
+`git log --pretty=oneline -- <filename>`
+
+来查看某个具体文件的改动。（注意第二个--后面的空格！）
 
 ####恢复旧版本
 最终，恢复之前版本的文件，你只需要使用hash值的前几个数字（要保证足够的区分度）：
 
 ` git checkout <hash> -- <filename>`
+
 比如
 
 `git checkout 179e59467039 -- myfile`
-会把我的名为myfile的文件的内容回退到179e59467039c7a7b81f676297415c8e018542a0这个状态（这里是指本文件的第一次提交版本）
+
+会把我的名为myfile的文件的内容回退到
+
+`179e59467039c7a7b81f676297415c8e018542a0`
+
+这个状态（这里是指本文件的第一次提交版本）
 
 
 ####查看改动
 通常你不会不先查看一下文件变化就回退到旧的版本！查看文件当前版本和历史版本的区别，你需要指明历史版本的hash值：
+
 ` git diff <hash> -- <filename>`
+
 你同样可以比较两个历史版本的差别：
+
 ` git diff <hash1>  <hash2> -- <filename>`
 
 ####还有一件事——可选项——也许会让本文多一分钟
 也许您仅仅使用以上功能就可以受益匪浅，你会还有一件事是很有用的。如果你现在不想看的话，就别看了——找机会下次再看。
 
 有时候，你不清楚有哪些文件被改动了。你可以使用如下命令找到它们：
+
 `git status`
 
 这会生成一份文件列表以及他们的状态。比如，一个还没有被`git add` 的文件会被显示为`untracked`；如果你想要追踪这个文件，就需要添加它。
