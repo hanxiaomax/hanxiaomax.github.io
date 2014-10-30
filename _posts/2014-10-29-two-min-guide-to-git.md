@@ -10,6 +10,15 @@ share: true
 
 ---
 
+
+**本文翻译自[Git In Two Minutes (For A Solo Developer)](http://www.garyrobinson.net/2014/10/git-in-two-minutes-for-a-solo-developer.html)**
+首发于**[伯乐在线]**(http://blog.jobbole.com/78999/)
+
+**未经许可，禁止转载！**
+
+-----------------------------
+
+
 受到[5分钟Git指南](http://classic.scottr.org/presentations/git-in-5-minutes/)的启发，我决定更进一步，写一篇用更短时间就能看完的git教程。当然，这是指最简单git！但是对于新手个人开发者来说足够了，而且给你提供一个可以继续成长的起点。
 
 
