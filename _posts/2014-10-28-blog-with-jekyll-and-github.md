@@ -49,7 +49,7 @@ share: true
 1. 安装Ruby
     - 下载[rubyinstaller](http://rubyinstaller.org/)并运行，安装结束后，在命令行工具中输入`ruby --version` 查看版本号，如果无法查看则可能需要重启或是手动添加bin目录到环境变量。
 
-    ![Alt text](/images/jekyll/install-ruby-ready.png)
+        ![Alt text](/images/jekyll/install-ruby-ready.png)
 
     - 下载[Ruby DevKit DevKit-mingw64](http://rubyinstaller.org/downloads/)有64位或32位可以选择，下载完成后打开，会询问解压位置（假定：C:\RubyDevKit），解压。解压后用`cd C:\RubyDevKit`定位到该目录下，然后运行`ruby dk.rb init`,初始化成功后会在目录下看到一个新文件`config.yml`，打开之后，添加本机ruby的安装路径，如图，然后运行`ruby dk.rb install` 即可完成。
 
@@ -72,10 +72,10 @@ share: true
 `bundle exec jekyll serve`
     ![Alt text](/images/jekyll/install-runjekyll.png)
 
-然后在浏览器访问：http://localhost:4000 即可查看本地仓库所构建的blog
+    然后在浏览器访问：http://localhost:4000 即可查看本地仓库所构建的blog
 
-至此我们就配置好了Jekyll，我们可以进行一次commit来保存进度。不过，先不要着急，我们来看一下现在生成了哪些文件。
+    至此我们就配置好了Jekyll，我们可以进行一次commit来保存进度。不过，先不要着急，我们来看一下现在生成了哪些文件。
 
-运行`git status` 我们发现生成了如下文件，这些文件只需要留在本地即可，所以我们可以把他们添加到`.gitignore` 文件中。
+    运行`git status` 我们发现生成了如下文件，这些文件只需要留在本地即可，所以我们可以把他们添加到`.gitignore` 文件中。
 
 
