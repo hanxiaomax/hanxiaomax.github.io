@@ -9,8 +9,11 @@ comments: True
 share: true
 ---
 
-**本文翻译自[10 Tips to Push Your Git Skills to the Next Level--by Shaumik Daityari](http://www.sitepoint.com/10-tips-git-next-level/)**
-**首发于[伯乐在线](http://blog.jobbole.com/75348/)**
+本文翻译自[10 Tips to Push Your Git Skills to the Next Level--by Shaumik Daityari](http://www.sitepoint.com/10-tips-git-next-level/)
+
+首发于[伯乐在线](http://blog.jobbole.com/75348/)
+
+
 
 **未经许可，禁止转载！**
 
