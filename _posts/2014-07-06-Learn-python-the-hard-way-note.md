@@ -4,7 +4,7 @@ title: "LEARN PYTHON THE HARD WAY 自学笔记"
 category: python
 tags: [python]
 image:
-  feature: article.jpeg
+  feature: article.jpg
 comments: true
 share: true
 
