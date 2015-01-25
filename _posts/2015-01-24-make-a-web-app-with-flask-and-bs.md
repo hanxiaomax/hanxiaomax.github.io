@@ -130,7 +130,7 @@ from app import views,models#导入视图和模型
 - 当需要对数据库进行修改的时候，可以运行`db_migrate.py`，则会对数据库进行自动更新。
 	`SQLAlchemy-migrate`通过对比数据库的结构（从`app.db`文件读取）和models结构（从`app/models.py`文件读取）的方式来创建迁移任务。
 	
-	这里需要注意的是，如果我们仅仅修改了`models.py`或是使用SQLite Expert进行了可视化的修改，直接运行`db_migrate.py` 可能会报错，这时我们需要确认`models.py`和SQLite Expert进行了相同的修改。比如，我在`models.py`修改了某个表的某个项，同样的，需要使用SQLite Expert对数据库进行相应的修改。
+这里需要注意的是，如果我们仅仅修改了`models.py`或是使用SQLite Expert进行了可视化的修改，直接运行`db_migrate.py` 可能会报错，这时我们需要确认`models.py`和SQLite Expert进行了相同的修改。比如，我在`models.py`修改了某个表的某个项，同样的，需要使用SQLite Expert对数据库进行相应的修改。
 
 
 

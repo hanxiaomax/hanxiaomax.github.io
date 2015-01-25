@@ -52,9 +52,20 @@ img {
     max-width: 100%;
     vertical-align: middle;
     border: 0;
-    border-radius: 0.5em;
     -ms-interpolation-mode: bicubic
+
 }
+img :hover{
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic
+    box-shadow: 4px 4px 2px -2px #6B6868;
+}
+
+
 #map_canvas img, .google-maps img {
     max-width: none
 }
