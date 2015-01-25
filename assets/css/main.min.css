@@ -55,7 +55,7 @@ img {
     -ms-interpolation-mode: bicubic
 
 }
-img :hover{
+/*img :hover{
     width: auto\9;
     height: auto;
     max-width: 100%;
@@ -63,7 +63,7 @@ img :hover{
     border: 0;
     -ms-interpolation-mode: bicubic
     box-shadow: 4px 4px 2px -2px #6B6868;
-}
+}*/
 
 
 #map_canvas img, .google-maps img {
@@ -203,6 +203,17 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
     -o-transition: all .2s ease;
     transition: all .2s ease
 }
+p:hover img{
+ width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic
+    box-shadow: 4px 4px 2px -2px #6B6868;
+}
+
+
 body {
     font-family: 'SourceSansPro-ExtraLight46228',"Microsoft YaHei",monospace;
     color: #222
