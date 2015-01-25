@@ -16,7 +16,7 @@ share: true
 2. 新建文件夹 `mkdir scorecalcu4ME`
 3. 创建新的虚拟环境
 
-	```
+	```python
 	cd scorecalcu4ME
 	virtualenv workshop
 	```
@@ -27,7 +27,7 @@ share: true
 
 5. 安装所需的包（按需安装）
 
-	```
+	```python
 pip install flask
 pip install flask-login
 pip install sqlalchemy
@@ -39,7 +39,7 @@ pip install flask-wtf
 ###2.文件目录
 1. 创建我们需要的目录结构
 
-	```
+	```python
 	mkdir app 
 	mkdir app/static #存放静态文件（css,js等）
 	mkdir app/templates #存放模板文件（html）
