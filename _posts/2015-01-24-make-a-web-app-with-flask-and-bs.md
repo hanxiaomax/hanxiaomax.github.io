@@ -1,3 +1,16 @@
+---
+layout: post
+title: "flask+Bootstrap3构建web应用小结"
+category: Python
+tags: [Python,Bootstrap,flask,web]
+image:
+  feature: article.jpg
+comments: True
+share: true
+
+---
+
+
 ###1.配置虚拟环境
 1.	安装`virtualenv`
 2. 新建文件夹 `mkdir scorecalcu4ME`
