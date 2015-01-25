@@ -327,7 +327,7 @@ pre {
     font-size: .75rem;
     line-height: 2;
     border-radius:1em;
-    box-shadow: 3px 3px 3px 3px #6B6868;
+    box-shadow: 4px 4px 2px -2px #6B6868;
 }
 .highlight pre {
     position: relative;

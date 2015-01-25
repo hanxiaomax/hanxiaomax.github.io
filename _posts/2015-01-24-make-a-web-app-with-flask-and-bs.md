@@ -16,7 +16,7 @@ share: true
 2. 新建文件夹 `mkdir scorecalcu4ME`
 3. 创建新的虚拟环境
 
-```python
+```bash
 	cd scorecalcu4ME
 	virtualenv workshop
 ```
@@ -27,7 +27,7 @@ share: true
 
 5. 安装所需的包（按需安装）
 
-```python
+```bash
 pip install flask
 pip install flask-login
 pip install sqlalchemy
@@ -39,7 +39,7 @@ pip install flask-wtf
 ###2.文件目录
 1. 创建我们需要的目录结构
 
-```python
+```bash
 	mkdir app 
 	mkdir app/static #存放静态文件（css,js等）
 	mkdir app/templates #存放模板文件（html）
@@ -60,7 +60,7 @@ pip install flask-wtf
 1. 创建配置文件[config.py](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/config.py)
 `config.py` 文件包含我们所需的各种设置，比如数据库，表单，文件夹的位置等等。把设置参数写在这里的一个明显好处是**调用和管理**非常方便。
 例如：
-```python
+```bash
 	#config.py
     UPLOAD_FOLDER = basedir+'/uploads/' #should use basedir
 ```
