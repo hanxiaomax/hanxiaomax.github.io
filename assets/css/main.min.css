@@ -288,8 +288,8 @@ blockquote {
     font-size: 1.5rem;
     font-style: italic;
     line-height: 1;
-    border-left: 8px solid #9E4A4A;
-    background-color:#FFFAF0;
+    border-left: 8px solid #809E8B;
+    background-color:rgba(165, 213, 68, 0.05);
 }
 .footnotes {
     font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
@@ -2467,7 +2467,7 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: #FFF5EE;
+    background-color: #eeeeEE;
     border-top: 5px solid #000
 }
 @media only screen and (min-width:48em) {
