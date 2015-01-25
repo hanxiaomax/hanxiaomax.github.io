@@ -315,16 +315,15 @@ pre {
     font-size: 12px;
     font-size: .75rem;
     line-height: 2;
-    border: 1px solid #2f4f4f
+    border: 1px solid #dedede
 }
 .highlight pre {
     position: relative;
     padding: 1em;
-    margin: 0;
-    background-color: #2f4f4f
+    margin: 0
 }
 .highlight .hll {
-    background-color: #2f4f4f
+    background-color: #ffc
 }
 .highlight .c {
     font-style: bold;
