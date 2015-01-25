@@ -4,7 +4,7 @@
 }
 article{
 display: block;
-color: #792D2D;
+
 }
 
 audio, canvas, video {
@@ -2467,7 +2467,7 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: #fff;
+    background-color: #FFF5EE;
     border-top: 5px solid #000
 }
 @media only screen and (min-width:48em) {
