@@ -193,11 +193,11 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
     transition: all .2s ease
 }
 body {
-    font-family: 'source-sans-pro', sans-serif;
+    font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
     color: #222
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'source-sans-pro', sans-serif
+    font-family: 'SourceSansPro-ExtraLight46228', sans-serif
 }
 a {
     color: #792D2D;
@@ -292,7 +292,7 @@ blockquote {
     background-color:#FFFAF0;
 }
 .footnotes {
-    font-family: 'source-sans-pro', sans-serif;
+    font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
     font-size: 14px;
     font-size: .875rem;
     line-height: 1.7143
@@ -2208,7 +2208,7 @@ label, input, button, select, textarea {
     *vertical-align: middle
 }
 input, button, select, textarea {
-    font-family: 'source-sans-pro', sans-serif;
+    font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
