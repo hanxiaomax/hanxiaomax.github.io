@@ -298,11 +298,12 @@ p code, li code {
     font-size: .75rem;
     line-height: 2;
     white-space: nowrap;
-    background-color: #f2f2f2;
+    background-color: #0A2635;
     border: 1px solid #e6e6e6;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    border-radius: 3px
+    border-radius: 3px;
+    color: #81E7DF
 }
 pre {
     overflow-x: auto;
@@ -311,8 +312,8 @@ pre {
     line-height: 2
 }
 .highlight {
-    margin-bottom: 1.5em;
-    font-size: 12px;
+    margin-bottom: 1em;
+    font-size: 15px;
     font-size: .75rem;
     line-height: 2;
     border-radius:2em;
@@ -324,7 +325,8 @@ pre {
     padding: 1em;
     margin: 0;
     border-radius:1.5em;
-    background-color: #000000
+    font-size: 15px;
+    background-color: #0A2635
 }
 
 .CodeRay {
