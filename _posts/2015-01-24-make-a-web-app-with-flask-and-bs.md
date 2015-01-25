@@ -16,10 +16,10 @@ share: true
 2. 新建文件夹 `mkdir scorecalcu4ME`
 3. 创建新的虚拟环境
 
-	```python
+```python
 	cd scorecalcu4ME
 	virtualenv workshop
-	```
+```
 4. 激活虚拟环境
 `source workshop/Scripts/activate`
 ![Alt text](./1422103103053.png)
@@ -27,7 +27,7 @@ share: true
 
 5. 安装所需的包（按需安装）
 
-	```python
+```python
 pip install flask
 pip install flask-login
 pip install sqlalchemy
@@ -35,16 +35,16 @@ pip install flask-sqlalchemy
 pip install sqlalchemy-migrate
 pip install flask-wtf
 
-	```
+```
 ###2.文件目录
 1. 创建我们需要的目录结构
 
-	```python
+```python
 	mkdir app 
 	mkdir app/static #存放静态文件（css,js等）
 	mkdir app/templates #存放模板文件（html）
 	mkdir temp #存放临时文件
-	```
+```
 
 2. 说明
 
@@ -60,10 +60,10 @@ pip install flask-wtf
 1. 创建配置文件[config.py](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/config.py)
 `config.py` 文件包含我们所需的各种设置，比如数据库，表单，文件夹的位置等等。把设置参数写在这里的一个明显好处是**调用和管理**非常方便。
 例如：
-	```python
+```python
 	#config.py
     UPLOAD_FOLDER = basedir+'/uploads/' #should use basedir
-	```
+```
 	这里我们设置了上传文件夹的路径。当然还有很多配置没有显示出来，你可以查看全部代码([config.py](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/config.py))
 稍后我们会在这个文件里面配置数据库，表单等设置。
 
@@ -72,43 +72,43 @@ pip install flask-wtf
 2. 配置数据库([config.py](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/config.py))
 这里我们使用[Flask-SQLAlchemy](https://pythonhosted.org/Flask-SQLAlchemy/)来进行数据库的操作。
 
-	```python
-	import os
-	basedir = os.path.abspath(os.path.dirname(__file__))
+```python
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
  
-	SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
-	SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-	```
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+```
 选择SQLite作为我们的数据库，配置两个参数，一个是数据库的路径，一个是数据库迁移仓库。
 **此时，我们只是设定了数据库的位置和迁移仓库，但是我们实际上并没有创建一个数据库，稍后我们将编写创建[`db_create.py`](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/db_create.py)，迁移脚本[`db_migrate.py`](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/db_migrate.py)以及编写我们的模型文件[`models.py`](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/app/models.py)**
 
 3. 创建[`__init__.py`](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/app/__init__.py)文件
 
 
-	```python
-		#coding:utf-8
-	from flask import Flask# 导入Flask模块
-	from flask.ext.sqlalchemy import SQLAlchemy
-	from flask.ext.login import LoginManager
-	import os 
-	#设定常用目录的路径
-	__StaticDir__=os.path.abspath(os.path.dirname(__file__))+"/static/" 
-	__ExcelDir__=__StaticDir__+"/excel/" 
-	
-	appME=Flask(__name__) #初始化应用程序对象
-	appME.config.from_object('config')#配置文件使用config.py
-	
-	#初始化数据库
-	db = SQLAlchemy(app)
-	
-	
-	#初始化flask-login
-	lm = LoginManager()
-	lm.setup_app(appME)
-	
-	from app import views,models#导入视图和模型
+```python
+	#coding:utf-8
+from flask import Flask# 导入Flask模块
+from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.login import LoginManager
+import os 
+#设定常用目录的路径
+__StaticDir__=os.path.abspath(os.path.dirname(__file__))+"/static/" 
+__ExcelDir__=__StaticDir__+"/excel/" 
 
-	```
+appME=Flask(__name__) #初始化应用程序对象
+appME.config.from_object('config')#配置文件使用config.py
+
+#初始化数据库
+db = SQLAlchemy(app)
+
+
+#初始化flask-login
+lm = LoginManager()
+lm.setup_app(appME)
+
+from app import views,models#导入视图和模型
+
+```
 **至此，我们已经完成了基本的配置和初始化，而我们的应用名字就叫做*appME*，相关的代码如下**
 - [config.py](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/config.py)
 - [`__init__.py`](https://github.com/hanxiaomax/scorecalcu4ME/blob/master/app/__init__.py)
