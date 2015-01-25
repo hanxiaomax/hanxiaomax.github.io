@@ -294,18 +294,18 @@ tt, code, kbd, samp, pre {
     font-family: 'source-code-pro', monospace
 }
 p code, li code {
-    padding: 0 5px;
+
     margin: 0 2px;
     font-size: 12px;
     font-size: 1.0rem;
     line-height: 2;
     white-space: nowrap;
     background-color: #0A2635;
-    border: 1px solid #e6e6e6;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 1px;
-    color: #FFFFFF
+    color: #FFFFFF;
+    padding: 2px;
 }
 pre {
     overflow-x: auto;
