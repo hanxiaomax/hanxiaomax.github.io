@@ -312,16 +312,16 @@ pre {
 }
 .highlight {
     margin-bottom: 1.5em;
-    font-size: 12px;
-    font-size: .75rem;
-    line-height: 2;
-    border: 1px solid #dedede
+    .font(14);
+    border: 1px solid darken(@body-color, 5);
 }
 .highlight pre {
-    position: relative;
-    padding: 1em;
-    margin: 0
-}
+        position: relative;
+        margin: 0;
+        padding: 1em;
+        background-color: #49483e
+    }
+
 .highlight .hll {
     background-color: #ffc
 }
