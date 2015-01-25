@@ -53,9 +53,14 @@ future:      true
 highlighter: pygments
 markdown:    redcarpet
 
+
+
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
 
+
+redcarpet:
+  extensions: ['fenced_code_blocks','tables','strikethrough','no_intra_emphasis']
 
 
 include: [".htaccess"]
