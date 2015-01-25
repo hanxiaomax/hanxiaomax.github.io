@@ -1,6 +1,12 @@
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+ aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block
+
 }
+article{
+display: block;
+color: #792D2D;
+}
+
 audio, canvas, video {
     display: inline-block;
     *display: inline;
@@ -194,12 +200,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'source-sans-pro', sans-serif
 }
 a {
-    color: #00B1F0;
+    color: #792D2D;
     text-decoration: none;
     font-weight: bold;
 }
 a:visited {
-    color: #5BABA2
+    color: #792D2D
 }
 a:hover {
     color: #000
@@ -2505,10 +2511,10 @@ body {
     display: block;
     float: left;
     font-size: 14px;
-    font-size: .875rem;
+    font-size: 1.2rem;
     color: #fff;
     text-align: center;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     list-style: none
 }
 .navigation-wrapper li a:hover {
