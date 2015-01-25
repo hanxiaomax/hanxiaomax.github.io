@@ -193,11 +193,11 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
     transition: all .2s ease
 }
 body {
-    font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
+    font-family: 'SourceSansPro-ExtraLight46228', monospace;
     color: #222
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'SourceSansPro-ExtraLight46228', sans-serif
+    font-family: 'SourceSansPro-ExtraLight46228', monospace
 }
 a {
     color: #792D2D;
@@ -283,7 +283,7 @@ blockquote {
     padding-left: 20px;
     margin-bottom: 24px;
     margin-bottom: 1.5rem;
-    font-family: 'volkhov', serif;
+    font-family: 'volkhov', monospace;
     font-size: 24px;
     font-size: 1.5rem;
     font-style: italic;
@@ -292,7 +292,7 @@ blockquote {
     background-color:rgba(165, 213, 68, 0.05);
 }
 .footnotes {
-    font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
+    font-family: 'SourceSansPro-ExtraLight46228', monospace;
     font-size: 14px;
     font-size: .875rem;
     line-height: 1.7143
@@ -2208,7 +2208,7 @@ label, input, button, select, textarea {
     *vertical-align: middle
 }
 input, button, select, textarea {
-    font-family: 'SourceSansPro-ExtraLight46228', sans-serif;
+    font-family: 'SourceSansPro-ExtraLight46228', monospace;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -2666,7 +2666,7 @@ body {
 }
 .site-description {
     margin-top: 0;
-    font-family: 'volkhov', serif;
+    font-family: 'volkhov', monospace;
     font-size: 16px;
     font-size: 1rem;
     font-style: italic;
@@ -2752,7 +2752,7 @@ span+.entry-title {
     margin-top: 0
 }
 .entry-title {
-    font-family: 'volkhov', serif;
+    font-family: 'volkhov', monospace;
     font-size: 36px;
     font-size: 2.25rem;
     font-style: italic;
@@ -2992,7 +2992,7 @@ span+.entry-title {
 }
 .footer-wrapper {
     margin: 2em auto;
-    font-family: 'volkhov', serif;
+    font-family: 'volkhov', monospace;
     font-size: 14px;
     font-size: .875rem;
     font-style: italic;
