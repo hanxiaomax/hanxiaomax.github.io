@@ -307,12 +307,13 @@ p code, li code {
     font-size: 1.0rem;
     line-height: 2;
     white-space: nowrap;
-    background-color: #0A2635;
+    background-color: #D3D3D3;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    border-radius: 1px;
-    color: #FFFFFF;
+    border-radius: 6.5px;
+    color: #000000;
     padding: 2px;
+    box-shadow: 1px 1px 1px 0.5px #6B6868;
 }
 pre {
     overflow-x: auto;
@@ -326,16 +327,16 @@ pre {
     font-size: .75rem;
     line-height: 2;
     border-radius:1em;
-    border: 1px solid #dedede;
-    box-shadow: 0 0 3px #fff;
+    box-shadow: 3px 3px 3px 3px #6B6868;
 }
 .highlight pre {
     position: relative;
     padding: 1em;
     margin: 0;
-    border-radius:1em;
+    border-radius:0.5em;
     font-size: 15px;
-    background-color: #0A2635
+    background-color: #0A2635;
+
 }
 
 .clearfix {
