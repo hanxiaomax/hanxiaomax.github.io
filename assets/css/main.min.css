@@ -203,15 +203,7 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a 
     -o-transition: all .2s ease;
     transition: all .2s ease
 }
-p:hover img{
- width: auto\9;
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0;
-    -ms-interpolation-mode: bicubic
-    box-shadow: 4px 4px 2px -2px #6B6868;
-}
+
 
 
 body {
@@ -2490,7 +2482,7 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: #eeeeEE;
+    background-color: #ffffff;
     border-top: 5px solid #000
 }
 @media only screen and (min-width:48em) {
