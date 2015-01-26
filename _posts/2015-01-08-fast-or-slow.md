@@ -13,7 +13,7 @@ share: true
 >本文由 伯乐在线 - [Lingfeng Ai](http://blog.jobbole.com/author/hanxiaomax/) 翻译，[黄利民](http://blog.jobbole.com/author/huanglimin/) 校稿。未经许可，禁止转载！
 英文出处：[ventrellathing.wordpress.com](https://ventrellathing.wordpress.com/2013/06/18/the-case-for-slow-programming/)。欢迎加入翻译小组。
 
-![Alt text](/image/fast-or-slow/7cc829d3gw1eo1i1c1kqxj207q05ewf2.jpg)
+![Alt text](/images/fast-or-slow/7cc829d3gw1eo1i1c1kqxj207q05ewf2.jpg)
 
 
 我老爸常对我说，「孩子，别太着急。慢点来，你完成工作的速度会更快。」
@@ -36,7 +36,7 @@ share: true
 
 在这样一群信仰快速开发的程序员中，做一个我这样缓慢编程的程序员的代价，就是某种形式的[心律不齐](http://en.wikipedia.org/wiki/Cardiac_dysrhythmia)——因为我自己的编程节奏都被其他程序员那机枪似的迭代开发搞乱了。我的编程风格是这样，由一些不同尺寸和时间尺度的弧线组成，开始是时候是探索、试验和出错，使用一些hacks和临时变量。基本上是在做一些构建工作。程序初露端倪。稍后，我会回头去做些修改。最后结束的时候，是完整实现的代码（「打扫战场」是完成我这个工作循环的一个必要的部分）我编写代码的这一流程与策略、设计方案、架构的出现是同步的。
 
-![Alt text](/image/fast-or-slow/7cc829d3gw1eo1hwi124lj20el0750uk.jpg)
+![Alt text](/images/fast-or-slow/7cc829d3gw1eo1hwi124lj20el0750uk.jpg)
 
 有时候，当一个成熟的方案出现后，我会回头重新开始。因为我觉得我会有更好的点子。有时候我错了，有时候我是对的。在一个方案完整的呈现在我面前之前，我是没有办法去知道对错的。
 
