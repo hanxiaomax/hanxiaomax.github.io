@@ -18,10 +18,15 @@ share: true
 ------------------
 ###零、Git哲学
 `版本号` :一个SHA1计算出来的一个非常大的数字，用十六进制表示
+
 `HEAD`:表示当前版本，HEAD~{n}表示当前版本之前的第n个版本
+
 **工作区（Working Directory）** :当前电脑可见文件目录
+
 **版本库（Repository）** ：`.git`文件夹
-`暂存区（stage`和`分支（branch`
+
+`暂存区(stage)`和`分支(branch)`
+
 **未追踪状态（Untracked）**：从未被放入过暂存区
 
 通过`add`放入暂存区，在通过`commit`提交到当前分支，只有被放入暂存区的文件，才会被提交到版本库
@@ -45,6 +50,7 @@ share: true
 
 - `git log`:查看提交记录
 `git log --pretty=oneline`
+
 `git reflog` :查看命令历史
 
 大部分时候，我们只是在循环使用这几个命令
@@ -54,6 +60,7 @@ share: true
 
 ###二、回退与删除
 >回退大法好
+
 ####1.尚未暂存(before `add`)
 `git checkout -- <file>`：丢弃**工作区**修改。注意是工作区，对暂存区和版本库用此命令是无法修改的
 
@@ -145,6 +152,7 @@ fast-forward方式是指在合并时，master的指针直接指向当前分支�
 `git stash list` 查看
 `git stash apply` 恢复
 `git stash drop` 删除
+
 - [让你Git水平更上一层楼的10个小贴士](http://hanxiaomax.github.io/trans/Ten-Tips-to-Push-Your-Git-Skills-to-the-Next-Level/)中的第8条。
 - [廖雪峰的官方网站-->Git教程-->Bug分支](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137602359178794d966923e5c4134bc8bf98dfb03aea3000)
 
@@ -180,11 +188,12 @@ fast-forward方式是指在合并时，master的指针直接指向当前分支�
 
 ####六、忽略文件
 创建`.gitignore`文件，可以让git不去追踪某些不必要的文件。
-`/`：目录；
-`*`：通配符
-`?`：通配符
-`[]`：单字符匹配列表
-`!`：不忽略
+
+`/`：目录；   
+`*`：通配符  
+`?`：通配符  
+`[]`：单字符匹配列表  
+`!`：不忽略  
 
 
 ####七、参考文件及扩展阅读:
@@ -194,3 +203,12 @@ fast-forward方式是指在合并时，master的指针直接指向当前分支�
 - [Git使用教程 by 龙恩0707 ](http://www.cnblogs.com/tugenhua0707/p/4050072.html)
 - [Pro Git 中文版](http://git-scm.com/book/zh/v1)
 - **帮助文档：**`git <命令> --help`
+
+
+----------------------
+**本文采用中国大陆版CC协议发布**  
+作者保留以下权利：  
+1. 署名（Attribution）：必须提到原作者。  
+2. 非商业用途（Noncommercial）：不得用于盈利性目的。  
+3. 禁止演绎（No Derivative Works）：不得修改原作品, 不得再创作。   
+新浪微博 [@XX含笑饮砒霜XX](http://weibo.com/smilingly1989)
