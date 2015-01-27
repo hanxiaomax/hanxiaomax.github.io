@@ -16,7 +16,7 @@ share: true
 本文为[Learn Git in One hour]()系列文章第一篇，重点在[Git](http://baike.baidu.com/link?url=-YXe9s9pkhSJ1Q3Byj_m0KmX7_UwzQ6ijo2mjV7e-fMi0LrNAxuaXm9qwxXXiR42RptrL_QZ_knbworGwlQSuJubUJz8K6EUSmTcJqdyUse)入门，希望读完本文后，您就可以开始使用Git进行工作了。
 
 ------------------
-####零、Git哲学
+###零、Git哲学
 `版本号` :一个SHA1计算出来的一个非常大的数字，用十六进制表示
 `HEAD`:表示当前版本，HEAD~{n}表示当前版本之前的第n个版本
 **工作区（Working Directory）** :当前电脑可见文件目录
@@ -28,7 +28,7 @@ share: true
 
 分支
 
-####一、最简流程及最常用的的5个命令
+###一、最简流程及最常用的的5个命令
 - `git init` : 初始化
 首先需要把一个普通文件夹初始化为一个git仓库
 
@@ -52,26 +52,26 @@ share: true
 
 **#TODO 各阶段在命令行中的显示**
 
-####二、回退与删除
+###二、回退与删除
 >回退大法好
-#####1.尚未暂存(before `add`)
+####1.尚未暂存(before `add`)
 `git checkout -- <file>`：丢弃**工作区**修改。注意是工作区，对暂存区和版本库用此命令是无法修改的
 
 `git reset HEAD <file>`:  丢弃**暂存区**的修改（unstage）
-#####2.尚未提交(before `commit`)
+####2.尚未提交(before `commit`)
 - 暂存区有修改可以提交![Alt text](./1422345710679.png)
 - 撤销当前暂存区的修改
 ![Alt text](./1422345731563.png)
 - 暂存区全部修改被撤销，工作区有未暂存的文件![Alt text](./1422345767307.png)
 
-#####3.已经提交(after `commit` before `push`)
+####3.已经提交(after `commit` before `push`)
 回退版本，回退后，工作区和暂存区都是干净的。（--hard一定，其他不一定）
 
-#####4.已经推送(after `push`)
+####4.已经推送(after `push`)
 首先把本地回退，然后`git push -f origin master`进行强行推送，如果不使用`-f`,则出现non-fast-forward错误。
 
 
-#####删除文件
+####删除文件
 在工作区，删除文件后，用`git status` 会检测到有文件被删除（工作区），如果我们确实要删除，则使用`git rm`来删除（同时会进行暂存，类似于add），然后，`git status`会检测到有文件被删除（暂存区），此时我们已经可以提交了。
 当然，`删除`也是一种修改，我们可以使用**回退大法**来撤销我们的修改。
 
