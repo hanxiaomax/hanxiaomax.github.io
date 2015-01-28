@@ -199,6 +199,7 @@ fast-forward方式是指在合并时，master的指针直接指向当前分支�
 ##七、参考文件及扩展阅读:
 
 - [廖雪峰的官方网站-->Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+- [learnGitBranching](http://pcottle.github.io/learnGitBranching/)
 - [让你Git水平更上一层楼的10个小贴士](http://hanxiaomax.github.io/trans/Ten-Tips-to-Push-Your-Git-Skills-to-the-Next-Level/)
 - [Git使用教程 by 龙恩0707 ](http://www.cnblogs.com/tugenhua0707/p/4050072.html)
 - [Pro Git 中文版](http://git-scm.com/book/zh/v1)
