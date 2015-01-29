@@ -96,6 +96,8 @@ share: true
 `git remote add origin git@github.com:hanxiaomax/learngit.git`
 远程库的名字默认是origin
 
+
+
 ###3. 推送
 `git push -u origin master`
 -u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
@@ -107,6 +109,9 @@ share: true
 ###5. 多种协议
 `https`和`ssh`
 
+`https://github.com/hanxiaomax/hanxiaomax.github.io.git`
+如果添加的仓库地址是这样的，则在`push`时需要输入密码，因为是`https`方式
+`ssh`方式更为方便，速度也比较快。
 
 ##四、分支管理
 
