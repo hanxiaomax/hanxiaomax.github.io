@@ -62,8 +62,24 @@ image:
 
 <!-- Load Modernizr -->
 <script src="{{ site.url }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
 <link rel="stylesheet" href="{{ site.url }}/assets/css/pygments.css">
 
+
+<style type="text/css">
+.memocard{
+background-color: #dddddd;
+/*box-shadow: 4px 4px 2px -2px #6B6868;*/
+padding-left: 24px;
+margin: 12px;
+}
+.memocard:hover{
+background-color: #dddddd;
+box-shadow: 2px 2px 3px 1px #6B6878;
+padding-left: 24px;
+margin: 12px;
+}
+</style>
 </head>
 
 <body id="page">
@@ -78,6 +94,26 @@ image:
         <h1 class="entry-title">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}</h1>{% endif %}
       </header>
       <div class="entry-content">
+
+{% for post in site.categories.other %}
+
+    <div class="memocard">
+
+        <a id="lightme" href="{{ site.url }}{{ post.url }}">
+        {{ post.title }}
+
+      </a>
+
+    </div>
+
+
+
+{% endfor %}
+
+
+
+
+
 
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
@@ -99,6 +135,8 @@ image:
 
   ga('create', 'UA-48815860-1', 'hanxiaomax.github.io');
   ga('send', 'pageview');
+
+
 
 </script>
 </body>
