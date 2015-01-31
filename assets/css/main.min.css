@@ -342,23 +342,16 @@ pre {
     font-size: .75rem;
     line-height: 2;
     border-radius:1em;
-    /*box-shadow: 1px 1px 28px 1px #6B6868;*/
-}
-.highlight :hover{
-    margin-bottom: 1em;
-    font-size: 15px;
-    font-size: .75rem;
-    line-height: 2;
-    border-radius:1em;
     box-shadow: 1px 1px 28px 1px #6B6868;
 }
+
 .highlight pre {
     position: relative;
     padding: 1em;
     margin: 0;
     border-radius:0.5em;
-    font-size: 15px;
-    background-color: #D3D3D3;
+    font-size: 15px;D
+    background-color: #FFFFFF;
 
 }
 
