@@ -168,3 +168,106 @@ class Example : public Base//派生类
 ```
 
 
+###5. 拷贝构造函数
+####0.从成员逐一初始化（Memberwise Initialization）说起
+
+```cpp
+Example ex1(0);
+Example ex2=ex1;//以一个对象作为另一个对象的初值
+```
+有时候我们会遇到上面的这种情况，以一个对象作为另一个对象的初值。此时，ex1的各个成员变量会一次进行复制到ex2。**这是一种默认的行为，但是并不能保证对所有情况都适用。**
+
+例如：
+
+```cpp
+class Example{
+    public:
+        Example(int x,int y):_x(x),_y(y){
+            p=new int[x*y];//分配一块内存，p为指针
+        }
+}
+```
+
+如果我们的`Example`其中包含这样动态内存分配的代码，那么就可能出现问题，试想：
+
+
+```cpp
+int main()
+{
+    Example ex1(1,2);
+    //ex1构造
+    {
+        Example ex2=ex1;
+        
+        //ex2析构，销毁了指针p
+    }
+    //使用ex1
+    //ex1析构
+}
+
+```
+默认的成员逐一初始化，会把`ex1`的各个成员复制到`ex2`，因此`ex2`和`ex1`的`p`指针是相同的，此时由于二者的生命周期可能不同，当其中一个析构后，就会影响另外一个还没有析构的对象，导致其`p`指针所指的内存被释放。
+
+因此我们要改变这种初始化的方法。
+
+ps：[需要拷贝构造函数的三种情况](http://blog.csdn.net/lwbeyond/article/details/6202256)
+
+####1.拷贝构造函数（copy constructor）
+拷贝构造函数是构造函数的一种重载形态，它仅接受唯一的参数，即`指向同类的引用`，例如：`Example(const Example &ex)`。不过`const`并不是必须的。
+
+我们可以在拷贝构造函数里面解决上述默认初始化方式造成的困境，即创建一个**独立的副本**。
+```cpp
+class Example{
+    public:
+        Example(int x,int y):_x(x),_y(y){
+            p=new int[x*y];//分配一块内存，p为指针
+        }
+        //拷贝构造函数
+        Example(const Example &ex):_x(x),_y(y){
+            _size=x*y;
+            p=new int[x*y];//分配一块内存，p为指针
+            for(int i=0;i<_size;i++){
+                p[i]=ex.p[i];//创建一个副本
+            }
+        }
+```
+
+
+
+####2.重载赋值操作符（copy assignment operator）
+上面的方案并非万无一失，对于一个普通的`赋值操作符`，它的功能仅仅是给被赋值对象赋值，而有时，在我们赋值之前，还需要丢弃一些原有的内容。
+试想，
+
+```cpp
+class Example{
+    public:
+        Example(int x,int y):_x(x),_y(y){
+            p=new int[x*y];//分配一块内存，p为指针
+        }
+}
+...     
+Example ex1(0);
+Example ex2(0);
+Example ex2=ex1;//把ex1赋值给ex2
+```
+作为一个常规的赋值符，`ex2`的`p`指针会被`ex1`所替换，这将导致ex2的`p`指针之前指向的内存泄露，因此，在p指针被替换前，它之前所指的内存需要被释放。
+
+```cpp
+Example &Example :: 
+operator=(const Example &ex){
+    if(this!=&ex){
+        x=ex.x;
+        y=ex.y;
+        int _size=x*y;
+        delete [] p;//丢弃原有内容
+        p=new int[_size];//创建副本
+        for(int i=0;i<size;i++){
+            p[i]=ex.p[i];
+        }
+    }
+    return *this;
+}
+```
+
+###6.扩展阅读
+- [C++拷贝构造函数详解](http://blog.csdn.net/lwbeyond/article/details/6202256)
