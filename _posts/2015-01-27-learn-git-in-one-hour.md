@@ -18,16 +18,16 @@ share: true
 ------------------
 ##零、Git哲学
 ####0.哲学
-####1.版本号 :
-一个SHA1计算出来的一个非常大的数字，用十六进制表示
+####1.版本号(commit-id) :
+一个SHA1计算出来的一个非常大的数字，用十六进制表示,代表每一次`commit`，一般使用前6位即可。
 ![Alt text](/images/learngit/log.png)
-代表每一次`commit`，一般使用前6位即可。
+
 ####2.HEAD指针:
 表示当前版本，HEAD~{n}表示当前版本之前的第n个版本
 
 ####3.工作区（Working Directory）和 版本库（Repository）
 ![Alt text](/images/learngit/1.png)
-版本库类似于我们玩游戏的存档区，每一次提交到版本库，就有一个存档记录(save)，方便日后进行回退(load)
+版本库类似于我们玩游戏的存档区，每一次提交到版本库，就有一个存档记录(save)，方便日后进行回退(load),而存档的名字，就是版本号(commit-id)
 
 ####4.暂存区(stage) 和 分支(branch)
 ![Alt text](/images/learngit/2.png)
@@ -51,9 +51,9 @@ share: true
 - `git diff` : 对比变化
 查看文件改动前后的变化
 
-- `git log`:查看提交记录
-`git log --pretty=oneline`
-`git reflog` :查看命令历史
+- `git log`:查看提交记录  
+  `git log --pretty=oneline`  
+  `git reflog` :查看命令历史  
 
 -  `git push origin master` : 推送到远端仓库origin/master
 
@@ -63,15 +63,19 @@ share: true
 其中我们经常会使用`git status`来查看当前状态：
 
 ![Alt text](/images/learngit/untracked.png)：
+
 **新创建了`test.md`后，会提示找到未追踪的文件。**
 
 ![Alt text](/images/learngit/not_staged.png)：
+
 **修改后，尚未添加到暂存区（commit不会将其提交）**
 
 ![Alt text](/images/learngit/w.png)：
+
 **添加到了暂存区（commit会将其提交）**
 
 ![Alt text](/images/learngit/aftercommit.png)：
+
 **运行`commit`之后，暂存区被提交。工作区干净（git没有发现工作区的任何改动）**
 
 
@@ -86,7 +90,8 @@ share: true
 ###0.查看版本
 回退首先要查看**版本**,不然我们没办法确定要回退到什么位置。此处会用到`HEAD`和`版本号`两个东西。以及`git log`命令
 
-使用`git log`或者`git log --oneline` 可以查看我们之前的commit记录，也就是我们之前的存档。
+使用`git log`或者`git log --oneline`可以查看我们之前的commit记录，也就是我们之前的存档。
+
 ![Alt text](/images/learngit/log.png)
 
 
@@ -98,10 +103,11 @@ share: true
 `git reset HEAD <file>`:  丢弃**暂存区**的修改（unstage）
 
 ###2.尚未提交(before `commit`)
-- 暂存区有修改可以提交![Alt text](/images/learngit/1422345710679.png)
+- 暂存区有修改可以提交!
+
 - 撤销当前暂存区的修改
-![Alt text](/images/learngit/1422345731563.png)
-- 暂存区全部修改被撤销，工作区有未暂存的文件![Alt text](/images/learngit/1422345767307.png)
+
+- 暂存区全部修改被撤销，工作区有未暂存的文件!
 
 ###3.已经提交(after `commit` before `push`)
 回退版本，回退后，工作区和暂存区都是干净的。（--hard一定，其他不一定）
@@ -212,13 +218,15 @@ fast-forward方式是指在合并时，master的指针直接指向当前分支�
 ###13. 抓取分支
 `git clone git@github.com:hanxiaomax/learngit.git`
 如果这样clone的话，在本地只能`master`分支
+
 如果需要其他分支：
 `git checkout -b dev origin/dev`
 这样，会在本地创建`dev`分支，并且把它和远端`origin`分支的`dev`对应起来。同时，切换到dev分支。
 当我们向远端分支提交时，可能会遇到non-fast-forward，这种情况有几种处理方式：
+
 1)：**强行上传**:·
 `git push -f origin master`，这种方式一般不用，因为会把远端的更新的文件，替换为本地较旧的文件，不过如果你像远端推送了不希望推送的内容，可以用这种方法删除。
-2）：**解决冲突**
+2)：**解决冲突**
 `git pull`可以先把远端仓库最新的代码拉到本地，此时会自动向本地分支合并，此时会遇到冲突。解决冲突，然后再次提交，上传。  
 
 ##五、GitHub
