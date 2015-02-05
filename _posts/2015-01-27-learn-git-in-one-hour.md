@@ -20,17 +20,17 @@ share: true
 ####0.哲学
 ####1.版本号 :
 一个SHA1计算出来的一个非常大的数字，用十六进制表示
-![Alt text](images/learngit/log.png)
+![Alt text](/images/learngit/log.png)
 代表每一次`commit`，一般使用前6位即可。
 ####2.HEAD指针:
 表示当前版本，HEAD~{n}表示当前版本之前的第n个版本
 
 ####3.工作区（Working Directory）和 版本库（Repository）
-![Alt text](images/learngit/1.png)
+![Alt text](/images/learngit/1.png)
 版本库类似于我们玩游戏的存档区，每一次提交到版本库，就有一个存档记录(save)，方便日后进行回退(load)
 
 ####4.暂存区(stage) 和 分支(branch)
-![Alt text](images/learngit/2.png)
+![Alt text](/images/learngit/2.png)
 
 通过`add`放入暂存区，在通过`commit`提交到当前分支，只有被放入暂存区的文件，我们可以多次`add`然后统一`commit`，提交到版本库。
 
@@ -58,20 +58,20 @@ share: true
 -  `git push origin master` : 推送到远端仓库origin/master
 
 
-![Alt text](images/learngit/2.png)
+![Alt text](/images/learngit/2.png)
 大部分时候，我们只是在循环使用这几个命令。
 其中我们经常会使用`git status`来查看当前状态：
 
-![Alt text](images/learngit/untracked.png)：
+![Alt text](/images/learngit/untracked.png)：
 **新创建了`test.md`后，会提示找到未追踪的文件。**
 
-![Alt text](images/learngit/not_staged.png)：
+![Alt text](/images/learngit/not_staged.png)：
 **修改后，尚未添加到暂存区（commit不会将其提交）**
 
-![Alt text](images/learngit/w.png)：
+![Alt text](/images/learngit/w.png)：
 **添加到了暂存区（commit会将其提交）**
 
-![Alt text](images/learngit/aftercommit.png)：
+![Alt text](/images/learngit/aftercommit.png)：
 **运行`commit`之后，暂存区被提交。工作区干净（git没有发现工作区的任何改动）**
 
 
@@ -87,7 +87,7 @@ share: true
 回退首先要查看**版本**,不然我们没办法确定要回退到什么位置。此处会用到`HEAD`和`版本号`两个东西。以及`git log`命令
 
 使用`git log`或者`git log --oneline` 可以查看我们之前的commit记录，也就是我们之前的存档。
-![Alt text](images/learngit/log.png)
+![Alt text](/images/learngit/log.png)
 
 
 
@@ -98,16 +98,16 @@ share: true
 `git reset HEAD <file>`:  丢弃**暂存区**的修改（unstage）
 
 ###2.尚未提交(before `commit`)
-- 暂存区有修改可以提交![Alt text](images/learngit/1422345710679.png)
+- 暂存区有修改可以提交![Alt text](/images/learngit/1422345710679.png)
 - 撤销当前暂存区的修改
-![Alt text](images/learngit/1422345731563.png)
-- 暂存区全部修改被撤销，工作区有未暂存的文件![Alt text](images/learngit/1422345767307.png)
+![Alt text](/images/learngit/1422345731563.png)
+- 暂存区全部修改被撤销，工作区有未暂存的文件![Alt text](/images/learngit/1422345767307.png)
 
 ###3.已经提交(after `commit` before `push`)
 回退版本，回退后，工作区和暂存区都是干净的。（--hard一定，其他不一定）
 `git reset <commit-id>`,Git会把HEAD指针，指向我们回退的那个版本。
 
-![Alt text](images/learngit/head.png)
+![Alt text](/images/learngit/head.png)
 
 
 
