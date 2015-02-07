@@ -50,7 +50,7 @@ $ git config --global user.email "email@example.com"
 ####4.暂存区(stage) 和 分支(branch)
 ![Alt text](/images/learngit/2.png)
 
-通过`add`放入暂存区，在通过`commit`提交到当前分支，只有被放入暂存区的文件，我们可以多次`add`然后统一`commit`，提交到版本库。
+通过`add`放入暂存区，在通过`commit`提交到当前分支，只有被放入暂存区的文件,才能最终被提交。我们可以多次`add`然后统一`commit`，提交到版本库。
 
 **未追踪状态（Untracked）**：从未被放入过暂存区
 
