@@ -182,8 +182,12 @@ $ git config --global user.email "email@example.com"
 ###2. 创建分支
 `git checkout -b dev`创建并切换分支
 相当于
-`git branch dev 创建分支`
-`git checkout dev 切换分支`
+
+```bash
+git branch dev 创建分支
+git checkout dev 切换分支
+
+```
 
 ###3. 查看分支
 `git branch`
