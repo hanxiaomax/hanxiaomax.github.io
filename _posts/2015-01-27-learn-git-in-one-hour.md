@@ -190,7 +190,8 @@ $ git config --global user.email "email@example.com"
 当前分支前面会有`*`
 
 ###4. 合并分支
-合并B分支到A首先需要合并切换到
+合并B分支到A首先需要合并切换到A分支，然后使用`git merge B`
+其中涉及到比如fast-forward方式什么的，可以看[这个问题:git merge --no-ff是什么意思](http://segmentfault.com/q/1010000002477106/a-1020000002519351)
 
 ###5. 删除分支
 `git branch -d <name>`
