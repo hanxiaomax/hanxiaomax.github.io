@@ -11,13 +11,31 @@ share: true
 
 >本系列文章，受到[Learn X in Y minutes](http://learnxinyminutes.com/)以及[知乎-哪些技能，经较短时间的学习，就可以给人的生活带来巨大帮助？](http://www.zhihu.com/question/20846401)等系列教程、文章的启发。
 >
-本系列可以看做是`入门教程`，`cheatsheet` 或是`笔记心得`，其重点在于利用尽**可能直白**的语言，介绍某项技术最**核心的部分**，并**显著改善**我们的生活和工作状态，并为后续的学习打下基础。
 
-本文为[Learn Git in One hour]()系列文章第一篇，重点在[Git](http://baike.baidu.com/link?url=-YXe9s9pkhSJ1Q3Byj_m0KmX7_UwzQ6ijo2mjV7e-fMi0LrNAxuaXm9qwxXXiR42RptrL_QZ_knbworGwlQSuJubUJz8K6EUSmTcJqdyUse)入门，希望读完本文后，您就可以开始使用Git进行工作了。
+
+本文为[Learn X in One hour]()系列文章第一篇，重点在[Git](http://baike.baidu.com/link?url=-YXe9s9pkhSJ1Q3Byj_m0KmX7_UwzQ6ijo2mjV7e-fMi0LrNAxuaXm9qwxXXiR42RptrL_QZ_knbworGwlQSuJubUJz8K6EUSmTcJqdyUse)入门，希望读完本文后，您就可以开始使用Git进行工作了。
 
 ------------------
-##零、Git哲学
-####0.哲学
+##零、Git安装，基本概念
+####0.安装
+
+Windows系统：
+去下载[msysgit](http://msysgit.github.io/)然后安装就可以了。提供了Git bash和Git GUI供大家使用，我们这里主要介绍的是bash的命令行操作。
+
+Linux系统（Debian或Ubuntu Linux）：
+`sudo apt-get install git`
+
+其他的一些系统大家可以网上搜一下，比较简单。
+
+安装完成后，我们需要配置一些用户名
+
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+```
+
+
+
 ####1.版本号(commit-id) :
 一个SHA1计算出来的一个非常大的数字，用十六进制表示,代表每一次`commit`，一般使用前6位即可。
 ![Alt text](/images/learngit/log.png)
