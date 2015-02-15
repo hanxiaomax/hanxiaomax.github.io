@@ -215,6 +215,8 @@ ps：[需要拷贝构造函数的三种情况](http://blog.csdn.net/lwbeyond/art
 拷贝构造函数是构造函数的一种重载形态，它仅接受唯一的参数，即`指向同类的引用`，例如：`Example(const Example &ex)`。不过`const`并不是必须的。
 
 我们可以在拷贝构造函数里面解决上述默认初始化方式造成的困境，即创建一个**独立的副本**。
+
+
 ```cpp
 class Example{
     public:
