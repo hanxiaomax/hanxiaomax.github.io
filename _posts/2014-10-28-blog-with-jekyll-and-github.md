@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用jeklly及GitHub建立博客--安装配置篇"
-category: trans
+category: other
 tags: [jeklly,博客]
 image:
   feature: article.jpg

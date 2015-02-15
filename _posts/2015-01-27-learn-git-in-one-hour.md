@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Learn Git in One hour"
-category: trans
+category: other
 tags: [git,Learn X in One hour]
 image:
   feature: article.jpg
