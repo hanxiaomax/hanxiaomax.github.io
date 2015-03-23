@@ -273,6 +273,13 @@ fast-forward方式是指在合并时，master的指针直接指向当前分支�
 
 只适用于还未添加到git中的文件，如果已经添加，需要先用`git rm`来删除
 
+如果需要让git管理一个空文件夹，则在该文件夹下建立一个`.gitignore`文件，内容为
+
+```
+# Ignore everything in this directory 
+* 
+# Except this file !.gitignore 
+```
 
 ##七、参考文件及扩展阅读:
 
