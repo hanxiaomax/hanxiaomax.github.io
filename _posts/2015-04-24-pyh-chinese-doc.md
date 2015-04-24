@@ -119,7 +119,9 @@ HTML 标签可以通过调用同名函数来生成。HTML 标签
 My content
 </div>'
 ```
+
 其他的标签同样可以作为内容传入:
+
 ```
 >>> mydiv = div(p('My paragraph.'), cl='myCSSclass1 myCSSclass2', id='myCSSid1')
 >>> mydiv.render()
@@ -127,6 +129,7 @@ My content
 <p>My paragraph</p>
 </div>'
 ```
+
 当一个标签对象被创建后，HTML属性可以通过它的`属性`成员来修改，它是一个字典：
 
 ```
@@ -135,6 +138,7 @@ My content
 >>> mydiv.render()
 '<div id="myCSSid"></div>\n'
 ```
+
 标签可以通过`+`号进行连接：
 
 ```
@@ -143,6 +147,7 @@ My content
 '<div></div>
 <div></div>'
 ```
+
 标签可以被包含进更高一层的标签中，可以把它作为非关键字参数传入（就像上面介绍的那样），也可以通过`<<`操作符来完成。这个操作符会返回最后被包含的标签：
 
 ```
@@ -158,6 +163,7 @@ My content
 </div>
 </div>'
 ```
+
 当一个标签被包含进另一个标签之后，可以把它作为上级标签的成员来进行访问，它的名字就是其`id`属性的值，如果没有指定该值，则`tag_001`就是该类第一个标签的名字，以此类推：
 
 ```
@@ -286,4 +292,5 @@ for i in range(nrows):
     for j in range(ncols):
         mytr << td('Row %i, column %j' % (i, j))
 ```
+
 这样可以生成一个i乘j的表格。
