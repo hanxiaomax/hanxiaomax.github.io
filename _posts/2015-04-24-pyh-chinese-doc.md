@@ -32,7 +32,7 @@ Pyh 是一个强大且简约的python模块，你可以使用它在python程序�
 # 如何安装PyH #
 从这个[下载页面](http://code.google.com/p/pyh/downloads/list)下载（译注：原链接需要代理，可以在本人托管的[GitHub地址](https://github.com/hanxiaomax/pyh)下载）或者直接下载 [PyH-0.1.tar.gz](http://pyh.googlecode.com/files/PyH-0.1.tar.gz)（译注：同样需要代理）解压到你的工作目录或是python目录，通常是 `/usr/lib/pythonX.X/site-packages`或者是其他任意能够被 `$PYTHONPATH`识别的路径:
 
-```
+```bash
 $ wget http://pyh.googlecode.com/files/PyH-0.1.tar.gz
 $ tar xvzf PyH-0.1.tar.gz
 $ cd PyH-0.1
@@ -40,7 +40,7 @@ $ sudo python setup.py install
 ```
 如果你没有root权限，可以把 `PyH-0.1/pyh.py`文件拷贝到你的项目目录下。如果你正在使用一个基于RPM的发行版系统，你可以使用rpm二进制包，并通过如下命令来安装：
 
-```
+```bash
 $ wget http://pyh.googlecode.com/files/PyH-0.1-1.noarch.rpm
 $ sudo rpm -ivh PyH-0.1-1.noarch.rpm
 ```
@@ -48,7 +48,7 @@ $ sudo rpm -ivh PyH-0.1-1.noarch.rpm
 
 下面这段python代码：
 
-```
+```python
 from pyh import *
 page = PyH('My wonderful PyH page')
 page.addCSS('myStylesheet1.css', 'myStylesheet2.css')
@@ -66,7 +66,7 @@ page.printOut()
 会生成这段html代码：
 
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -96,7 +96,7 @@ page.printOut()
 
 pyh.py可以通过如下方式导入:
 
-```
+```python
 >>> from pyh import *
 ```
 ## `Tag` 对象 ##
@@ -104,7 +104,7 @@ pyh.py可以通过如下方式导入:
 HTML 标签可以通过调用同名函数来生成。HTML 标签
 `<tag>` 可以通过 `tag()` 生成:
 
-```
+```python
 >>> mydiv = div()
 >>> mydiv.render()
 '<div></div>'
@@ -112,7 +112,7 @@ HTML 标签可以通过调用同名函数来生成。HTML 标签
 
 标签的属性，通过函数的关键字参数传入，关键字和标签的属性是同名的，除了`class` 这个属性被替换成了 `cl`. 标签的内容或是子标签可以通过非关键字参数传入:
 
-```
+```python
 >>> mydiv = div('My content', cl='myCSSclass1 myCSSclass2', id='myCSSid1')
 >>> mydiv.render()
 '<div class="myCSSclass1 myCSSclass2" id="myCSSid1">
@@ -122,7 +122,7 @@ My content
 
 其他的标签同样可以作为内容传入:
 
-```
+```python
 >>> mydiv = div(p('My paragraph.'), cl='myCSSclass1 myCSSclass2', id='myCSSid1')
 >>> mydiv.render()
 '<div class="myCSSclass1 myCSSclass2" id="myCSSid1">
@@ -132,7 +132,7 @@ My content
 
 当一个标签对象被创建后，HTML属性可以通过它的`属性`成员来修改，它是一个字典：
 
-```
+```python
 >>> mydiv = div()
 >>> mydiv.attributes['id'] = 'myCSSid'
 >>> mydiv.render()
@@ -141,7 +141,7 @@ My content
 
 标签可以通过`+`号进行连接：
 
-```
+```python
 >>> twoDivs = div() + div()
 >>> twoDivs.render()
 '<div></div>
@@ -150,7 +150,7 @@ My content
 
 标签可以被包含进更高一层的标签中，可以把它作为非关键字参数传入（就像上面介绍的那样），也可以通过`<<`操作符来完成。这个操作符会返回最后被包含的标签：
 
-```
+```python
 >>> myDiv = div(id='myTopLevelDiv')
 >>> myPar = myDiv << div(id='myInnerDiv') << p(id='myPar') ＃注意此处返回的是p标签
 >>> myPar << span('My first span') + span('My second span')
@@ -166,7 +166,7 @@ My content
 
 当一个标签被包含进另一个标签之后，可以把它作为上级标签的成员来进行访问，它的名字就是其`id`属性的值，如果没有指定该值，则`tag_001`就是该类第一个标签的名字，以此类推：
 
-```
+```python
 >>> myDiv = div()
 >>> myDiv << span(id='myspan')
 >>> myDiv.myspan << 'content1'
@@ -185,7 +185,7 @@ My content
 ## 创建网页 ##
 最高层的对象，是`PyH`对象。它创建一个包含CSS和javascript元素的HTML页面。创建一个网页的第一件事是实例化一个`PyH`对象:
 
-```
+```python
 from pyh import *
 page = PyH('My wonderful PyH page')
 ```
@@ -193,13 +193,13 @@ page = PyH('My wonderful PyH page')
 随后你可以添加你的CSS表盒javascript文件，例如：
 
 
-```
+```python
 page.addCSS('myStylesheet1.css', 'myStylesheet2.css')
 page.addJS('myJavascript1.js', 'myJavascript2.js')
 ```
 注意，它们可以在任意时刻通过python脚本添加（例如，根据你的内容，仅添加被用到的脚本和样式表）。你现在可以开始创建你的页面了：
 
-```
+```python
 page << h1('My big title!', cl='myCSSclass')
 page << div(id='mySubtitleDiv') << h2('My sub-title')
 maindiv = page << div(id='myMainDiv')
@@ -213,13 +213,13 @@ page << div(id='myFooter') << span('My footer')
 
 之后，你可以把HTML页面输出到文件，或是输出到浏览器，如果你的脚本是在服务器上运行的话。
 
-```
+```python
 page.printOut()
 ```
 
 输出的结果是：
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -249,7 +249,7 @@ page.printOut()
 
 你可以充分利用python和pyh的能力来高校的生成HTML表格，创建一个4乘4的表格非常轻松：
 
-```
+```python
 page = PyH('My wonderful PyH page')
 page << h2('Most compact way to build a 4 by 4 table')
 page << table() << tr(td('1') + td('2')) + tr(td('3') + td('4'))
@@ -264,7 +264,7 @@ page.printOut()
 
 上面的代码会生成如下HTML代码（为了简洁，表头被去掉了）
 
-```
+```html
 <h2>Most compact way to build a 4 by 4 table</h2>
 <table>
 <tr>
@@ -285,7 +285,7 @@ page.printOut()
 
 现在，如果你想要自动的创建一个大型表格，比如从数据库中创建，你可以这样做：
 
-```
+```python
 mytab = page << table()
 for i in range(nrows):
     mytr = mytab << tr()
