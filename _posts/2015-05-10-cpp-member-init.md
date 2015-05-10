@@ -1,0 +1,103 @@
+---
+layout: post
+title: "C++成员变量初始化的几点思考"
+category: cpp
+tags: [C/C++,笔记]
+image:
+  feature: article.jpg
+comments: True
+share: true
+---
+
+
+
+最近在学习QT，使用Qt 设计设计的界面，会多一个中间层Ui::MainWindow，它被用来初始化界面，但是界面的逻辑需要再创建一个类来实现。一般这个类的命名是不带前缀的同名类，即MainWindow，《C++ GUI Qt 4 编程》书中介绍的方法是让这个类直接继承Ui::MainWindow和Ui::MainWindow的父类。在研究这个问题的时候，发现如果在继承列表里面调整顺序，则编译不通过。网上搜索发现，约定必须要把QT类放在第一位，既然是约定就不说了。不过在网上提了一个相关的问题，[c++多重继承的顺序应该如何写](http://segmentfault.com/q/1010000002741153)。其中答案给我很大的帮助，作者说到，一般并不会直接继承。而是创建一个Ui::MainWindow类型的成员变量。在尝试创建这个成员变量的时候遇到了一些问题，在此做一个总结。
+
+
+
+##成员变量可以以以下三种形式存在
+1. 对象
+2. 引用
+3. 指针
+
+
+###对于引用和指针
+引用比指针更安全，不存在空的引用，但是指针可能为空，指针在使用之前一定要检查是不是空。
+两者在调用成员的时候也是不一样的，对象或者引用可以使用`.`，而指针要使用`->`。
+
+
+所以一般来讲使用引用要好一些，但是也正是因为引用不能为空，所以在构造函数里面必须要初始化对象或者引用。
+
+对于引用，采用以下形式。注意，这里是把ui绑定到_UI，后者可以是引用或者是一个对象，此时前者是引用或者对象都可以。但是如果后者是一个对象，而前者是一个引用，则会出现警告：**binding reference member 'ui' to stack allocated parameter '_UI'**，一般常见的还是两者均为引用。
+
+```cpp
+MainWindow::MainWindow(Ui::MainWindow &_UI,QWidget *parent)
+:QMainWindow(parent),ui(_UI)
+{
+    ui.setupUi(this);
+}
+```
+
+请注意下面这种形式，比上面少了一个参数，这里想要通过`Ui::MainWindow()`为ui初始化，创建的是一个无名临时变量，是不可以被绑定到非const类型的左值的。会出现错误：
+**non-const lvalue reference to type ‘
+Ui::MainWindow ' cannot bind to a temporary of type '
+Ui::MainWindow '**。
+
+同时由于成员变量ui是一个引用或对象，那么不能使用`new Ui::MainWindow`这种形式。
+
+```cpp
+MainWindow::MainWindow(QWidget *parent)
+:QMainWindow(parent),ui(Ui::MainWindow())
+{
+    ui.setupUi(this);
+}
+```
+
+
+我猜测如果成员变量是一个对象或者引用的话，那就只能多一个参数，在外面初始化为有名的变量后传递进来才行。
+
+```cpp
+int main(int argc,char *argv[])
+{
+    QApplication app(argc,argv);
+    Ui::MainWindow _UI = Ui::MainWindow();
+    MainWindow *mainwindow = new MainWindow(_UI);//这里传进构造函数
+    mainwindow->show();
+    app.exec();
+}
+```
+
+
+对于指针
+```cpp
+Ui::MainWindow* ui;
+```
+
+```cpp
+MainWindow::MainWindow(QWidget *parent)
+:QMainWindow(parent),ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+```
+
+这里可以直接在初始化列表里面使用`new Ui::MainWindow`来进行初始化，构造函数少一个参数。
+也不需要在外面把有名变量传递进行做初始化
+
+```cpp
+int main(int argc,char *argv[])
+{
+    QApplication app(argc,argv);
+    MainWindow *mainwindow = new MainWindow;
+    mainwindow->show();
+    app.exec();
+}
+```
+
+现在有一点不明白，成员变量使用引用和对象形式有什么优劣，目前所了解的一个缺点就是上面所说的，如果成员变量是一个对象，那么构造函数的参数也要是一个对象，如果是引用就会出现警告。那如果参数是一个引用，就类似传值的方式了，似乎会多创建一个对象副本。而如果是引用的方式则为传址的方式，似乎更具优势。
+
+
+
+参考资料：
+
+- [C++中引用和指针的区别 - Listening_music的专栏](http://blog.csdn.net/listening_music/article/details/6921608)
