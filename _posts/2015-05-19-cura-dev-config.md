@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#Cura二次开发环境配置"
+title: "Cura二次开发环境配置"
 category: other
 tags: [Cura,3D打印]
 image:
@@ -17,6 +17,7 @@ share: true
 2. 非商业用途（Noncommercial）：不得用于盈利性目的。  
 3. 禁止演绎（No Derivative Works）：不得修改原作品, 不得再创作。   
 新浪微博 [@XX含笑饮砒霜XX](http://weibo.com/smilingly1989)
+
 ------------------
 
 ##安装Git for Windows
@@ -37,8 +38,10 @@ git clone https://github.com/hanxiaomax/Cura.git
 **以64位 Windows 7为例**
 
 首先需要安装python，强烈推荐安装32位的，不论你是64位系统还是32位系统，都可以使用32位Python。
+
 ###0.创建虚拟环境
 首先利用pip安装virtualenv，网上很多教程这里不细说了，然后进入cura目录创建虚拟环境 **mycura**
+
 ```
 virtualenv mycura
 ```
@@ -56,28 +59,29 @@ source mycura/Scripts/activate
 
 Cura的GUI是用python框架wxPython开发的，而wxPython不可以从pip安装，只能从源码编译或者安装预[编译版本](http://www.wxpython.org/download.php#msw)
 
-wxPython不能直接从pip安装，在虚拟环境中安装看cura教程，比较复杂，需要从源码编译。比较简单的办法就是先把wxPython安装到系统（我们采用这样的方法），然后从**C:\Python27\Lib\site-packages**中把**wx-3.0-msw**，**wx.pth**,**wxversion.py**这三个拷贝到虚拟环境下面的Lib/site-packages中即可在虚拟环境中使用。
+wxPython不能直接从pip安装，在虚拟环境中安装看cura教程，比较复杂，需要从源码编译。比较简单的办法就是先把wxPython安装到系统（我们采用这样的方法），然后从
+**C:\Python27\Lib\site-packages** 中把 **wx-3.0-msw**，**wx.pth**,**wxversion.py**这三个拷贝到虚拟环境下面的 **Lib/site-packages**中即可在虚拟环境中使用。
 
 
-如果出现以下问题：**DLL load failed: 1% 不是有效的win32 应用程序
-![Alt text](./1432018832187.png)
+如果出现以下问题：**DLL load failed: 1% 不是有效的win32 应用程序**
 
 说明wxPython和Python的版本不匹配，此处应该安装32位的wxPython
 
-安装完成后，进入Python，运行一下import wx，如果没有出错就是成功了。（注意测试时应该处于虚拟环境中）
+安装完成后，进入Python，运行一下`import wx`，如果没有出错就是成功了。（注意测试时应该处于虚拟环境中）
 
 ###2.安装其他依赖库
-在cura的目录内，使用如下命令，安装**requirements.txt**文件指明的全部依赖包。
+在cura的目录内，使用如下命令，安装 **requirements.txt** 文件指明的全部依赖包。
+
 `pip install -r requirements.txt`
 
-如果是在windows平台下，很有可能会无法安装numpy。我们这里选择手动安装到系统中，然后拷贝到虚拟环境下的库中。
-在windows平台上编译容易出现问题，且需要配置很多工具。因此我们直接从网上下载编译好的numpy。
+如果是在windows平台下，很有可能会无法安装 **numpy**。我们这里依然选择手动安装到系统中，然后拷贝到虚拟环境下的库的方法。
+在windows平台上编译容易出现问题，且需要配置很多工具。因此我们直接从网上下载编译好的 **numpy**。
 
 **注意，预编译的numpy只有win32版本，需要32位的python，因此我建议使用32位的python。否则还是要自己手动编译的。**
 
-安装完成后从系统的**C:\Python27\Lib\site-packages**中把**numpy**和**numpy-1.9.2-py2.7.egg-info**拷贝到虚拟环境下的Lib/site-packages即可。
+安装完成后从系统的 **C:\Python27\Lib\site-packages**中把 **numpy**和 **numpy-1.9.2-py2.7.egg-info** 拷贝到虚拟环境下的 **Lib/site-packages**即可。
 
-同样的，进入Python然后`import numpy`测试是否安装成功，成功后，从requirements.txt中删除numpy，再次运行，安装其他的依赖库。
+同样的，进入Python然后 `import numpy` 测试是否安装成功，成功后，从requirements.txt中删除numpy，再次运行，安装其他的依赖库。
 
 ##运行Cura
 ###0.修改app.py
