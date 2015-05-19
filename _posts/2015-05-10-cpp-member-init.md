@@ -42,8 +42,9 @@ MainWindow::MainWindow(Ui::MainWindow &_UI,QWidget *parent)
 **non-const lvalue reference to type ‘
 Ui::MainWindow ' cannot bind to a temporary of type '
 Ui::MainWindow '**。
-
+(VS之后提示一个warring)  
 同时由于成员变量ui是一个引用或对象，那么不能使用`new Ui::MainWindow`这种形式。
+(`new` 返回的是指针)，而应该使用是值初始化的形式`Ui::MainWindow()`（特例是对象声明了一个private的拷贝构造函数）
 
 ```cpp
 MainWindow::MainWindow(QWidget *parent)
@@ -54,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
 ```
 
 
-我猜测如果成员变量是一个对象或者引用的话，那就只能多一个参数，在外面初始化为有名的变量后传递进来才行。
+或者在外面初始化为有名的变量后传递进来才行。
 
 ```cpp
 int main(int argc,char *argv[])
@@ -67,6 +68,7 @@ int main(int argc,char *argv[])
 }
 ```
 
+还有的对象可以在类内完成初始化，比如这里ui，在声明的时候初始化就完成了`Ui::mainformClass ui;`，因此这里初始化列表实际上不需要包含ui,需要默认构造函数支持
 
 对于指针
 ```cpp
@@ -75,7 +77,7 @@ Ui::MainWindow* ui;
 
 ```cpp
 MainWindow::MainWindow(QWidget *parent)
-:QMainWindow(parent),ui(new Ui::MainWindow)
+:QMainWindow(parent),ui(new Ui::MainWindow) // new 返回的是指针
 {
     ui->setupUi(this);
 }
@@ -94,10 +96,24 @@ int main(int argc,char *argv[])
 }
 ```
 
-现在有一点不明白，成员变量使用引用和对象形式有什么优劣，目前所了解的一个缺点就是上面所说的，如果成员变量是一个对象，那么构造函数的参数也要是一个对象，如果是引用就会出现警告。那如果参数是一个引用，就类似传值的方式了，似乎会多创建一个对象副本。而如果是引用的方式则为传址的方式，似乎更具优势。
+现在有一点不明白，成员变量使用引用和对象形式有什么优劣，目前所了解的一个缺点就是上面所说的，如果成员变量是一个对象，那么构造函数的参数也要是一个对象，如果是引用就会出现警告。那如果参数是一个引用，就类似传值的方式了，似乎会多创建一个对象副本。而如果是引用的方式则为传址的方式，似乎更具优势。而如果成员变量是一个对象，那么是可以在初始化列表里面直接初始化（这里涉及到绑定一个临时变量的问题），可以少一个参数。
+
+- 引用适合传值和返回时使用（传址方式，而且避免了临时变量的问题）
+- 对象适合在类内使用（节省参数）
+- 指针个人觉得尽量少使用，但是有些时候，不需要把所有对象初始化，因为有些可能用不到。或者不想要在构造函数的初始化列表里面初始化(是否在构造函数内部把它们赋值为NULL更好？)。不过指针在使用之前必须要考察是否为空。而且声明的时候也会赋值一个空指针
 
 
 
 参考资料：
 
 - [C++中引用和指针的区别 - Listening_music的专栏](http://blog.csdn.net/listening_music/article/details/6921608)
+
+
+
+-----------------------
+**本文采用中国大陆版CC协议发布**  
+作者保留以下权利：  
+1. 署名（Attribution）：必须提到原作者。  
+2. 非商业用途（Noncommercial）：不得用于盈利性目的。  
+3. 禁止演绎（No Derivative Works）：不得修改原作品, 不得再创作。   
+新浪微博 [@XX含笑饮砒霜XX](http://weibo.com/smilingly1989)
