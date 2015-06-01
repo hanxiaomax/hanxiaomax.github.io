@@ -35,7 +35,7 @@ git clone https://github.com/qextserialport/qextserialport.git
 qmake -tp vc qextserialport.pro
 ```
 则可以生成VS2010所需的工程文件，如图所示，使用VS打开
-![Alt text](/images/QextSerialPort/.1433083199586.png)
+![Alt text](/images/QextSerialPort/1433083199586.png)
 
 当然，如果要生成64位的，则需要使用64位QT中提供的qamke，关于如何编译64位QT，请看[这里](http://hanxiaomax.github.io/other/build-qtx64-win7/)
 
@@ -54,7 +54,7 @@ qmake -tp vc qextserialport.pro
 右键工程文件，选择编译，会要求我们保持解决方案文件，点击保存即可。
 
 分别编译debug和release版本，在build文件夹下生成如下文件：
-![Alt text](/images/QextSerialPort/.1433083922713.png)
+![Alt text](/images/QextSerialPort/1433083922713.png)
 
 - 把全部文件拷贝到你的QT安装目录下的Lib文件夹中
 - 把dll文件拷贝到你的QT安装目录下的bin文件夹中
@@ -69,4 +69,4 @@ qmake -tp vc qextserialport.pro
     - release版本添加**qextserialport.lib**
 
 
-####VS2010预编译64位QextSerialPort可以在此直接下载：[链接]:(http://pan.baidu.com/s/1o6onhPK) 密码: wtsi
+####VS2010预编译64位QextSerialPort可以在此直接下载：[链接](http://pan.baidu.com/s/1o6onhPK) 密码: wtsi
