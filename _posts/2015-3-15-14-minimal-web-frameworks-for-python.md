@@ -1,14 +1,15 @@
 ---
 layout: post
 title: "14个Python微型框架"
-category: other
+category: Python
 tags: [Python,Web]
 image:
   feature: article.jpg
 comments: True
 share: true
-
 ---
+
+
 
 本文由 [伯乐在线 - 艾凌风](http://www.jobbole.com/members/hanxiaomax) 翻译，[进林](http://www.jobbole.com/members/8zjl8) 校稿。未经许可，禁止转载！
 英文出处：[codecondo.com](http://codecondo.com/14-minimal-web-frameworks-for-python/)。欢迎加入翻译组。
