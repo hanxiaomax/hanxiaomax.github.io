@@ -36,9 +36,10 @@ Python版的Hello World程序
 你可能忘记该怎么做了，下面是一个提示。 print "Hello World!";
 
 我还特别喜欢这一段代码，
+
 ```python
-  for i in ["/","*","|","","|"]:
-        print "%sr" % i,
+for i in ["/","*","|","","|"]:
+    print "%sr" % i,
 ```
 
 
