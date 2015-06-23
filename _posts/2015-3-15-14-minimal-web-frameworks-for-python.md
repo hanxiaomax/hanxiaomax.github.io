@@ -1,7 +1,20 @@
+---
+layout: post
+title: "14个Python微型框架"
+category: other
+tags: [Python,Web]
+image:
+  feature: article.jpg
+comments: True
+share: true
 
+---
 
 本文由 [伯乐在线 - 艾凌风](http://www.jobbole.com/members/hanxiaomax) 翻译，[进林](http://www.jobbole.com/members/8zjl8) 校稿。未经许可，禁止转载！
 英文出处：[codecondo.com](http://codecondo.com/14-minimal-web-frameworks-for-python/)。欢迎加入翻译组。
+
+---------------------------------
+
 
 我最近发表了一篇名为 [7 Minimal Node.js Web Frameworks for 2014 and Beyond](http://codecondo.com/7-minimal-node-js-web-frameworks/)的博文——目前它是我博客访问量最高的文章：超过10000人浏览，分享和评论了这些我总结到一起的web框架。
 
