@@ -130,4 +130,4 @@ stdout_logfile=//home/ubuntu/flaskCard/logs/flaskcard_supervisor.log
 
 - `killall -9 uwsgi`可以停止uwsgi进程
 - `lsof -i tcp  / grep LISTEN`  可以查看端口监听情况
-- `find /path/to/find/with/ name xxx
+- `find /path/to/find/with/ name xxx`
