@@ -65,10 +65,9 @@ Nginx站点配置：
 server{
                 listen       80;
                 server_name xxx.xxx.xxx;
-                error_log /home/ubuntu/flaskCard/logs/
-                access_log  /home/ubuntu/flaskCard/logs/;
+                error_log /home/ubuntu/flaskCard/logs/error.log;
+                access_log  /home/ubuntu/flaskCard/logs/access.log;
                 root  /home/ubuntu/flaskCard/;
-                }
                 location / {
                         include uwsgi_params;
                         uwsgi_pass 127.0.0.1:5000;
