@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "腾讯云配置：Flask+uWSGI+Nginx"
-category: other
+category: Python
 tags: [Python,Flask,Nginx]
 image:
   feature: article.jpg
