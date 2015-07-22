@@ -213,6 +213,7 @@ myfun("world")
 但是这么做有时会违背func函数的初衷，比如func函数确实是需要返回值的，那么其装饰后的函数wrapper也应该把值返回。
 
 我们看这样一段函数：
+
 ```python
 def deco(func):
 	def warpper(*args,**kw):
