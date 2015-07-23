@@ -136,7 +136,7 @@ def myfun(param):
 myfun("something")
 ```
 
-这种情况下，仍然返回wrapper，但是这个wrapper可以接受一个参数，不过这样的装饰器只能作用于接受一个参数的函数
+这种情况下，仍然返回wrapper，但是这个wrapper可以接受一个参数，因此这样的装饰器只能作用于接受一个参数的函数
 
 ###3.装饰任意参数的函数
 
@@ -172,7 +172,7 @@ myfun2("something","otherthing")
 
 ###4.带参数的装饰器
 
-装饰器接受一个函数作为参数，这个毋庸置疑。但是有时候我们需要装饰器接受另外的参数。此时需要再加一层函数
+装饰器接受一个函数作为参数，这个毋庸置疑。但是有时候我们需要装饰器接受另外的参数。此时需要再加一层函数，实际上是定义了一个生成装饰器的工厂函数，调用它，搭配需要的参数，来返回合适的装饰器。
 
 ```python
 def log(text):
@@ -351,3 +351,235 @@ print myfun.__name__ #wrapper
 ```
 
 导入模块`import functools`，并且用`@functools.wraps(func)`装饰wrapper即可
+
+##3.Flask中的`@app.route()`装饰器
+ 
+[Things which aren't magic - Flask and @app.route - Part 1](http://ains.co/blog/things-which-arent-magic-flask-part-1.html)
+[Things which aren't magic - Flask and @app.route - Part 2](http://ains.co/blog/things-which-arent-magic-flask-part-2.html) 
+
+```python
+class NotFlask():
+    def route(self, route_str):
+        def decorator(f):
+            return f
+ 
+        return decorator
+ 
+app = NotFlask()
+ 
+@app.route("/")
+def hello():
+    return "Hello World!"
+```
+
+route是NotFlask类的一个方法，并且其实际上是一个装饰器工厂，这里我们并没有装饰我们的函数，装饰器仅仅返回了函数的引用而没有装饰它。
+
+```python
+class NotFlask():
+    def __init__(self):
+        self.routes = {}
+ 
+    def route(self, route_str):
+        def decorator(f):
+            self.routes[route_str] = f
+            return f
+ 
+        return decorator
+ 
+app = NotFlask()
+ 
+@app.route("/")
+def hello():
+    return "Hello World!"
+```
+
+现在给装饰器初始化一个字典，在我们传入参数生产装饰器route的时候，把函数存入字典响应位置，key为url字符串，value为相应函数。
+
+
+不过此时，我们并不能访问这个内部的视图函数，我们需要一个方法来获取相应的视图函数。
+
+
+```python
+class NotFlask():
+    def __init__(self):
+        self.routes = {}
+ 
+    def route(self, route_str):
+        def decorator(f):
+            self.routes[route_str] = f
+            return f
+ 
+        return decorator
+ 
+    def serve(self, path):
+        view_function = self.routes.get(path)#获取相应函数
+        if view_function:
+            return view_function()#返回函数
+        else:
+            raise ValueError('Route "{}"" has not been registered'.format(path))
+ 
+app = NotFlask()
+ 
+@app.route("/")
+def hello():
+    return "Hello World!"
+```
+
+然后我们可以这样，通过url字符串来访问相应的视图函数
+
+```python
+app = NotFlask()
+ 
+@app.route("/")
+def hello():
+    return "Hello World!"
+ 
+print app.serve("/")
+
+#>>Hello World!
+
+```
+
+
+####小结
+
+Flask路由装饰器的主要功能，就是绑定url到相应的函数。
+（如何访问视图函数其实是HTTP服务器的一部分）
+
+--------
+
+当然，目前的url绑定还太死板，我们需要url能够加入可变参数
+
+下面我们要实现从url中识别出参数
+
+```
+app = Flask(__name__)
+ 
+@app.route("/hello/<username>")
+def hello_user(username):
+    return "Hello {}!".format(username)
+```
+
+首先我们要利用命名捕获组，从url中识别参数
+
+```python
+route_regex = re.compile(r'^/hello/(?P<username>.+)$')
+match = route_regex.match("/hello/ains")
+ 
+print match.groupdict()
+```
+
+当然，我们需要一个方法来把输入的url转化为相应的正则表达式
+
+```python
+def build_route_pattern(route):
+    route_regex = re.sub(r'(<\w+>)', r'(?P\1.+)', route)
+    return re.compile("^{}$".format(route_regex))
+ 
+print build_route_pattern('/hello/<username>')
+```
+
+
+```python
+class NotFlask():
+    def __init__(self):
+        self.routes = []
+
+    # Here's our build_route_pattern we made earlier
+    @staticmethod
+    def build_route_pattern(route):
+        route_regex = re.sub(r'(<\w+>)', r'(?P\1.+)', route)
+        return re.compile("^{}$".format(route_regex))
+
+    def route(self, route_str):
+        def decorator(f):
+            # Instead of inserting into a dictionary,
+            # We'll append the tuple to our route list
+            route_pattern = self.build_route_pattern(route_str)
+            self.routes.append((route_pattern, f))
+
+            return f
+
+        return decorator
+```
+
+与之前的代码不同，字典被移除了，取而代之的是一个列表，然后我们把生成的正则表达式和相应的函数作为元组放到列表里。
+
+
+同样，我们需要一个方法来返回视图函数，当然，还有捕获匹配组的字典，我们需要它来传递正确的参数
+
+```python
+def get_route_match(path):
+    for route_pattern, view_function in self.routes:
+        m = route_pattern.match(path)
+        if m:
+           return m.groupdict(), view_function
+ 
+    return None
+```
+
+最终结果：
+
+```python
+class NotFlask():
+    def __init__(self):
+        self.routes = []
+
+    @staticmethod
+    def build_route_pattern(route):
+        route_regex = re.sub(r'(<\w+>)', r'(?P\1.+)', route)
+        return re.compile("^{}$".format(route_regex))
+
+    def route(self, route_str):
+        def decorator(f):
+            route_pattern = self.build_route_pattern(route_str)
+            self.routes.append((route_pattern, f))
+
+            return f
+
+        return decorator
+
+    def get_route_match(self, path):
+        for route_pattern, view_function in self.routes:
+            m = route_pattern.match(path)
+            if m:
+                return m.groupdict(), view_function
+
+        return None
+
+    def serve(self, path):
+		#查找和path匹配的视图函数以及捕获组字典
+        route_match = self.get_route_match(path)
+        if route_match:
+            kwargs, view_function = route_match
+            return view_function(**kwargs)#捕获组字典作为函数参数
+        else:
+            raise ValueError('Route "{}"" has not been registered'.format(path))
+```
+
+使用方法：
+
+```python
+app = NotFlask()
+ 
+@app.route("/hello/<username>")
+def hello_user(username):
+    return "Hello {}!".format(username)
+ 
+print app.serve("/hello/ains")
+```
+
+```
+>>Hello ains!
+```
+
+####小结
+
+装饰阶段：
+- 装饰器工厂route接受url字符串，生成一个合适的装饰器
+- 装饰器装饰视图函数，生成url字符串对应的正则表达式模板，连同视图函数组成元组，存放在列表中。然后把函数返回。
+
+调用阶段：
+- app.serve并传入url的时候，首先在列表中查找，依次进行匹配，是否有符合该模式的路径和视图函数
+- 有则返回相应获取捕获组字典和视图函数
+- 将字典作为参数，**返回该视图函数的运行结果**。
