@@ -9,7 +9,7 @@ comments: True
 share: true
 ---
 
-
+>我真的是不怎么懂，大兄弟们看到有问题一点要评论呀！
 
 最近在学习QT，使用Qt 设计设计的界面，会多一个中间层Ui::MainWindow，它被用来初始化界面，但是界面的逻辑需要再创建一个类来实现。一般这个类的命名是不带前缀的同名类，即MainWindow，《C++ GUI Qt 4 编程》书中介绍的方法是让这个类直接继承Ui::MainWindow和Ui::MainWindow的父类。在研究这个问题的时候，发现如果在继承列表里面调整顺序，则编译不通过。网上搜索发现，约定必须要把QT类放在第一位，既然是约定就不说了。不过在网上提了一个相关的问题，[c++多重继承的顺序应该如何写](http://segmentfault.com/q/1010000002741153)。其中答案给我很大的帮助，作者说到，一般并不会直接继承。而是创建一个Ui::MainWindow类型的成员变量。在尝试创建这个成员变量的时候遇到了一些问题，在此做一个总结。
 
@@ -28,7 +28,11 @@ share: true
 
 所以一般来讲使用引用要好一些，但是也正是因为引用不能为空，所以在构造函数里面必须要初始化对象或者引用。
 
-对于引用，采用以下形式。注意，这里是把ui绑定到_UI，后者可以是引用或者是一个对象，此时前者是引用或者对象都可以。但是如果后者是一个对象，而前者是一个引用，则会出现警告：**binding reference member 'ui' to stack allocated parameter '_UI'**，一般常见的还是两者均为引用。
+对于引用，采用以下形式。注意，这里是把ui绑定到_UI，后者可以是引用或者是一个对象，此时前者是引用或者对象都可以。但是如果后者是一个对象，而前者是一个引用，则会出现警告：
+
+**binding reference member 'ui' to stack allocated parameter '_UI'**
+
+，一般常见的还是两者均为引用。
 
 ```cpp
 MainWindow::MainWindow(Ui::MainWindow &_UI,QWidget *parent)
