@@ -9,6 +9,7 @@ comments: True
 share: true
 ---
 
+#一.函数装饰器
 
 ##1.从Python内层函数说起
 
@@ -78,6 +79,7 @@ def generate_power(number):
     
 128
 ```
+
 外层函数接受一个参数number=2，然后生成一个**nth_power()**函数，该函数只接受一个单一的参数**power**，其中包含**number＝2**
 
 返回的函数被赋值给变量`raise_two`，我们可以通过`raise_two`来调用函数并传递变量。
@@ -97,15 +99,15 @@ def generate_power(number):
 
 ```python
 def deco(func):
-	def wrapper():
-		print "start"
-		func() #调用函数
-		print "end"
-	return wrapper
+    def wrapper():
+        print "start"
+        func() #调用函数
+        print "end"
+    return wrapper
 
 @deco
 def myfun():
-	print "run"
+    print "run"
 
 myfun()
 ```
@@ -121,16 +123,16 @@ myfun()
 
 ```python
 def deco(func):
-	def wrapper(param):
-		print "start"
-		func(param)
-		print "end"
-	return wrapper
+    def wrapper(param):
+        print "start"
+        func(param)
+        print "end"
+    return wrapper
 
 
 @deco
 def myfun(param):
-	print "run with param %s"%(param)
+    print "run with param %s"%(param)
 
 
 myfun("something")
@@ -142,20 +144,20 @@ myfun("something")
 
 ```python
 def deco(func):
-	def warpper(*args,**kw):
-		print "start"
-		func(*args,**kw)
-		print "end"
-	return warpper
+    def warpper(*args,**kw):
+        print "start"
+        func(*args,**kw)
+        print "end"
+    return warpper
 
 
 @deco
 def myfun1(param1):
-	print "run with param %s"%(param1)
+    print "run with param %s"%(param1)
 
 @deco
 def myfun2(param1,param2):
-	print "run with param %s and %s"%(param1,param2)
+    print "run with param %s and %s"%(param1,param2)
 
 myfun1("something")
 myfun2("something","otherthing")
@@ -176,18 +178,18 @@ myfun2("something","otherthing")
 
 ```python
 def log(text):
-	def deco(func):
-		def wrapper(*args,**kw):
-			print text
-			func(*args,**kw)
-			print text + " again"
-		return wrapper
-	return deco
+    def deco(func):
+        def wrapper(*args,**kw):
+            print text
+            func(*args,**kw)
+            print text + " again"
+        return wrapper
+    return deco
 
 
 @log("hello")
 def myfun(message):
-	print message
+    print message
 
 
 myfun("world")
@@ -206,6 +208,78 @@ myfun("world")
 整体来看是`myfun=log("hello")(myfun)`
 
 
+###5.[装饰器带*类*参数](http://blog.csdn.net/dreamcoding/article/details/8611578)
+
+```python
+# -*- coding:gbk -*-  
+'''''示例8: 装饰器带类参数'''  
+  
+class locker:  
+    def __init__(self):  
+        print("locker.__init__() should be not called.")  
+         
+    @staticmethod  
+    def acquire():  
+        print("locker.acquire() called.（这是静态方法）")  
+         
+    @staticmethod  
+    def release():  
+        print("  locker.release() called.（不需要对象实例）")  
+  
+def deco(cls):  
+    '''cls 必须实现acquire和release静态方法'''  
+    def _deco(func):  
+        def __deco():  
+            print("before %s called [%s]." % (func.__name__, cls))  
+            cls.acquire()  
+            try:  
+                return func()  
+            finally:  
+                cls.release()  
+        return __deco  
+    return _deco  
+ 
+@deco(locker)  
+def myfunc():  
+    print(" myfunc() called.")  
+  
+myfunc()  
+myfunc()  # -*- coding:gbk -*-  
+'''''示例8: 装饰器带类参数'''  
+  
+class locker:  
+    def __init__(self):  
+        print("locker.__init__() should be not called.")  
+         
+    @staticmethod  
+    def acquire():  
+        print("locker.acquire() called.（这是静态方法）")  
+         
+    @staticmethod  
+    def release():  
+        print("  locker.release() called.（不需要对象实例）")  
+  
+def deco(cls):  
+    '''''cls 必须实现acquire和release静态方法'''  
+    def _deco(func):  
+        def __deco():  
+            print("before %s called [%s]." % (func.__name__, cls))  
+            cls.acquire()  
+            try:  
+                return func()  
+            finally:  
+                cls.release()  
+        return __deco  
+    return _deco  
+ 
+@deco(locker)  
+def myfunc():  
+    print(" myfunc() called.")  
+  
+myfunc()  
+myfunc()  
+```
+
 ####关于wrapper的返回值
 
 上面的代码中，我们的wrapper函数都没有返回值，而是在wrapper中直接调用了func函数，这么做的目的是要在函数运行前后打印一些字符串。而func函数本事也只是打印字符串而已。
@@ -216,16 +290,16 @@ myfun("world")
 
 ```python
 def deco(func):
-	def warpper(*args,**kw):
-		print "start"
-		func(*args,**kw)#直接调用，无返回值
-		print "end"
-	return warpper
+    def warpper(*args,**kw):
+        print "start"
+        func(*args,**kw)#直接调用，无返回值
+        print "end"
+    return warpper
 
 @deco
 def myfun(param):
-	return 2+param
-	
+    return 2+param
+    
 sum=myfun(2) #期望纪录返回值并打印
 print sum
 ```
@@ -243,15 +317,15 @@ None
 
 ```python
 def deco(func):
-	def warpper(*args,**kw):
-		print "start"
-		result=func(*args,**kw)#纪录结果
-		print "end"
-		return result #返回
-	return warpper
+    def warpper(*args,**kw):
+        print "start"
+        result=func(*args,**kw)#纪录结果
+        print "end"
+        return result #返回
+    return warpper
 @deco
 def myfun(param):
-	return 2**param
+    return 2**param
 
 
 sum=myfun(2) #这里其实是sum＝result
@@ -268,18 +342,18 @@ print sum
 ```python
 from time import time,sleep
 def timer(func):
-	def warpper(*args,**kw):
-		tic=time()
-		result=func(*args,**kw)
-		toc=time()
-		print "%f seconds has passed"%(toc-tic)
-		return result
-	return warpper
+    def warpper(*args,**kw):
+        tic=time()
+        result=func(*args,**kw)
+        toc=time()
+        print "%f seconds has passed"%(toc-tic)
+        return result
+    return warpper
 
 @timer
 def myfun():
-	sleep(2)
-	return "end"
+    sleep(2)
+    return "end"
 
 print myfun()
 
@@ -297,19 +371,19 @@ print myfun()
 from time import time,sleep
 
 def timer(func):
-	def warpper(*args,**kw):
-		tic=time()
-		result=func(*args,**kw)
-		toc=time()
-		print func.__name__
-		print "%f seconds has passed"%(toc-tic)
-		return result
-	return warpper
+    def warpper(*args,**kw):
+        tic=time()
+        result=func(*args,**kw)
+        toc=time()
+        print func.__name__
+        print "%f seconds has passed"%(toc-tic)
+        return result
+    return warpper
 
 @timer
 def myfun():
-	sleep(2)
-	return "end"
+    sleep(2)
+    return "end"
 
 myfun()
 print myfun.__name__ #wrapper
@@ -326,21 +400,21 @@ from time import time,sleep
 import functools
 
 def timer(func):
-	@functools.wraps(func)
-	def warpper(*args,**kw):
-		tic=time()
-		result=func(*args,**kw)
-		toc=time()
-		print func.__name__
-		print "%f seconds has passed"%(toc-tic)
-		return result
-	return warpper
+    @functools.wraps(func)
+    def warpper(*args,**kw):
+        tic=time()
+        result=func(*args,**kw)
+        toc=time()
+        print func.__name__
+        print "%f seconds has passed"%(toc-tic)
+        return result
+    return warpper
 
 
 @timer
 def myfun():
-	sleep(2)
-	return "end"
+    sleep(2)
+    return "end"
 
 myfun()
 print myfun.__name__ #wrapper
@@ -440,14 +514,12 @@ print app.serve("/")
 
 ```
 
-
 ####小结
 
 Flask路由装饰器的主要功能，就是绑定url到相应的函数。
 （如何访问视图函数其实是HTTP服务器的一部分）
 
 --------
-
 当然，目前的url绑定还太死板，我们需要url能够加入可变参数
 
 下面我们要实现从url中识别出参数
@@ -548,7 +620,7 @@ class NotFlask():
         return None
 
     def serve(self, path):
-		#查找和path匹配的视图函数以及捕获组字典
+        #查找和path匹配的视图函数以及捕获组字典
         route_match = self.get_route_match(path)
         if route_match:
             kwargs, view_function = route_match
@@ -576,12 +648,20 @@ print app.serve("/hello/ains")
 ####小结
 
 装饰阶段：
-
 - 装饰器工厂route接受url字符串，生成一个合适的装饰器
 - 装饰器装饰视图函数，生成url字符串对应的正则表达式模板，连同视图函数组成元组，存放在列表中。然后把函数返回。
 
 调用阶段：
-
 - app.serve并传入url的时候，首先在列表中查找，依次进行匹配，是否有符合该模式的路径和视图函数
 - 有则返回相应获取捕获组字典和视图函数
 - 将字典作为参数，**返回该视图函数的运行结果**。
+
+
+------------
+
+**本文采用中国大陆版CC协议发布**  
+作者保留以下权利：  
+1. 署名（Attribution）：必须提到原作者。  
+2. 非商业用途（Noncommercial）：不得用于盈利性目的。  
+3. 禁止演绎（No Derivative Works）：不得修改原作品, 不得再创作。   
+新浪微博 [@XX含笑饮砒霜XX](http://weibo.com/smilingly1989)
