@@ -429,6 +429,7 @@ print myfun.__name__ #wrapper
 ##3.Flask中的`@app.route()`装饰器
  
 [Things which aren't magic - Flask and @app.route - Part 1](http://ains.co/blog/things-which-arent-magic-flask-part-1.html)
+
 [Things which aren't magic - Flask and @app.route - Part 2](http://ains.co/blog/things-which-arent-magic-flask-part-2.html) 
 
 ```python
