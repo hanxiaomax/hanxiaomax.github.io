@@ -20,6 +20,8 @@ share: true
 
 ------------------
 
+[新版文章请点击](http://www.jianshu.com/p/65a02f71409b)
+
 ##安装Git for Windows
 [下载地址](https://msysgit.github.io/)
 安装完成之后，鼠标右键可以打开git bash，用于输入下面的命令。
